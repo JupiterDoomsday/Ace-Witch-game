@@ -6,6 +6,7 @@ public enum ACT
     IDLE,
     WALKING,
     FLYING,
+    INSPECTING,
     TALKING,
     SITTING,
     STIMMING,
@@ -34,16 +35,15 @@ public class Player : MonoBehaviour
         
     }
     void FixedUpdate() {
-        if (Input.anyKeyDown) {
+        //if (Input.anyKeyDown)
             handleInput();
-        }
     }
 
     // Update is called once per frame
     void handleInput() {
         //check if player is walking
         float axisX = Input.GetAxisRaw("Horizontal");
-        float axisY = Input.GetAxisRaw("Verticle");
+        float axisY = Input.GetAxisRaw("Vertical");
         switch (act) {
             case ACT.IDLE:
                 if (axisX >= -1 && axisX <0)
@@ -57,8 +57,8 @@ public class Player : MonoBehaviour
                 if (axisX ==-1 || axisX==1 || axisY==1 || axisY==-1)
                     act= ACT.WALKING;
                 //check if player is talking
-                else if (Input.GetKeyDown("X"))
-                    act = ACT.TALKING;
+                else if (Input.GetKeyDown(KeyCode.X))
+                    act = ACT.INSPECTING;
                 break;
 
             case ACT.WALKING:
@@ -92,6 +92,7 @@ public class Player : MonoBehaviour
                     act = ACT.SITTING;
                 break;
         }
+
     }
         
 }
