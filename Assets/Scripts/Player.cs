@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
         
     }
     void FixedUpdate() {
-        //if (Input.anyKeyDown)
             handleInput();
     }
 
@@ -62,16 +61,7 @@ public class Player : MonoBehaviour
                 break;
 
             case ACT.WALKING:
-                if (axisX == -1) 
-                    dir = DIRECTION.LEFT;
-                else if (axisX == 1)
-                   dir = DIRECTION.RIGHT;
-                else if (axisY == -1)
-                    dir = DIRECTION.DOWN;
-                else if (axisY == 1)
-                    dir = DIRECTION.UP;
-                else
-                    act = ACT.IDLE;  
+                 
                 break;
             case ACT.SITTING:
                 //set marji to stim after a certain ammount of time has passed while sitting
@@ -94,5 +84,24 @@ public class Player : MonoBehaviour
         }
 
     }
+    public void move()
+    {
+        switch (dir) {
+            case DIRECTION.LEFT:
+                transform.position = Vector2.left;
+                break;
+            case DIRECTION.RIGHT:
+                transform.position = Vector2.right;
+                break;
+            case DIRECTION.UP:
+                transform.position = Vector2.up;
+                break;
+            case DIRECTION.DOWN:
+
+                transform.position = Vector2.down;
+                break;
+        }
         
+    }
+
 }

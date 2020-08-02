@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 interface PlayerState {
-    void handleInput();
-    void update(Player marji);
+
+    void handleInput(Player marji);
+    void FixedUpdate(Player marji);
 }
