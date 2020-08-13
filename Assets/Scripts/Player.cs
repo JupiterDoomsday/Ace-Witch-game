@@ -21,47 +21,50 @@ public enum DIRECTION
     LEFT,
     RIGHT
 };
-public class Player : MonoBehaviour
+public class  Player : MonoBehaviour
 {
     public ACT act;
     public DIRECTION dir;
-    public int speed;
+    static Walking walkingState;
+    static Idle idleState;
+    PlayerState curState = null;
+    public int speed=4;
     public int sittingTime;
+    public float x;
+    public float y;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        idleState = new Idle();
+        walkingState = new Walking();
+        curState = idleState;
+        x = -7.98f;
+        y = -2.03f;
+
     }
-    void FixedUpdate() {
-            handleInput();
+    void Update() {
+        this.handleInput();
+        curState.UpdateState(this);
     }
+   /* private void FixedUpdate()
+    {
+        curState.UpdateState(this);
+    }*/
 
     // Update is called once per frame
     void handleInput() {
         //check if player is walking
-        float axisX = Input.GetAxisRaw("Horizontal");
-        float axisY = Input.GetAxisRaw("Vertical");
         switch (act) {
             case ACT.IDLE:
-                if (axisX >= -1 && axisX <0)
-                    dir = DIRECTION.LEFT;
-                else if(axisX <= 1 && axisX > 0)
-                    dir = DIRECTION.RIGHT;
-                else if (axisY<= 1 && axisY>0)
-                    dir = DIRECTION.UP;
-                else if (axisY >= -1 && axisY < 0)
-                    dir = DIRECTION.DOWN;
-                if (axisX ==-1 || axisX==1 || axisY==1 || axisY==-1)
-                    act= ACT.WALKING;
-                //check if player is talking
-                else if (Input.GetKeyDown(KeyCode.X))
-                    act = ACT.INSPECTING;
+                curState = idleState;
+                curState.handleInput(this);
                 break;
 
             case ACT.WALKING:
-                 
+                curState = walkingState;
+                curState.handleInput(this);
                 break;
             case ACT.SITTING:
                 //set marji to stim after a certain ammount of time has passed while sitting
@@ -88,20 +91,24 @@ public class Player : MonoBehaviour
     {
         switch (dir) {
             case DIRECTION.LEFT:
-                transform.position = Vector2.left;
+                x += -1 * Time.deltaTime * speed;
+                //x += -0.125f;
                 break;
             case DIRECTION.RIGHT:
-                transform.position = Vector2.right;
+                x += 1 * Time.deltaTime * speed;
+                //x+=0.125f;
                 break;
             case DIRECTION.UP:
-                transform.position = Vector2.up;
+                y += 1 * Time.deltaTime * speed;
+                //y+= 0.125f;
                 break;
             case DIRECTION.DOWN:
-
-                transform.position = Vector2.down;
+                y += -1 * Time.deltaTime * speed;
+                //y+= -0.125f;
                 break;
         }
-        
+        transform.position = new Vector2(x , y);
+
     }
 
 }
