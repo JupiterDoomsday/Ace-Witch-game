@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Walking : PlayerState
 {
-    public void handleInput(Player marji)
+    public void handleInput(Player player)
     {
         float axisX = Input.GetAxisRaw("Horizontal");
         float axisY = Input.GetAxisRaw("Vertical");
         if (axisX == -1)
-            marji.dir = DIRECTION.LEFT;
+            player.dir = DIRECTION.LEFT;
         else if (axisX == 1)
-            marji.dir = DIRECTION.RIGHT;
+            player.dir = DIRECTION.RIGHT;
         else if (axisY == -1)
-            marji.dir = DIRECTION.DOWN;
+            player.dir = DIRECTION.DOWN;
         else if (axisY == 1)
-            marji.dir = DIRECTION.UP;
+            player.dir = DIRECTION.UP;
         else
-            marji.act = ACT.IDLE;
+            player.act = ACT.IDLE;
     }
 
     // Update is called once per frame
-    public void FixedUpdate(Player marji)
+    public void UpdateState(Player player)
     {
-        marji.move();
+            player.move();
     }
 }
