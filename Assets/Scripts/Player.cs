@@ -27,7 +27,10 @@ public class  Player : MonoBehaviour
     public DIRECTION dir;
     static Walking walkingState;
     static Idle idleState;
+    static Talking talkingState;
+    public Sprite[] dirSprites= new Sprite[4];
     PlayerState curState = null;
+    public SpriteRenderer spriteRender;
     public int speed=4;
     public int sittingTime;
     public float x;
@@ -45,27 +48,14 @@ public class  Player : MonoBehaviour
 
     }
     void Update() {
-        this.handleInput();
+        curState.handleInput(this);
         curState.UpdateState(this);
     }
-   /* private void FixedUpdate()
-    {
-        curState.UpdateState(this);
-    }*/
-
     // Update is called once per frame
-    void handleInput() {
+    /*void handleInput() {
         //check if player is walking
+        
         switch (act) {
-            case ACT.IDLE:
-                curState = idleState;
-                curState.handleInput(this);
-                break;
-
-            case ACT.WALKING:
-                curState = walkingState;
-                curState.handleInput(this);
-                break;
             case ACT.SITTING:
                 //set marji to stim after a certain ammount of time has passed while sitting
                 if (Time.time - sittingTime == 50)
@@ -85,30 +75,71 @@ public class  Player : MonoBehaviour
                     act = ACT.SITTING;
                 break;
         }
-
-    }
-    public void move()
-    {
+    }*/
+    public void move(){
         switch (dir) {
             case DIRECTION.LEFT:
                 x += -1 * Time.deltaTime * speed;
-                //x += -0.125f;
                 break;
             case DIRECTION.RIGHT:
                 x += 1 * Time.deltaTime * speed;
-                //x+=0.125f;
                 break;
             case DIRECTION.UP:
                 y += 1 * Time.deltaTime * speed;
-                //y+= 0.125f;
                 break;
             case DIRECTION.DOWN:
                 y += -1 * Time.deltaTime * speed;
-                //y+= -0.125f;
                 break;
         }
         transform.position = new Vector2(x , y);
 
+    }
+    public void isTalking()
+    {
+        act = ACT.TALKING;
+    }
+    public void notTalking()
+    {
+        act = ACT.IDLE;
+    }
+    /*
+     * this function allows us to change the curAct pointer
+     * to update to its respective PlayerState object 
+     * after we chang the Players ACT Enum
+     */
+
+    public void UpdateAct()
+    {
+        switch (act)
+        {
+            case ACT.IDLE:
+                curState = idleState;
+                break;
+            case ACT.WALKING:
+                curState = walkingState;
+                break;
+            case ACT.TALKING:
+                break;
+            case ACT.SITTING:
+                break;
+        }
+    }
+    public void setPlayerDirectionSprite() {
+        switch (dir)
+        {
+            case DIRECTION.LEFT:
+                spriteRender.sprite = dirSprites[2];
+                break;
+            case DIRECTION.RIGHT:
+                spriteRender.sprite = dirSprites[1];
+                break;
+            case DIRECTION.UP:
+                spriteRender.sprite = dirSprites[0];
+                break;
+            case DIRECTION.DOWN:
+                spriteRender.sprite = dirSprites[3];
+                break;
+        }
     }
 
 }

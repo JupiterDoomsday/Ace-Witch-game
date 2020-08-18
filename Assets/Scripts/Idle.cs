@@ -18,10 +18,10 @@ public class Idle : PlayerState
         else if (axisY >= -1 && axisY < 0)
             player.dir = DIRECTION.DOWN;
         if (axisX == -1 || axisX == 1 || axisY == 1 || axisY == -1)
+        {
             player.act = ACT.WALKING;
-        //check if player is talking
-        else if (Input.GetKeyDown(KeyCode.X))
-            player.act = ACT.INSPECTING;
+            player.UpdateAct();
+        }
     }
 
     // Update is called once per frame
