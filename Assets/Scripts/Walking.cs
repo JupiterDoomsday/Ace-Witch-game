@@ -17,7 +17,11 @@ public class Walking : PlayerState
         else if (axisY == 1)
             player.dir = DIRECTION.UP;
         else
+        {
             player.act = ACT.IDLE;
+            player.UpdateAct();
+        }
+        player.setPlayerDirectionSprite(); 
     }
 
     // Update is called once per frame
