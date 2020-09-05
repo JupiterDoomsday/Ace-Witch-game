@@ -51,31 +51,6 @@ public class  Player : MonoBehaviour
         curState.handleInput(this);
         curState.UpdateState(this);
     }
-    // Update is called once per frame
-    /*void handleInput() {
-        //check if player is walking
-        
-        switch (act) {
-            case ACT.SITTING:
-                //set marji to stim after a certain ammount of time has passed while sitting
-                if (Time.time - sittingTime == 50)
-                {
-                    sittingTime = 0;
-                    act = ACT.STIMMING;
-                }
-                if (Input.anyKeyDown)
-                {
-                    //if you press a key while sitting you get off
-                    act = ACT.IDLE;
-                    //play getting off chair animation
-                }
-                break;
-            case ACT.STIMMING:
-                if (Input.anyKeyDown)
-                    act = ACT.SITTING;
-                break;
-        }
-    }*/
     public void move(){
         switch (dir) {
             case DIRECTION.LEFT:
@@ -98,7 +73,7 @@ public class  Player : MonoBehaviour
     {
         act = ACT.TALKING;
     }
-    public void notTalking()
+    public void setIdle()
     {
         act = ACT.IDLE;
     }
