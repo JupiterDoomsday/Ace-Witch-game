@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 1521037380}
   - component: {fileID: 1521037381}
   m_Layer: 0
-  m_Name: playerProfilePic
+  m_Name: Marji
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -605,7 +605,7 @@ Transform:
   m_GameObject: {fileID: 1521037378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.98, y: -2.03, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -625,10 +625,10 @@ MonoBehaviour:
   act: 0
   dir: 3
   dirSprites:
-  - {fileID: 5954738627770567768, guid: c87ae67ab36ec44178266552d87a94ed, type: 3}
-  - {fileID: 4067908654607010981, guid: c87ae67ab36ec44178266552d87a94ed, type: 3}
-  - {fileID: -636046446595124885, guid: c87ae67ab36ec44178266552d87a94ed, type: 3}
-  - {fileID: 2129022215294607653, guid: c87ae67ab36ec44178266552d87a94ed, type: 3}
+  - {fileID: 8225503934104678146, guid: 544657bbd7aa143c386fffed9ca2eeed, type: 3}
+  - {fileID: 7810626931894192798, guid: 544657bbd7aa143c386fffed9ca2eeed, type: 3}
+  - {fileID: 3595598607781627462, guid: 544657bbd7aa143c386fffed9ca2eeed, type: 3}
+  - {fileID: -1410599644301775473, guid: 544657bbd7aa143c386fffed9ca2eeed, type: 3}
   spriteRender: {fileID: 1521037381}
   speed: 8
   sittingTime: 0
@@ -674,7 +674,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2129022215294607653, guid: c87ae67ab36ec44178266552d87a94ed,
+  m_Sprite: {fileID: -1410599644301775473, guid: 544657bbd7aa143c386fffed9ca2eeed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
