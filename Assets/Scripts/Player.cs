@@ -33,6 +33,7 @@ public class  Player : MonoBehaviour
     public SpriteRenderer spriteRender;
     public int speed=4;
     public int sittingTime;
+    public Animator player_animator;
     public float x;
     public float y;
     
@@ -43,8 +44,8 @@ public class  Player : MonoBehaviour
         idleState = new Idle();
         walkingState = new Walking();
         curState = idleState;
-        x = -7.98f;
-        y = -2.03f;
+        //x = -7.98f;
+        //y = -2.03f;
 
     }
     void Update() {
@@ -99,22 +100,6 @@ public class  Player : MonoBehaviour
                 break;
         }
     }
-    public void setPlayerDirectionSprite() {
-        switch (dir)
-        {
-            case DIRECTION.LEFT:
-                spriteRender.sprite = dirSprites[2];
-                break;
-            case DIRECTION.RIGHT:
-                spriteRender.sprite = dirSprites[1];
-                break;
-            case DIRECTION.UP:
-                spriteRender.sprite = dirSprites[0];
-                break;
-            case DIRECTION.DOWN:
-                spriteRender.sprite = dirSprites[3];
-                break;
-        }
-    }
+    
 
 }

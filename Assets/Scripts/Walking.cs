@@ -8,20 +8,31 @@ public class Walking : PlayerState
     {
         float axisX = Input.GetAxisRaw("Horizontal");
         float axisY = Input.GetAxisRaw("Vertical");
-        if (axisX == -1)
-            player.dir = DIRECTION.LEFT;
-        else if (axisX == 1)
-            player.dir = DIRECTION.RIGHT;
-        else if (axisY == -1)
-            player.dir = DIRECTION.DOWN;
-        else if (axisY == 1)
-            player.dir = DIRECTION.UP;
-        else
-        {
-            player.act = ACT.IDLE;
-            player.UpdateAct();
+        player.player_animator.SetInteger("x", (int)axisX);
+        player.player_animator.SetInteger("y", (int)axisY);
+        switch(axisX){
+            case -1:
+                player.dir = DIRECTION.LEFT;
+                return;
+                
+            case 1:
+                player.dir = DIRECTION.RIGHT;
+                return;
         }
-        player.setPlayerDirectionSprite(); 
+        switch (axisY)
+        {
+            case -1:
+                player.dir = DIRECTION.DOWN;
+                return;
+            case 1:
+                player.dir = DIRECTION.UP;
+                return;
+            default:
+                player.act = ACT.IDLE;
+                player.UpdateAct();
+                break;
+        }
+
     }
 
     // Update is called once per frame
