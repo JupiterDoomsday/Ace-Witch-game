@@ -13,10 +13,6 @@ public class Npc : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
     //[YarnCommand("facePlayer")]
     //alows us to change where the npc is facing when talking to the player
     public void resetNPCDir(Player marji)
@@ -38,7 +34,7 @@ public class Npc : MonoBehaviour
 
         }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (Input.GetKeyDown(KeyCode.X))
         {

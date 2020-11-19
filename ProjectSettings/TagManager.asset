@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: furniture
+    uniqueID: 686978733
+    locked: 0
+  - name: foreground
+    uniqueID: 4235969275
+    locked: 0
+  - name: npcs
+    uniqueID: 2947344787
+    locked: 0
+  - name: player
+    uniqueID: 2848528001
+    locked: 0
