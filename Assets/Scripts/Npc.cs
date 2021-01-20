@@ -7,10 +7,14 @@ public class Npc : MonoBehaviour
 {
     public ACT act;
     public DIRECTION dir;
+    public Sprite Profile;
+    public string Name;
     public YarnProgram script;
+    public DialogueRunner runner;
     // Start is called before the first frame update
     void Start()
     {
+        runner.Add(script);
     }
 
     //[YarnCommand("facePlayer")]
@@ -34,11 +38,17 @@ public class Npc : MonoBehaviour
 
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay2D(Collider2D ot)
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (ot.tag.Equals("Player"))
         {
-            act = ACT.TALKING;
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                Debug.Log("trigger event");
+                act = ACT.TALKING;
+                runner.StartDialogue();
+                //player.isTalking(this);
+            }
         }
     }
 }

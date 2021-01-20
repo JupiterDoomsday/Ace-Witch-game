@@ -9,20 +9,9 @@ public enum GAMESTATE {
     MENU,
     END
 };
-public class GameState : MonoBehaviour
+public abstract class GameState : MonoBehaviour
 {
     public GAMESTATE mode;
     // Start is called before the first frame update
-    void Start()
-    {
-        // Sync framerate to monitors refresh rate
-        QualitySettings.vSyncCount = 1;
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -29,12 +29,36 @@ public class Walking : PlayerState
                 return;
             default:
                 player.act = ACT.IDLE;
+                player.player_animator.enabled = false;
                 player.UpdateAct();
+                setDirection(player);
                 break;
         }
 
     }
 
+    //this function gets called when the walking animation breaks and we're at the idel state
+    //the play is suposed to be facing the last direction they're facing
+    //set it up in walking state so that this gets called once
+    //instead of being called each frame at the idle state
+    public void setDirection(Player p) {
+        switch (p.dir)
+        {
+            case DIRECTION.LEFT:
+                p.spriteRender.sprite = p.dirSprites[0];
+                break;
+            case DIRECTION.RIGHT:
+                p.spriteRender.sprite = p.dirSprites[1];
+                break;
+            case DIRECTION.UP:
+                p.spriteRender.sprite = p.dirSprites[2];
+                break;
+            case DIRECTION.DOWN:
+                p.spriteRender.sprite = p.dirSprites[3];
+                break;
+        }
+ 
+    }
     // Update is called once per frame
     public void UpdateState(Player player)
     {
