@@ -27,6 +27,5 @@ public class Idle : PlayerState
     // Update is called once per frame
    public void UpdateState(Player player)
     {
-
     }
 }

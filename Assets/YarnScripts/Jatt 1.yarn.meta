@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: 70e2cd5b2bb334e07ab7661913beca13
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - Jatt 1-Start-0
+  - Jatt 1-Start-1
+  - Jatt 1-Start-2
+  - Jatt 1-Start-3
+  - Jatt 1-Start-4
+  - Jatt 1-Belly_rubs-5
+  - Jatt 1-save_game-6
+  - Jatt 1-jatt_cnv1_-7
+  - Jatt 1-jatt_cnv1_-8
+  - Jatt 1-jatt_cnv1_-9
+  - Jatt 1-jatt_cnv1_-10
+  - Jatt 1-jatt_cnv1_-11
+  - Jatt 1-jatt_cnv1_-12
+  - Jatt 1-jatt_cnv2-13
+  - Jatt 1-yes_talk_to_me-14
+  - Jatt 1-dont_have_to-15
+  - Jatt 1-dont_have_to-16
+  - Jatt 1-dont_have_to-17
+  - Jatt 1-dont_have_to-18
+  - Jatt 1-dont_have_to-19
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 70e2cd5b2bb334e07ab7661913beca13,
+    type: 3}
+  localizations: []

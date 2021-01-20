@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -44,7 +45,7 @@ TagManager:
   - name: furniture
     uniqueID: 686978733
     locked: 0
-  - name: foreground
+  - name: _bakg
     uniqueID: 4235969275
     locked: 0
   - name: npcs
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 2848528001
+    locked: 0
+  - name: foreground
+    uniqueID: 447388901
     locked: 0
