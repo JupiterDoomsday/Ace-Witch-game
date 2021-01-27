@@ -14,6 +14,7 @@ public class Talking : GameState
     public Image left;
     public Image right;
     public Player player;
+    public AudioSource audioSource;
     //[SerializeField]
     public List<Npc> actors;
     public void Awake()
@@ -21,12 +22,12 @@ public class Talking : GameState
         actors = new List<Npc>();
     }
 
-    private Sprite findActor(string str)
+    private Npc findActor(string str)
     {
         foreach (Npc key in actors)
         {
             if (str.Equals(key.Name))
-                return key.Profile;
+                return key;
         }
         return null;
     }
@@ -34,7 +35,7 @@ public class Talking : GameState
     [YarnCommand("profile")]
     public void ShowProfile(string profile)
     {
-        Sprite witch = findActor(profile);
+        Sprite witch = findActor(profile).Profile;
         if (witch == null)
         {
             Debug.Log("ERROR actor doesn't exsist");
@@ -47,11 +48,23 @@ public class Talking : GameState
         right.sprite = player.profile;
         right.SetNativeSize();
     }
-    public void ShowProfile(string person, string personNew)
+    [YarnCommand("sound")]
+    public void PlayAudio(string str)
+    {
+        Npc npc = findActor(str);
+        if (npc == null)
+            return;
+        if (npc.audio == null)
+            return;
+
+        audioSource.PlayOneShot(npc.audio, .9f);
+    }
+    /*public void ShowProfile(string person, string personNew)
     {
         Sprite witch = findActor(person);
         Sprite witchnd = findActor(personNew);
     }
+    */
 
 
     // Start is called before the first frame update

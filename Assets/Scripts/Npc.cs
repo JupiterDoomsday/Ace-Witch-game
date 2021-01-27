@@ -11,6 +11,8 @@ public class Npc : MonoBehaviour
     public string Name;
     public YarnProgram script;
     public DialogueRunner runner;
+    public AudioSource srcAudi;
+    public AudioClip audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,14 @@ public class Npc : MonoBehaviour
 
         }
     }
+    public void PlayAudio()
+    {
+        if (audio == null)
+            return;
+
+        srcAudi.PlayOneShot(audio, .7f);
+    }
+
     private void OnTriggerStay2D(Collider2D ot)
     {
         if (ot.tag.Equals("Player"))
@@ -47,6 +57,7 @@ public class Npc : MonoBehaviour
                 Debug.Log("trigger event");
                 act = ACT.TALKING;
                 runner.StartDialogue();
+                this.PlayAudio();
                 //player.isTalking(this);
             }
         }
