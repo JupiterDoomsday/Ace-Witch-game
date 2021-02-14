@@ -28,6 +28,7 @@ public class  Player : MonoBehaviour
 
     static Walking walkingState;
     static Idle idleState;
+    public Talking talkingState;
     //public Talking talkingState;
     public Sprite profile;
     public Sprite[] dirSprites= new Sprite[4];
@@ -47,6 +48,7 @@ public class  Player : MonoBehaviour
         idleState = new Idle();
         walkingState = new Walking();
         curState = idleState;
+        talkingState.player = this;
         //x = -7.98f;
         //y = -2.03f;
 
@@ -142,12 +144,13 @@ public class  Player : MonoBehaviour
     public void isTalking()
     {
         act = ACT.TALKING;
-
+        curState.OnExit(this);
     }
     //this resets the player state to idle
     public void setIdle()
     {
         act = ACT.IDLE;
+      
     }
     /*
      * this function allows us to change the curAct pointer
@@ -166,11 +169,15 @@ public class  Player : MonoBehaviour
                 player_animator.enabled = true;
                 break;
             case ACT.TALKING:
-                //curState = null;
+                curState = talkingState;
                 break;
             case ACT.SITTING:
                 break;
         }
+    }
+    public void ExitStateRightAway()
+    {
+        curState.OnExit(this);
     }
     
 

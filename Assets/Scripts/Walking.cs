@@ -29,9 +29,7 @@ public class Walking : PlayerState
                 return;
             default:
                 player.act = ACT.IDLE;
-                player.player_animator.enabled = false;
-                player.UpdateAct();
-                setDirection(player);
+                OnExit(player);
                 break;
         }
 
@@ -58,6 +56,12 @@ public class Walking : PlayerState
                 break;
         }
  
+    }
+    public void OnExit(Player p)
+    {
+        p.player_animator.enabled = false;
+        setDirection(p);
+        p.UpdateAct();
     }
     // Update is called once per frame
     public void UpdateState(Player player)
