@@ -9,18 +9,19 @@ public class Npc : MonoBehaviour
     public DIRECTION dir;
     public Sprite Profile;
     public string Name;
-    public YarnProgram script;
+    public  string startNode;
+    public YarnProgram startScript;
     public DialogueRunner runner;
     public AudioSource srcAudi;
     public AudioClip audio;
-    // Start is called before the first frame update
-    void Start()
-    {
-        runner.Add(script);
-    }
 
     //[YarnCommand("facePlayer")]
     //alows us to change where the npc is facing when talking to the player
+
+    private void Start()
+    {
+        runner.Add(startScript);
+    }
     public void resetNPCDir(Player marji)
     {
         switch (marji.dir)
@@ -40,6 +41,24 @@ public class Npc : MonoBehaviour
 
         }
     }
+    public bool corespondingDir(Player marji)
+    {
+        switch (this.dir)
+        {
+            case (DIRECTION.UP):
+                return (marji.dir == DIRECTION.DOWN);
+            case (DIRECTION.DOWN):
+                return marji.dir == DIRECTION.UP;
+            case (DIRECTION.LEFT):
+                return marji.dir == DIRECTION.RIGHT;
+            case (DIRECTION.RIGHT):
+                return this.dir == DIRECTION.LEFT;
+            default:
+                return false;
+        }
+        //return false;
+    }
+
     public void PlayAudio()
     {
         if (audio == null)
@@ -50,16 +69,22 @@ public class Npc : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D ot)
     {
-        if (ot.tag.Equals("Player"))
+        if (ot.tag.Equals("Player") && act == ACT.IDLE)
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                Debug.Log("trigger event");
-                act = ACT.TALKING;
-                runner.StartDialogue();
-                this.PlayAudio();
-                //player.isTalking(this);
+                Player player = ot.GetComponentInParent<Player>();
+                if (this.corespondingDir(player))
+                {
+                    act = ACT.TALKING;
+                    runner.StartDialogue(startNode);
+                }
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        act = ACT.IDLE;
     }
 }

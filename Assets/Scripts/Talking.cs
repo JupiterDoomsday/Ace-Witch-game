@@ -1,29 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.UI;
 
-public class Talking : GameState
+public class Talking : MonoBehaviour, PlayerState
 {
     public DialogueRunner dialogueRunner;
+    public DialogueUI diaUI;
     public Image left;
     public Image right;
     public Player player;
     public AudioSource audioSource;
     //[SerializeField]
     public List<Npc> actors;
-    public void Awake()
+    public void Start()
     {
-        actors = new List<Npc>();
+        dialogueRunner.AddCommandHandler("profile", ShowProfile);
+        dialogueRunner.AddCommandHandler("sound", PlayAudio);
     }
+    
 
     private Npc findActor(string str)
     {
+        //Debug.Log("Finding actor");
         foreach (Npc key in actors)
         {
             if (str.Equals(key.Name))
@@ -33,25 +33,42 @@ public class Talking : GameState
     }
     //this is a custome action in unity that create the talking settings for the
     [YarnCommand("profile")]
-    public void ShowProfile(string profile)
+    public void ShowProfile(string [] profile)
     {
-        Sprite witch = findActor(profile).Profile;
+        Debug.Log("Finding profile");
+        Sprite witch = findActor(profile[0]).Profile;
         if (witch == null)
         {
             Debug.Log("ERROR actor doesn't exsist");
             return;
         }
-
         //if (pos.Equals("left"))
         left.sprite = witch;
         left.SetNativeSize();
-        right.sprite = player.profile;
+        //left.IsActive();
+        left.enabled = true;
+        if (profile.Length == 2)
+        {
+            if((witch= findActor(profile[1]).Profile) != null)
+            {
+                right.sprite = witch;
+                right.enabled = true; ;
+            }
+                
+        }
+        else
+        {
+            right.sprite = player.profile;
+            right.enabled = true;
+        }
+        Debug.Log("Set it right");
         right.SetNativeSize();
     }
     [YarnCommand("sound")]
-    public void PlayAudio(string str)
+    public void PlayAudio(string[] str)
     {
-        Npc npc = findActor(str);
+        Debug.Log("Finding soundFX");
+        Npc npc = findActor(str[0]);
         if (npc == null)
             return;
         if (npc.audio == null)
@@ -59,22 +76,32 @@ public class Talking : GameState
 
         audioSource.PlayOneShot(npc.audio, .9f);
     }
-    /*public void ShowProfile(string person, string personNew)
-    {
-        Sprite witch = findActor(person);
-        Sprite witchnd = findActor(personNew);
-    }
-    */
 
 
     // Start is called before the first frame update
     public void handleInput(Player player)
     {
-        Debug.Log("Is talking");
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("Pressing x to continue");
+            diaUI.MarkLineComplete();
+            //diaUI.textSpeed = .025f;
+
+        }
+
     }
     public void UpdateState(Player player)
     {
-        Debug.Log("still talking");
+        if (dialogueRunner.IsDialogueRunning == false)
+        {
+            OnExit(player);
+        }
+
+    }
+    public void OnExit(Player player)
+    {
+        player.act = ACT.IDLE;
+        player.UpdateAct();
     }
 
 }

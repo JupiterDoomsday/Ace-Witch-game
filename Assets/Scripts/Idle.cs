@@ -23,9 +23,12 @@ public class Idle : PlayerState
             player.UpdateAct();
         }
     }
-
+    public void OnExit(Player player)
+    {
+        player.UpdateAct();
+    }
     // Update is called once per frame
-   public void UpdateState(Player player)
+    public void UpdateState(Player player)
     {
     }
 }

@@ -1,10 +1,11 @@
-title: Start
+title: Jatt_Start
 tags: 
 colorID: 0
 position: 424,-907
 ---
-Jatt: Hoot hoot!
+<<sound jatt>>
 <<profile jatt>> 
+Jatt: Hoot hoot!
 ->Talk to me comrade!
 <<if $jatt_attic is 0>> 
 [[jatt_cnv1_]]
@@ -35,19 +36,19 @@ jatt: curses! Some eldritch god has taken away my ability to give you a belly ru
 title: jatt_cnv1_
 tags: 
 colorID: 0
-position: 1221,-69
+position: 1664,-401
 ---
 Jatt:...
 Marji:...
 Jatt:...
-Jatt: Am I supposed to say something or what?
+Jatt:Am I supposed to say something or what?
 [[ Yes|yes_talk_to_me]]
 [[ You don't have to if you don't wanna |dont_have_to]]
 ===
 title: jatt_cnv2
 tags: 
 colorID: 0
-position: 690,653
+position: 579,409
 ---
 Empty Text
 ===
@@ -56,7 +57,7 @@ tags:
 colorID: 0
 position: 2346,-410
 ---
-Empty Text
+Jatt:hmmmm OH! How is you day?
 ===
 title: dont_have_to
 tags: 
@@ -64,8 +65,11 @@ colorID: 0
 position: 2465,329
 ---
 Jatt: Well now I feel like it cause you told me not to!
-Marji: I didn't say–Jeeze, Jatt...
-Marji: Can't you just chill?
+Marji: I didn't say–
+MArji: Jeeze, Jatt... Can't you just... 
+Marji: chill?
 Jatt: One does not chill while surviving under capitalism.
-Marji:
+Marji: ...
+Marji: You really are my brothers familiar
+Jatt: Damn right I am!!!
 ===
