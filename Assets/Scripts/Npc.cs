@@ -2,10 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
+//this is an enum that represents the relationship of an NPC and
+public enum SOCIAL_STANDING
+{
+    COMARADE,
+    FAMILY,
+    BEST_FIREND,
+    AQUINTANCE,
+    RIVAL
+};
 
 public class Npc : MonoBehaviour
 {
     public ACT act;
+    public SOCIAL_STANDING player_relationship;
     public DIRECTION dir;
     public Sprite Profile;
     public string Name;
