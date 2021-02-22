@@ -25,7 +25,7 @@ public class  Player : MonoBehaviour
 {
     public ACT act;
     public DIRECTION dir;
-
+    public Inventory invo;
     static Walking walkingState;
     static Idle idleState;
     public Talking talkingState;
@@ -40,9 +40,13 @@ public class  Player : MonoBehaviour
     public Rigidbody2D rgb2d;
     public float x;
     public float y;
-    
+
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        invo = new Inventory();
+    }
     void Start()
     {
         idleState = new Idle();
