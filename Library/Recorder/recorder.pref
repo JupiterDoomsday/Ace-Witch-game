@@ -36,7 +36,7 @@ MonoBehaviour:
   m_Name: Movie
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 28
+  take: 30
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
@@ -44,7 +44,7 @@ MonoBehaviour:
       m_Leaf: /Users/CosmicHorror/Desktop
       m_ForceAssetFolder: 0
       m_AbsolutePath: /Users/CosmicHorror/Documents/Games
-    m_FileName: collisions
+    m_FileName: aceday
   outputFormat: 0
   videoBitRateMode: 2
   captureAlpha: 0

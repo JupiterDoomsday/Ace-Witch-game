@@ -3,8 +3,9 @@ tags:
 colorID: 0
 position: 900,-1333
 ---
-<<profile jatt>> 
 <<sound jatt>>
+<<profile jatt left>> 
+<<profile marji right lookat>> 
 Jatt: Hoot hoot!
 ->Talk to me comrade!
 [[convos_choices ]]
@@ -63,11 +64,14 @@ position: 2465,329
 ---
 Jatt: Well now I feel like it cause you told me not to!
 Marji: I didn't say–
+<<profile marji right>> 
 Marji: Jeeze, Jatt... Can't you just... 
 Marji: chill?
+<<profile jatt left mad>>
 Jatt: One does not chill while surviving under capitalism.
 Marji: ...
 Marji: You really are my brothers familiar
+<<profile jatt left happy>> 
 Jatt: Damn right I am!!!
 ===
 title: convos_choices

@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.UI;
+
 
 public class Talking : MonoBehaviour, PlayerState
 {
@@ -11,70 +13,79 @@ public class Talking : MonoBehaviour, PlayerState
     public Image left;
     public Image right;
     public Player player;
+    public GameObject NPCContainer;
     public AudioSource audioSource;
-    //[SerializeField]
-    public List<Npc> actors;
+    private Dictionary<string, Npc> actors;
     public void Start()
     {
+        //grab all of the npcs contained in the array and add them to our
+        actors = new Dictionary<string, Npc>();
+        Npc[] npcs = NPCContainer.GetComponentsInChildren<Npc>();
+        foreach(Npc child in npcs)
+        {
+            actors.Add(child.Name,child);
+        }
         dialogueRunner.AddCommandHandler("profile", ShowProfile);
         dialogueRunner.AddCommandHandler("sound", PlayAudio);
     }
     
-
-    private Npc findActor(string str)
-    {
-        //Debug.Log("Finding actor");
-        foreach (Npc key in actors)
-        {
-            if (str.Equals(key.Name))
-                return key;
-        }
-        return null;
-    }
-    //this is a custome action in unity that create the talking settings for the
+    //this is a custome action in unity that creates the
+    //talking settings for the
     [YarnCommand("profile")]
     public void ShowProfile(string [] profile)
     {
-        Debug.Log("Finding profile");
-        Sprite witch = findActor(profile[0]).Profile;
-        if (witch == null)
+        Sprite witch = null;
+        Image target = right;
+        bool hasSprite = actors.ContainsKey(profile[0]);
+        if (hasSprite == false)
         {
-            Debug.Log("ERROR actor doesn't exsist");
-            return;
-        }
-        //if (pos.Equals("left"))
-        left.sprite = witch;
-        left.SetNativeSize();
-        //left.IsActive();
-        left.enabled = true;
-        if (profile.Length == 2)
-        {
-            if((witch= findActor(profile[1]).Profile) != null)
+            if(profile[0].Equals("marji"))
             {
-                right.sprite = witch;
-                right.enabled = true; ;
+                Debug.Log("printing out marji");
+                if (profile.Length == 3)
+                {
+                    Debug.Log("Array is 3 printing out " + profile[2]);
+                    witch = player.getExpression(profile[2]);
+                }  
+                else
+                    witch = player.profile;
             }
-                
+            else
+                Debug.Log("ERROR actor doesn't exsist");
         }
         else
         {
-            right.sprite = player.profile;
-            right.enabled = true;
+            //this is bad styling I know but its 12AM and I'm tired UwU
+            if (profile.Length == 3)
+            {
+                witch = actors[profile[0]].getExpression(profile[2]);
+            }
+            else
+                witch = actors[(profile[0])].Profile;
         }
-        Debug.Log("Set it right");
-        right.SetNativeSize();
+
+        if (witch == null)
+            return;
+        //check the position you want the player to be in
+        if (profile[1].Equals("left"))
+        {
+            target = left;
+        }
+        target.sprite = witch;
+        target.SetNativeSize();
+        target.enabled = true;
     }
     [YarnCommand("sound")]
     public void PlayAudio(string[] str)
     {
         Debug.Log("Finding soundFX");
-        Npc npc = findActor(str[0]);
-        if (npc == null)
+        bool hasSprite = actors.ContainsKey(str[0]);
+        if (hasSprite == false)
             return;
-        if (npc.audio == null)
+        Npc npc = actors[(str[0])];
+        if (npc.audioSFX == null)
             return;
-
-        audioSource.PlayOneShot(npc.audio, .9f);
+        audioSource.PlayOneShot(npc.audioSFX, .9f);
     }
 
 
@@ -83,7 +94,7 @@ public class Talking : MonoBehaviour, PlayerState
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Debug.Log("Pressing x to continue");
+            //Debug.Log("Pressing x to continue");
             diaUI.MarkLineComplete();
             //diaUI.textSpeed = .025f;
 
@@ -103,5 +114,6 @@ public class Talking : MonoBehaviour, PlayerState
         player.act = ACT.IDLE;
         player.UpdateAct();
     }
+
 
 }

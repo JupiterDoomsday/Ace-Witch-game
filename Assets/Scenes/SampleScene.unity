@@ -368,7 +368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291076632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7295237, y: -3.4607122, z: -319.955}
+  m_LocalPosition: {x: 5.7295237, y: -3.4607122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -632,15 +632,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   act: 0
+  player_relationship: 0
   dir: 1
   Profile: {fileID: 21300000, guid: a82cb85893afa4c9894472c42f33a6ef, type: 3}
   Name: jatt
-  startNode: Jatt_Start
-  startScript: {fileID: 2480198943629176163, guid: f7af5c3ec13ee4bbcad9ac3fb8a93e96,
+  startNode: ace
+  startScript: {fileID: 2480198943629176163, guid: 626cf9ce9117742d98e7da4ebf94af38,
     type: 3}
   runner: {fileID: 2138742495}
-  srcAudi: {fileID: 1761096607}
-  audio: {fileID: 8300000, guid: 2a3bc675853e841898defd61cb5e2053, type: 3}
+  audioSFX: {fileID: 8300000, guid: 2a3bc675853e841898defd61cb5e2053, type: 3}
+  _keys:
+  - tired
+  - mad
+  - happy
+  _values:
+  - {fileID: 819012671509505418, guid: e6c39817f790f43eb90fa9de404294e1, type: 3}
+  - {fileID: 4583084598111612062, guid: e6c39817f790f43eb90fa9de404294e1, type: 3}
+  - {fileID: 4451487763381329701, guid: e6c39817f790f43eb90fa9de404294e1, type: 3}
 --- !u!50 &465443350
 Rigidbody2D:
   serializedVersion: 4
@@ -737,8 +745,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1347622509
-  m_SortingLayer: 3
+  m_SortingLayerID: -58998021
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 829676097667655824, guid: 2bd1d642b7f4b425bbd5a27498fbb0ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -778,14 +786,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   act: 0
+  player_relationship: 1
   dir: 0
   Profile: {fileID: 0}
   Name: walker
   startNode: 
   startScript: {fileID: 0}
   runner: {fileID: 2138742495}
-  srcAudi: {fileID: 0}
-  audio: {fileID: 0}
+  audioSFX: {fileID: 0}
+  _keys: []
+  _values: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +809,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -912,6 +923,21 @@ MonoBehaviour:
   minPosition: -5.3
   maxPosition: 5.3
   moveSpeed: 1
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc4310589bd9438f811f11ec86ebcdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resWidth: 768
+  resHeight: 432
+  camera: {fileID: 519420031}
 --- !u!1 &628752513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,9 +2062,8 @@ MonoBehaviour:
   left: {fileID: 1895048593}
   right: {fileID: 1595157202}
   player: {fileID: 1521037380}
+  NPCContainer: {fileID: 54779044}
   audioSource: {fileID: 1761096607}
-  actors:
-  - {fileID: 465443349}
 --- !u!1 &751052041
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,12 +2102,12 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.52156866, g: 0.87058824, b: 0.52156866, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2388,7 +2413,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.44705883, g: 0.5137255, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.5199359, g: 0.8679245, b: 0.5199359, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2415,20 +2440,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980979378}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2643,7 +2668,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.4481132, g: 0.512489, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.52156866, g: 0.87058824, b: 0.52156866, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3090,8 +3115,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f67ce931e6dca4d71b4160f730b4dac0, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 2982671c8e7444346b23194a971ebbc4, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4523,7 +4548,12 @@ MonoBehaviour:
   act: 0
   dir: 1
   talkingState: {fileID: 680577537}
-  profile: {fileID: 21300000, guid: 0389c0f44918a484b84b5e901fc79ac1, type: 3}
+  profile: {fileID: -5746144591060602633, guid: cb06f14163ebe4ffc923a6b74df9e72f,
+    type: 3}
+  sitting:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   dirSprites:
   - {fileID: 4579412264386894783, guid: 544657bbd7aa143c386fffed9ca2eeed, type: 3}
   - {fileID: 7810626931894192798, guid: 544657bbd7aa143c386fffed9ca2eeed, type: 3}
@@ -4536,6 +4566,16 @@ MonoBehaviour:
   rgb2d: {fileID: 1521037384}
   x: 0
   y: 0
+  _keys:
+  - lookat
+  - smile
+  - irritated
+  - mouthopen
+  _values:
+  - {fileID: 7014039177383307474, guid: cb06f14163ebe4ffc923a6b74df9e72f, type: 3}
+  - {fileID: -7601529083503135682, guid: cb06f14163ebe4ffc923a6b74df9e72f, type: 3}
+  - {fileID: -7740732033912462440, guid: cb06f14163ebe4ffc923a6b74df9e72f, type: 3}
+  - {fileID: 8922614092482597254, guid: cb06f14163ebe4ffc923a6b74df9e72f, type: 3}
 --- !u!212 &1521037381
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4620,7 +4660,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.003000021, y: -1.44}
+  m_Offset: {x: 0.003000021, y: -1.6875871}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4631,7 +4671,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2510115, y: 0.8787893}
+  m_Size: {x: 1.25, y: 0.3762281}
   m_EdgeRadius: 0
 --- !u!50 &1521037384
 Rigidbody2D:
@@ -4653,7 +4693,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1595157200
 GameObject:
   m_ObjectHideFlags: 0
@@ -5169,12 +5209,12 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.52156866, g: 0.87058824, b: 0.52156866, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5433,7 +5473,31 @@ MonoBehaviour:
         m_CallState: 2
   onDialogueEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1895048593}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1595157202}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onLineStart:
     m_PersistentCalls:
       m_Calls: []

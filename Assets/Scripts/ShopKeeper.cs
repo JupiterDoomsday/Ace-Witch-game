@@ -6,22 +6,16 @@ public class ShopKeeper : Npc
 {
     //this represents how much the shopkeeper loves the current trade
     public float favor;
-
-   public List<Item> item_stock;
+    public float sway;
+    public List<Item> item_stock;
+    public List<Item> trade;
 
     public void AddItem(Item i)
     {
         item_stock.Add(i);
     }
-    // Start is called before the first frame update
-    void Start()
+    public bool willTrade()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return false;
     }
 }
