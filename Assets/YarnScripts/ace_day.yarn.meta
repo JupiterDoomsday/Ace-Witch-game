@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 626cf9ce9117742d98e7da4ebf94af38
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - ace_day-ace-0
+  - ace_day-ace-1
+  - ace_day-ace-2
+  - ace_day-ace-3
+  - ace_day-ace-4
+  - ace_day-ace-5
+  - ace_day-ace-6
+  - ace_day-ace-7
+  - ace_day-ace-8
+  - ace_day-ace-9
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

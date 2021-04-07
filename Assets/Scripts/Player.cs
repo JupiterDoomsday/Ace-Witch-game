@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public enum ACT
@@ -29,8 +30,9 @@ public class  Player : MonoBehaviour
     static Walking walkingState;
     static Idle idleState;
     public Talking talkingState;
-    //public Talking talkingState;
     public Sprite profile;
+    public Dictionary<string,Sprite> expressions;
+    public Sprite[] sitting = new Sprite[3];
     public Sprite[] dirSprites= new Sprite[4];
     PlayerState curState = null;
     public SpriteRenderer spriteRender;
@@ -50,6 +52,11 @@ public class  Player : MonoBehaviour
     void Start()
     {
         idleState = new Idle();
+
+        expressions = new Dictionary<string, Sprite>();
+        for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
+            expressions.Add(_keys[i], _values[i]);
+
         walkingState = new Walking();
         curState = idleState;
         talkingState.player = this;
@@ -63,7 +70,7 @@ public class  Player : MonoBehaviour
         curState.UpdateState(this);
     }
     //this function handles 2D character movement based on the direction sate
-    public void moveOriginalFunct()
+    public void move()
     {
         
         switch (dir)
@@ -81,33 +88,35 @@ public class  Player : MonoBehaviour
                 y += -1 * Time.deltaTime * speed; 
                 break;
         }
-        transform.position = new Vector2(x, y);
+        rgb2d.MovePosition(new Vector2(x, y));
     }
     //this function handles 2D character movement based on the direction sate
-    public void move(){
+    public void movetemp(){
         float dirX = 0;
         float dirY = 0;
-        Vector3 offset= new Vector3(transform.position.x, transform.position.y + -.6f);
+        Vector3 offset = Vector3.zero;
         switch (dir) {
             case DIRECTION.LEFT:
                 //x += -1 * Time.deltaTime * speed;
+                offset = new Vector3(transform.position.x -.625f, transform.position.y);
                 dirX = -1f * Time.deltaTime * speed;
                 break;
             case DIRECTION.RIGHT:
                 //x += 1 * Time.deltaTime * speed;
+                offset = new Vector3(transform.position.x + .625f, transform.position.y);
                 dirX = 1f * Time.deltaTime * speed;
                 break;
             case DIRECTION.UP:
+                offset = new Vector3(transform.position.x, transform.position.y + 1.69f);
                 dirY = 1f * Time.deltaTime * speed;
                 break;
             case DIRECTION.DOWN:
-                offset = new Vector3(transform.position.x, transform.position.y + -2);
+                offset = new Vector3(transform.position.x, transform.position.y - 1.69f);
                 dirY = -1f * Time.deltaTime * speed;
                 break;
         }
         //generate the ray where we walk to
         Vector3 moveDir = new Vector3(dirX , dirY).normalized;
-
         //check if you can move
         if (checkRayHit('n', moveDir,offset))
             return;
@@ -183,6 +192,35 @@ public class  Player : MonoBehaviour
     {
         curState.OnExit(this);
     }
-    
 
+    public Sprite getExpression(string exp)
+    {
+        if (expressions.ContainsKey(exp))
+            return expressions[exp];
+        else
+            return null;
+    }
+    public List<string> _keys = new List<string>();
+    public List<Sprite> _values = new List<Sprite>();
+
+
+    public void OnBeforeSerialize()
+    {
+        _keys.Clear();
+        _values.Clear();
+
+        foreach (var kvp in expressions)
+        {
+            _keys.Add(kvp.Key);
+            _values.Add(kvp.Value);
+        }
+    }
+
+    public void OnAfterDeserialize()
+    {
+        expressions = new Dictionary<string, Sprite>();
+
+        for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
+            expressions.Add(_keys[i], _values[i]);
+    }
 }

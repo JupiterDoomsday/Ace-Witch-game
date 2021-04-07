@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
@@ -17,13 +18,14 @@ public class Npc : MonoBehaviour
     public ACT act;
     public SOCIAL_STANDING player_relationship;
     public DIRECTION dir;
+
+    public Dictionary<string,Sprite> expressions;
     public Sprite Profile;
     public string Name;
     public  string startNode;
     public YarnProgram startScript;
     public DialogueRunner runner;
-    public AudioSource srcAudi;
-    public AudioClip audio;
+    public AudioClip audioSFX;
 
     //[YarnCommand("facePlayer")]
     //alows us to change where the npc is facing when talking to the player
@@ -31,6 +33,10 @@ public class Npc : MonoBehaviour
     private void Start()
     {
         runner.Add(startScript);
+        expressions = new Dictionary<string, Sprite>();
+
+        for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
+            expressions.Add(_keys[i], _values[i]);
     }
     public void resetNPCDir(Player marji)
     {
@@ -66,15 +72,6 @@ public class Npc : MonoBehaviour
             default:
                 return false;
         }
-        //return false;
-    }
-
-    public void PlayAudio()
-    {
-        if (audio == null)
-            return;
-
-        srcAudi.PlayOneShot(audio, .7f);
     }
 
     private void OnTriggerStay2D(Collider2D ot)
@@ -97,4 +94,36 @@ public class Npc : MonoBehaviour
     {
         act = ACT.IDLE;
     }
+
+    public Sprite getExpression(string exp)
+    {
+        if (expressions.ContainsKey(exp))
+            return expressions[exp];
+        else
+            return null;
+    }
+    public List<string> _keys = new List<string>();
+    public List<Sprite> _values = new List<Sprite>();
+
+
+    public void OnBeforeSerialize()
+    {
+        _keys.Clear();
+        _values.Clear();
+
+        foreach (var kvp in expressions)
+        {
+            _keys.Add(kvp.Key);
+            _values.Add(kvp.Value);
+        }
+    }
+
+    public void OnAfterDeserialize()
+    {
+        expressions = new Dictionary<string, Sprite>();
+        for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
+            expressions.Add(_keys[i], _values[i]);
+    }
+
+
 }
