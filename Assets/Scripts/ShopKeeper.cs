@@ -9,7 +9,7 @@ public class ShopKeeper : Npc
     public float sway;
     public List<Item> item_stock;
     public List<Item> trade;
-
+    public Dictionary<string,int> adorations;
     public void AddItem(Item i)
     {
         item_stock.Add(i);
