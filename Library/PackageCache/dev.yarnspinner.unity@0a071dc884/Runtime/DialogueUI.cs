@@ -57,7 +57,6 @@ namespace Yarn.Unity {
         /// disabled when it ends.
         /// </remarks>
         public GameObject dialogueContainer;
-
         /// <summary>
         /// How quickly to show the text, in seconds per character
         /// </summary>

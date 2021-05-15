@@ -809,7 +809,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -923,21 +922,6 @@ MonoBehaviour:
   minPosition: -5.3
   maxPosition: 5.3
   moveSpeed: 1
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc4310589bd9438f811f11ec86ebcdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resWidth: 768
-  resHeight: 432
-  camera: {fileID: 519420031}
 --- !u!1 &628752513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3108,14 +3092,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2982671c8e7444346b23194a971ebbc4, type: 3}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5377,6 +5361,7 @@ GameObject:
   - component: {fileID: 2138742496}
   - component: {fileID: 2138742495}
   - component: {fileID: 2138742498}
+  - component: {fileID: 2138742497}
   m_Layer: 0
   m_Name: DialougeManager
   m_TagString: Untagged
@@ -5437,6 +5422,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2138742497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138742494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523c14c38110242179599cd18748c969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueContainer: {fileID: 0}
+  nameContainer: {fileID: 0}
+  leftScrollBtn: {fileID: 0}
+  rightScrollBtn: {fileID: 0}
+  textSpeed: 0.025
+  optionButtons: []
+  onDialogueStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1521037380}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: isTalking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  onLineStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onLineFinishDisplaying:
+    m_PersistentCalls:
+      m_Calls: []
+  onLineUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onLineEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  onOptionsStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onOptionsEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  onCommand:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2138742498
 MonoBehaviour:
   m_ObjectHideFlags: 0
