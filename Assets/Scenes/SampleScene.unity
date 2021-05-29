@@ -170,11 +170,11 @@ GameObject:
   - component: {fileID: 77139996}
   m_Layer: 0
   m_Name: Ari
-  m_TagString: Untagged
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &77139993
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -240,11 +240,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   act: 0
   player_relationship: 3
-  dir: 0
+  dir: 1
   Profile: {fileID: 0}
   Name: Ari
-  startNode: ari_start
-  startScript: {fileID: 0}
+  startNode: Start
+  startScript: {fileID: 2480198943629176163, guid: da89c7463b9194288925329d803cc902,
+    type: 3}
   runner: {fileID: 2138742495}
   audioSFX: {fileID: 0}
   _keys: []
