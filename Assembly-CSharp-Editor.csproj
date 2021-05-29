@@ -300,34 +300,34 @@
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="YarnSpinner.Compiler">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/YarnSpinner.Compiler.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/YarnSpinner.Compiler.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="YarnSpinner">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/YarnSpinner.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/YarnSpinner.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/Google.Protobuf.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="CsvHelper">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/CsvHelper.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.TypeExtensions">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Reflection.TypeExtensions.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Reflection.TypeExtensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Buffers.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics.Vectors">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Numerics.Vectors.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Memory.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="Antlr4.Runtime.Standard">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/Antlr4.Runtime.Standard.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/Antlr4.Runtime.Standard.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>

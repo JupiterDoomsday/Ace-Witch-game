@@ -10,6 +10,7 @@ public enum ACT
     FLYING,
     INSPECTING,
     TALKING,
+    INTERACTING,
     SITTING,
     STIMMING,
     INCANTATION,
@@ -30,6 +31,7 @@ public class  Player : MonoBehaviour
     public Inventory invo;
     static Walking walkingState;
     static Idle idleState;
+    static Interact interactState;
     public Talking talkingState;
     public Sprite profile;
     public Dictionary<string,Sprite> expressions;
@@ -59,101 +61,22 @@ public class  Player : MonoBehaviour
             expressions.Add(_keys[i], _values[i]);
 
         walkingState = new Walking();
+        interactState = new Interact();
         curState = idleState;
         talkingState.player = this;
         //x = -7.98f;
         //y = -2.03f;
 
     }
+    private void FixedUpdate()
+    {
+        curState.UpdateState(this);
+    }
     //handle the change of states
     void Update() {
         curState.handleInput(this);
-        curState.UpdateState(this);
-    }
-    //this function handles 2D character movement based on the direction sate
-    public void move()
-    {
-        
-        switch (dir)
-        {
-            case DIRECTION.LEFT:
-                x += -1 * Time.deltaTime * speed;
-                break;
-            case DIRECTION.RIGHT:
-                x += 1 * Time.deltaTime * speed;
-                break;
-            case DIRECTION.UP:
-                y += 1 * Time.deltaTime * speed;
-                break;
-            case DIRECTION.DOWN:
-                y += -1 * Time.deltaTime * speed; 
-                break;
-        }
-        rgb2d.MovePosition(new Vector2(x, y));
-    }
-    //this function handles 2D character movement based on the direction sate
-    public void movetemp(){
-        float dirX = 0;
-        float dirY = 0;
-        Vector3 offset = Vector3.zero;
-        switch (dir) {
-            case DIRECTION.LEFT:
-                //x += -1 * Time.deltaTime * speed;
-                offset = new Vector3(transform.position.x -.625f, transform.position.y);
-                dirX = -1f * Time.deltaTime * speed;
-                break;
-            case DIRECTION.RIGHT:
-                //x += 1 * Time.deltaTime * speed;
-                offset = new Vector3(transform.position.x + .625f, transform.position.y);
-                dirX = 1f * Time.deltaTime * speed;
-                break;
-            case DIRECTION.UP:
-                offset = new Vector3(transform.position.x, transform.position.y + 1.69f);
-                dirY = 1f * Time.deltaTime * speed;
-                break;
-            case DIRECTION.DOWN:
-                offset = new Vector3(transform.position.x, transform.position.y - 1.69f);
-                dirY = -1f * Time.deltaTime * speed;
-                break;
-        }
-        //generate the ray where we walk to
-        Vector3 moveDir = new Vector3(dirX , dirY).normalized;
-        //check if you can move
-        if (checkRayHit('n', moveDir,offset))
-            return;
-        //check if we can ONLY move horizontally
-        if (checkRayHit('x', moveDir, offset))
-            return;
-        //check if we can ONLY move Vertically
-        checkRayHit('y', moveDir, offset);
-
     }
 
-    //this allows us to edit the vector to check and modify our viewing ray several times without repetitive code
-    private bool checkRayHit(char c,Vector3 moveDir,Vector3 pos)
-    {
-        Vector3 targetDir;
-        switch (c)
-        {
-            case 'x':
-                targetDir = new Vector3(moveDir.x, 0f).normalized;
-
-                break;
-            case 'y':
-                targetDir = new Vector3(0f,moveDir.y).normalized;
-                break;
-            default:
-                targetDir = moveDir;
-                break;
-        }
-        RaycastHit2D ray = Physics2D.Raycast(pos, targetDir, Time.deltaTime * speed);
-        if (ray.collider == null || ray.collider.isTrigger)
-        {
-            transform.position += targetDir * Time.deltaTime * speed;
-            return true;
-        }
-        return false;      
-    }
     //is the bones for handeling the talking event
     public void isTalking()
     {
@@ -185,12 +108,16 @@ public class  Player : MonoBehaviour
             case ACT.TALKING:
                 curState = talkingState;
                 break;
+            case ACT.INTERACTING:
+                curState = interactState;
+                break;
             case ACT.SITTING:
                 break;
         }
     }
     public void ExitStateRightAway()
     {
+        this.act = ACT.IDLE;
         curState.OnExit(this);
     }
 

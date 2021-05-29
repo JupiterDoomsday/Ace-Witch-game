@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637553301640000000
+      ticks: 637577517000000000
     m_Hash: 2143197144
   m_LockFileStatus:
     m_FilePath: /Users/CosmicHorror/Desktop/GitRepo/Ace-Witch-game/Packages/packages-lock.json
@@ -13,8 +13,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637553301660000000
-    m_Hash: 821591044
+      ticks: 637577517010000000
+    m_Hash: 444995677
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -76,6 +76,7 @@ m_PackageAssets:
         - 3.2.4
         - 3.2.5
         - 3.2.6
+        - 3.2.9
         - 4.0.0
         - 4.0.1
         - 4.1.0
@@ -92,12 +93,15 @@ m_PackageAssets:
         - 5.0.2
         - 5.0.3
         - 5.0.4
+        - 5.0.5
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.1
+        - 6.0.3
         compatible:
         - 5.0.4
-        verified: 5.0.4
+        - 5.0.5
+        verified: 5.0.5
       dependencies:
       - name: com.unity.2d.common
         version: 4.0.3
@@ -267,6 +271,7 @@ m_PackageAssets:
         - 2.1.4
         - 2.1.5
         - 2.1.6
+        - 2.1.8
         - 3.0.0
         - 3.1.1
         - 3.1.3
@@ -280,6 +285,8 @@ m_PackageAssets:
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.1
+        - 5.0.3
+        - 6.0.0-pre.2
         compatible:
         - 4.0.2
         verified: 4.0.2
@@ -438,6 +445,7 @@ m_PackageAssets:
         - 3.0.13
         - 3.0.14
         - 3.0.15
+        - 3.0.16
         - 4.0.0
         - 4.0.1
         - 4.0.2
@@ -453,12 +461,15 @@ m_PackageAssets:
         - 5.0.2
         - 5.1.0
         - 5.1.1
+        - 5.1.2
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.0
+        - 7.0.0-pre.2
         compatible:
         - 5.1.1
-        verified: 5.1.1
+        - 5.1.2
+        verified: 5.1.2
       dependencies:
       - name: com.unity.mathematics
         version: 1.1.0
@@ -605,6 +616,7 @@ m_PackageAssets:
         - 1.3.7
         - 1.3.8
         - 1.3.9
+        - 1.5.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -617,6 +629,7 @@ m_PackageAssets:
         - 2.1.0-preview.6
         compatible:
         - 1.3.9
+        - 1.5.7
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -707,6 +720,7 @@ m_PackageAssets:
         - 3.0.4
         - 3.0.5
         - 3.0.6
+        - 3.0.7
         compatible:
         - 1.0.2
         - 1.0.6
@@ -732,6 +746,7 @@ m_PackageAssets:
         - 3.0.4
         - 3.0.5
         - 3.0.6
+        - 3.0.7
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -800,6 +815,7 @@ m_PackageAssets:
         - 2.0.3
         - 2.0.5
         - 2.0.7
+        - 2.0.8
         compatible:
         - 1.0.2
         - 1.0.3
@@ -813,7 +829,8 @@ m_PackageAssets:
         - 2.0.3
         - 2.0.5
         - 2.0.7
-        verified: 2.0.7
+        - 2.0.8
+        verified: 2.0.8
       dependencies: []
       resolvedDependencies: []
       keywords: []
@@ -942,6 +959,7 @@ m_PackageAssets:
         - 2.6.0-exp.3
         - 2.6.0-exp.4
         - 3.0.0-pre.1
+        - 3.0.0-pre.2
         compatible:
         - 2.0.0-preview.6
         - 2.0.1-preview.1
@@ -958,6 +976,7 @@ m_PackageAssets:
         - 2.6.0-exp.3
         - 2.6.0-exp.4
         - 3.0.0-pre.1
+        - 3.0.0-pre.2
         verified: 2.5.5
       dependencies:
       - name: com.unity.timeline
@@ -1050,10 +1069,12 @@ m_PackageAssets:
         - 1.1.20
         - 1.1.22
         - 1.1.24
+        - 1.1.26
         compatible:
         - 1.1.22
         - 1.1.24
-        verified: 1.1.24
+        - 1.1.26
+        verified: 1.1.26
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.6
@@ -1189,6 +1210,7 @@ m_PackageAssets:
         - 2.1.3
         - 2.1.4
         - 2.1.5
+        - 2.1.6
         - 3.0.0-preview.1
         - 3.0.0-preview.3
         - 3.0.0-preview.4
@@ -1205,12 +1227,14 @@ m_PackageAssets:
         - 3.0.3
         - 3.0.4
         - 3.0.5
+        - 3.0.6
         compatible:
         - 3.0.1
         - 3.0.3
         - 3.0.4
         - 3.0.5
-        verified: 3.0.5
+        - 3.0.6
+        verified: 3.0.6
       dependencies:
       - name: com.unity.ugui
         version: 1.0.0
@@ -1313,6 +1337,7 @@ m_PackageAssets:
         - 1.4.5
         - 1.4.6
         - 1.4.7
+        - 1.4.8
         - 1.5.0-pre.2
         - 1.5.0-preview.1
         - 1.5.0-preview.2
@@ -1324,11 +1349,15 @@ m_PackageAssets:
         - 1.5.1-pre.3
         - 1.5.2
         - 1.5.4
+        - 1.5.5
         - 1.6.0-pre.1
         - 1.6.0-pre.3
+        - 1.6.0-pre.4
+        - 1.6.0-pre.5
         compatible:
         - 1.4.6
         - 1.4.7
+        - 1.4.8
         - 1.5.0-pre.2
         - 1.5.0-preview.1
         - 1.5.0-preview.2
@@ -1340,9 +1369,12 @@ m_PackageAssets:
         - 1.5.1-pre.3
         - 1.5.2
         - 1.5.4
+        - 1.5.5
         - 1.6.0-pre.1
         - 1.6.0-pre.3
-        verified: 1.4.7
+        - 1.6.0-pre.4
+        - 1.6.0-pre.5
+        verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
         version: 1.0.0
@@ -1423,6 +1455,7 @@ m_PackageAssets:
         - 0.1.18-preview
         - 0.1.19-preview
         - 0.1.20-preview
+        - 0.1.21-preview
         compatible:
         - 0.1.4-preview
         - 0.1.5-preview
@@ -1439,6 +1472,7 @@ m_PackageAssets:
         - 0.1.18-preview
         - 0.1.19-preview
         - 0.1.20-preview
+        - 0.1.21-preview
         verified: 
       dependencies:
       - name: com.unity.sysroot
@@ -1601,6 +1635,8 @@ m_PackageAssets:
         - 4.0.0-pre.2
         - 4.0.0-pre.3
         - 4.0.1
+        - 4.0.3
+        - 4.0.5
         compatible:
         - 3.2.13
         - 3.2.15
@@ -1610,6 +1646,8 @@ m_PackageAssets:
         - 4.0.0-pre.2
         - 4.0.0-pre.3
         - 4.0.1
+        - 4.0.3
+        - 4.0.5
         verified: 3.2.17
       dependencies:
       - name: com.unity.xr.legacyinputhelpers
@@ -1662,9 +1700,9 @@ m_PackageAssets:
     - packageId: dev.yarnspinner.unity@https://github.com/YarnSpinnerTool/YarnSpinner-Unity.git
       testable: 0
       isDirectDependency: 1
-      version: 1.2.6
+      version: 1.2.7
       source: 5
-      resolvedPath: /Users/CosmicHorror/Desktop/GitRepo/Ace-Witch-game/Library/PackageCache/dev.yarnspinner.unity@0a071dc884
+      resolvedPath: /Users/CosmicHorror/Desktop/GitRepo/Ace-Witch-game/Library/PackageCache/dev.yarnspinner.unity@e050b45804
       assetPath: Packages/dev.yarnspinner.unity
       name: dev.yarnspinner.unity
       displayName: Yarn Spinner
@@ -3931,6 +3969,8 @@ m_PackageAssets:
         - 4.0.3
         - 5.0.0-pre.1
         - 5.0.0-pre.2
+        - 5.0.0
+        - 6.0.0-pre.2
         compatible:
         - 4.0.2
         - 4.0.3
@@ -4012,6 +4052,7 @@ m_PackageAssets:
         - 4.0.1
         - 5.0.0-pre.1
         - 5.0.0-pre.2
+        - 5.0.0
         compatible:
         - 4.0.1
         verified: 4.0.1
