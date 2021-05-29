@@ -4,6 +4,9 @@ using UnityEngine;
 using state;
 public class Walking : PlayerState
 {
+    public int playerId;
+    public Player player;
+    public Vector2 moveDir;
     public void handleInput(Player player)
     {
         float axisX = Input.GetAxisRaw("Horizontal");
@@ -35,6 +38,7 @@ public class Walking : PlayerState
 
     }
 
+
     //this function gets called when the walking animation breaks and we're at the idel state
     //the play is suposed to be facing the last direction they're facing
     //set it up in walking state so that this gets called once
@@ -59,13 +63,31 @@ public class Walking : PlayerState
     }
     public void OnExit(Player p)
     {
+        p.rgb2d.velocity = Vector2.zero;
         p.player_animator.enabled = false;
         setDirection(p);
+        p.setIdle();
         p.UpdateAct();
     }
     // Update is called once per frame
     public void UpdateState(Player player)
     {
-            player.move();
+        
+        switch (player.dir)
+        {
+            case DIRECTION.LEFT:
+                moveDir= new Vector2(-1,0);
+                break;
+            case DIRECTION.RIGHT:
+                moveDir = new Vector2(1, 0);
+                break;
+            case DIRECTION.UP:
+                moveDir = new Vector2(0, 1);
+                break;
+            case DIRECTION.DOWN:
+                moveDir = new Vector2(0, -1);
+                break;
+        }
+        player.rgb2d.velocity= moveDir * player.speed;
     }
 }

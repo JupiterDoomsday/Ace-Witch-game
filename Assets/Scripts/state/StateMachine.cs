@@ -5,7 +5,7 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
     private GameState curState;
-    public void Initialize( GameState start_state)
+    public void Initialize(GameState start_state)
     {
         curState = start_state;
         start_state.Enter();
@@ -15,7 +15,6 @@ public class StateMachine : MonoBehaviour
         curState.Exit();
         curState = new_state;
         new_state.Enter();
-
     }
     // Start is called before the first frame update
     void Start()

@@ -7,12 +7,9 @@ position: 900,-1333
 <<profile jatt left>> 
 <<profile marji right lookat>> 
 Jatt: Hoot hoot!
-->Talk to me comrade!
-[[convos_choices ]]
-->I want to save my game
-[[save_game]]
--> Give belly rubs << if $belly_rubs is 1>> 
-[[Belly_rubs]]
+[[Talk to me comrade!|convos_choices ]]
+[[I want to save my game|save_game]] 
+[[Give belly rubs|Belly_rubs]]
 ===
 title: Belly_rubs
 tags: 

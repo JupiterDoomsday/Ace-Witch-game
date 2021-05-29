@@ -67,20 +67,21 @@
     <Compile Include="Assets/ChangeSorting.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/CameraFollow.cs" />
     <Compile Include="Assets/FollowPlayer.cs" />
+    <Compile Include="Assets/Scripts/state/State.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/SpriteSwitcher.cs" />
     <Compile Include="Assets/Scripts/state/Idle.cs" />
     <Compile Include="Assets/Scripts/Updater.cs" />
     <Compile Include="Assets/Scripts/state/Talking.cs" />
-    <Compile Include="Assets/Scripts/Inventory.cs" />
-    <Compile Include="Assets/Scripts/Item.cs" />
+    <Compile Include="Assets/Scripts/Inventory/Inventory.cs" />
+    <Compile Include="Assets/Scripts/Inventory/Item.cs" />
     <Compile Include="Assets/Scripts/Npc.cs" />
-    <Compile Include="Assets/Scripts/PlayerController.cs" />
+    <Compile Include="Assets/Scripts/Interactable.cs" />
     <Compile Include="Assets/Scripts/state/PlayerState.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/NPC.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/NodeVisitedTracker.cs" />
     <Compile Include="Assets/change_side.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/PlayerCharacter.cs" />
-    <Compile Include="Assets/Scripts/state/State.cs" />
+    <Compile Include="Assets/Scripts/state/Interact.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -327,34 +328,34 @@
       <HintPath>/Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="YarnSpinner.Compiler">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/YarnSpinner.Compiler.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/YarnSpinner.Compiler.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="YarnSpinner">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/YarnSpinner.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/YarnSpinner.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/Google.Protobuf.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="CsvHelper">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/CsvHelper.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.TypeExtensions">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Reflection.TypeExtensions.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Reflection.TypeExtensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Buffers">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Buffers.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics.Vectors">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Numerics.Vectors.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Numerics.Vectors.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/System.Memory.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="Antlr4.Runtime.Standard">
-      <HintPath>Library/PackageCache/dev.yarnspinner.unity@0a071dc884/Runtime/DLLs/Antlr4.Runtime.Standard.dll</HintPath>
+      <HintPath>Library/PackageCache/dev.yarnspinner.unity@e050b45804/Runtime/DLLs/Antlr4.Runtime.Standard.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>/Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

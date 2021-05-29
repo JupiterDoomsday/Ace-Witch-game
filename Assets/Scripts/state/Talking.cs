@@ -16,6 +16,7 @@ public class Talking : MonoBehaviour, PlayerState
     public GameObject NPCContainer;
     public AudioSource audioSource;
     private Dictionary<string, Npc> actors;
+    //private Npc curActor;
     public void Start()
     {
         //grab all of the npcs contained in the array and add them to our
@@ -55,7 +56,7 @@ public class Talking : MonoBehaviour, PlayerState
         }
         else
         {
-            //this is bad styling I know but its 12AM and I'm tired UwU
+            //this is bad styling, I know, but its 12AM and I'm tired UwU
             if (profile.Length == 3)
             {
                 witch = actors[profile[0]].getExpression(profile[2]);
@@ -96,7 +97,7 @@ public class Talking : MonoBehaviour, PlayerState
         {
             //Debug.Log("Pressing x to continue");
             diaUI.MarkLineComplete();
-            //diaUI.textSpeed = .025f;
+            //
 
         }
 

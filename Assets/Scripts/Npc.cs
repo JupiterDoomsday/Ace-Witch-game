@@ -75,25 +75,15 @@ public class Npc : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D ot)
+    public void speak()
     {
-        if (ot.tag.Equals("Player") && act == ACT.IDLE)
-        {
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                Player player = ot.GetComponentInParent<Player>();
-                if (this.corespondingDir(player))
-                {
-                    act = ACT.TALKING;
-                    runner.StartDialogue(startNode);
-                }
-            }
-        }
+        //act = ACT.TALKING;
+        runner.StartDialogue(startNode);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        act = ACT.IDLE;
+        //act = ACT.IDLE;
     }
 
     public Sprite getExpression(string exp)
@@ -107,7 +97,7 @@ public class Npc : MonoBehaviour
     public List<Sprite> _values = new List<Sprite>();
 
 
-    public void OnBeforeSerialize()
+    public virtual void OnBeforeSerialize()
     {
         _keys.Clear();
         _values.Clear();
@@ -119,7 +109,7 @@ public class Npc : MonoBehaviour
         }
     }
 
-    public void OnAfterDeserialize()
+    public virtual void OnAfterDeserialize()
     {
         expressions = new Dictionary<string, Sprite>();
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
