@@ -356,3 +356,124 @@ System memory in use after: 163.7 MB.
 Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 2539.
 Total: 2.549229 ms (FindLiveObjects: 0.290588 ms CreateObjectMapping: 0.084468 ms MarkObjects: 2.144539 ms  DeleteObjects: 0.027742 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 727.130488 seconds.
+  path: Assets/sprites/UI/spell_phone.png
+  artifactKey: Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/spell_phone.png using Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '059ac6dc06166e0429367f990bee046b') in 0.147416 seconds
+  Import took 0.152417 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.991064 seconds.
+  path: Assets/sprites/UI/spell_phone.png
+  artifactKey: Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/spell_phone.png using Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a6cb514f81f9f4f48c91d79bd7e549') in 0.010032 seconds
+  Import took 0.014482 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.087870 seconds.
+  path: Assets/sprites/UI/spell_phone.png
+  artifactKey: Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/spell_phone.png using Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a6cb514f81f9f4f48c91d79bd7e549') in 0.010154 seconds
+  Import took 0.014592 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.847210 seconds.
+  path: Assets/sprites/UI/spell_phone.png
+  artifactKey: Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/spell_phone.png using Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c74552f709856d3dd2eca5f0994b7aa') in 0.011482 seconds
+  Import took 0.015913 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.066265 seconds.
+  path: Assets/sprites/UI/spell_phone.png
+  artifactKey: Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/spell_phone.png using Guid(3399321b729b1497cb3fe51554fef251) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c74552f709856d3dd2eca5f0994b7aa') in 0.009994 seconds
+  Import took 0.014707 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 987.916939 seconds.
+  path: Assets/sprites/UI/Inventory Icon.png
+  artifactKey: Guid(15f5dfd1e35284f4180986539fb6aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/Inventory Icon.png using Guid(15f5dfd1e35284f4180986539fb6aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcda445506d6fa1d790e7ce5efe0a78e') in 0.009613 seconds
+  Import took 0.015119 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.077686 seconds.
+  path: Assets/sprites/UI/Inventory Icon.png
+  artifactKey: Guid(15f5dfd1e35284f4180986539fb6aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/Inventory Icon.png using Guid(15f5dfd1e35284f4180986539fb6aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f476a787bbf708588f08684b3997dc80') in 0.008504 seconds
+  Import took 0.013064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.079905 seconds.
+  path: Assets/sprites/UI/Inventory Icon.png
+  artifactKey: Guid(15f5dfd1e35284f4180986539fb6aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/Inventory Icon.png using Guid(15f5dfd1e35284f4180986539fb6aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f476a787bbf708588f08684b3997dc80') in 0.009106 seconds
+  Import took 0.013614 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 311.879153 seconds.
+  path: Assets/sprites/UI/back_btn.png
+  artifactKey: Guid(73f218977c1bd4c51b5a001784bb3872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/back_btn.png using Guid(73f218977c1bd4c51b5a001784bb3872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a7a040735f43df89bdd02848614ab2e') in 0.008076 seconds
+  Import took 0.012838 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.631351 seconds.
+  path: Assets/sprites/UI/back_btn.png
+  artifactKey: Guid(73f218977c1bd4c51b5a001784bb3872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/back_btn.png using Guid(73f218977c1bd4c51b5a001784bb3872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed5d8311f7870b99887978a691f2a798') in 0.008487 seconds
+  Import took 0.013033 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.074552 seconds.
+  path: Assets/sprites/UI/back_btn.png
+  artifactKey: Guid(73f218977c1bd4c51b5a001784bb3872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/UI/back_btn.png using Guid(73f218977c1bd4c51b5a001784bb3872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed5d8311f7870b99887978a691f2a798') in 0.008395 seconds
+  Import took 0.012922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 903.617297 seconds.
+  path: Assets/animation/Msmartphone.controller
+  artifactKey: Guid(392385fb16e684fc6865ce38415e97f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/animation/Msmartphone.controller using Guid(392385fb16e684fc6865ce38415e97f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d3361849833488eb122273d3c031771') in 0.035587 seconds
+  Import took 0.040147 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007040 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.716 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2058 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 175.3 MB.
+System memory in use after: 175.4 MB.
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 2550.
+Total: 2.726303 ms (FindLiveObjects: 0.270057 ms CreateObjectMapping: 0.091342 ms MarkObjects: 2.333801 ms  DeleteObjects: 0.028979 ms)
+
