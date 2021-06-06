@@ -8,7 +8,6 @@ public class Interact : PlayerState {
     private RaycastHit2D hit;
     public void handleInput(Player player)
     {
-        //Vector2 curpos = new Vector2(transform.position.x, (transform.position.y - 1.7f));
         switch (player.dir)
         {
             case DIRECTION.UP:
@@ -48,26 +47,15 @@ public class Interact : PlayerState {
                         return;
                     }
                     break;
+
                 case "item":
                     Debug.Log("You Hit ITEM!");
                     Item pickup = hit.collider.GetComponentInParent<Item>();
-                    break;
+                break;
 
             }
         }
             player.act = ACT.IDLE;
             player.UpdateAct();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

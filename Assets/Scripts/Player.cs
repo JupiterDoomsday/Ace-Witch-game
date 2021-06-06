@@ -12,6 +12,7 @@ public enum ACT
     TALKING,
     INTERACTING,
     SITTING,
+    PAUSE,
     STIMMING,
     INCANTATION,
     COLLIDE,
@@ -28,6 +29,9 @@ public class  Player : MonoBehaviour
 {
     public ACT act;
     public DIRECTION dir;
+    public MenuTransition menu;
+    public GameObject canvas;
+    public GameObject menu_panel;
     public Inventory invo;
     static Walking walkingState;
     static Idle idleState;
@@ -55,6 +59,9 @@ public class  Player : MonoBehaviour
     void Start()
     {
         idleState = new Idle();
+        idleState.menu = this.menu;
+        idleState.Canvas = this.canvas;
+        idleState.menu_panel = this.menu_panel;
 
         expressions = new Dictionary<string, Sprite>();
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
@@ -130,7 +137,7 @@ public class  Player : MonoBehaviour
     }
     public List<string> _keys = new List<string>();
     public List<Sprite> _values = new List<Sprite>();
-
+    private object idelState;
 
     public void OnBeforeSerialize()
     {
