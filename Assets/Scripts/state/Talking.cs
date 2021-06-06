@@ -9,7 +9,7 @@ using state;
 public class Talking : MonoBehaviour, PlayerState
 {
     public DialogueRunner dialogueRunner;
-    public DialogueUI diaUI;
+    public CustomeDiaUI diaUI;
     public Image left;
     public Image right;
     public Player player;
