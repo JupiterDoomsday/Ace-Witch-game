@@ -29,6 +29,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Text;
 using System.Collections.Generic;
+using TMPro;
 
 namespace Yarn.Unity
 {
@@ -58,9 +59,10 @@ namespace Yarn.Unity
         /// disabled when it ends.
         /// </remarks>
         public GameObject dialogueContainer;
-        public TextMesh nameContainer;
-        public Button leftScrollBtn;
-        public Button rightScrollBtn;
+        public TextMeshProUGUI nameContainer;
+        //private TextMeshPro name_actor;
+        //public Button leftScrollBtn;
+        //public Button rightScrollBtn;
         /// <summary>
         /// How quickly to show the text, in seconds per character
         /// </summary>
@@ -295,6 +297,8 @@ namespace Yarn.Unity
                 nameContainer.text = desc[0];
                 text = desc[1];
             }
+            else
+                nameContainer.text = "";
 
             if (textSpeed > 0.0f)
             {
