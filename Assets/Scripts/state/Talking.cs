@@ -24,7 +24,7 @@ public class Talking : MonoBehaviour, PlayerState
         Npc[] npcs = NPCContainer.GetComponentsInChildren<Npc>();
         foreach(Npc child in npcs)
         {
-            actors.Add(child.Name,child);
+            actors.Add(child.Name.ToLower(),child);
         }
         dialogueRunner.AddCommandHandler("profile", ShowProfile);
         dialogueRunner.AddCommandHandler("sound", PlayAudio);
@@ -37,7 +37,7 @@ public class Talking : MonoBehaviour, PlayerState
     {
         Sprite witch = null;
         Image target = right;
-        bool hasSprite = actors.ContainsKey(profile[0]);
+        bool hasSprite = actors.ContainsKey(profile[0].ToLower());
         if (hasSprite == false)
         {
             if(profile[0].Equals("marji"))

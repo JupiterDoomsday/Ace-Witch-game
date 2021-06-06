@@ -58,7 +58,7 @@ namespace Yarn.Unity
         /// disabled when it ends.
         /// </remarks>
         public GameObject dialogueContainer;
-        public Text nameContainer;
+        public TextMesh nameContainer;
         public Button leftScrollBtn;
         public Button rightScrollBtn;
         /// <summary>

@@ -77,11 +77,16 @@
     <Compile Include="Assets/Scripts/Npc.cs" />
     <Compile Include="Assets/Scripts/Interactable.cs" />
     <Compile Include="Assets/Scripts/state/PlayerState.cs" />
+    <Compile Include="Assets/Scripts/state/Interact.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/NPC.cs" />
+    <Compile Include="Assets/Scripts/LevelLoader.cs" />
+    <Compile Include="Assets/Scripts/Save.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/NodeVisitedTracker.cs" />
     <Compile Include="Assets/change_side.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/PlayerCharacter.cs" />
-    <Compile Include="Assets/Scripts/state/Interact.cs" />
+    <Compile Include="Assets/Scripts/Inventory/InventoryUI.cs" />
+    <Compile Include="Assets/Scripts/MenuTransition.cs" />
+    <Compile Include="Assets/Scripts/state/Pause.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

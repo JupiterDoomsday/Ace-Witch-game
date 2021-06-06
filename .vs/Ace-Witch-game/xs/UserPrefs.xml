@@ -1,20 +1,21 @@
 ﻿<Properties StartupConfiguration="{26F11631-FE60-7D0B-FABF-598A1CF42C32}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/state/Interact.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/cust_Yarn/CustomeDiaUI.cs">
     <Files>
-      <File FileName="Assets/Scripts/state/Talking.cs" Line="96" Column="13" IsPinned="True" />
-      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="21" Column="6" />
-      <File FileName="Assets/Scripts/Player.cs" Line="116" Column="10" />
-      <File FileName="Assets/Scripts/state/Walking.cs" Line="69" Column="21" />
-      <File FileName="Assets/Scripts/Npc.cs" Line="80" Column="11" />
-      <File FileName="Assets/Scripts/Inventory/Item.cs" Line="19" Column="24" />
-      <File FileName="Assets/Scripts/ShopKeeper.cs" Line="43" Column="10" />
-      <File FileName="Assets/Scripts/state/Interact.cs" Line="48" Column="32" />
-      <File FileName="Assets/Scripts/state/Idle.cs" Line="28" Column="38" />
+      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ShopKeeper.cs" />
+      <File FileName="Assets/Scripts/Save.cs" />
+      <File FileName="Assets/Scripts/Inventory/InventoryUI.cs" />
+      <File FileName="Assets/Scripts/Inventory/Item.cs" />
+      <File FileName="Assets/Scripts/LevelLoader.cs" />
+      <File FileName="Assets/Scripts/MenuTransition.cs" Line="27" Column="31" />
+      <File FileName="Assets/Scripts/Player.cs" />
+      <File FileName="Assets/Scripts/state/Idle.cs" />
+      <File FileName="Assets/Scripts/cust_Yarn/CustomeDiaUI.cs" Line="61" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e7e11e16-a75d-4bae-86e7-604c6cbc01c9" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8c8eea90-423c-4789-9490-56ae45c03e4d" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

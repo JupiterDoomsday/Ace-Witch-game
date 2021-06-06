@@ -22,6 +22,7 @@ public class Npc : MonoBehaviour
 
     public Dictionary<string,Sprite> expressions;
     public Sprite Profile;
+    public bool dirMoves = false;
     public string Name;
     public  string startNode;
     public YarnProgram startScript;
@@ -60,6 +61,12 @@ public class Npc : MonoBehaviour
     }
     public bool corespondingDir(Player marji)
     {
+        if (dirMoves)
+        {
+            resetNPCDir(marji);
+            return true;
+        }
+            
         switch (this.dir)
         {
             case (DIRECTION.UP):
@@ -79,11 +86,6 @@ public class Npc : MonoBehaviour
     {
         //act = ACT.TALKING;
         runner.StartDialogue(startNode);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        //act = ACT.IDLE;
     }
 
     public Sprite getExpression(string exp)
