@@ -67,11 +67,13 @@
     <Compile Include="Assets/ChangeSorting.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/CameraFollow.cs" />
     <Compile Include="Assets/FollowPlayer.cs" />
+    <Compile Include="Assets/Scripts/state/Pause.cs" />
     <Compile Include="Assets/Scripts/state/State.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/SpriteSwitcher.cs" />
     <Compile Include="Assets/Scripts/state/Idle.cs" />
     <Compile Include="Assets/Scripts/Updater.cs" />
     <Compile Include="Assets/Scripts/state/Talking.cs" />
+    <Compile Include="Assets/Scripts/Inventory/InventoryUI.cs" />
     <Compile Include="Assets/Scripts/Inventory/Inventory.cs" />
     <Compile Include="Assets/Scripts/Inventory/Item.cs" />
     <Compile Include="Assets/Scripts/Npc.cs" />
@@ -82,11 +84,10 @@
     <Compile Include="Assets/Scripts/LevelLoader.cs" />
     <Compile Include="Assets/Scripts/Save.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/NodeVisitedTracker.cs" />
+    <Compile Include="Assets/Scripts/MenuTransition.cs" />
     <Compile Include="Assets/change_side.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/PlayerCharacter.cs" />
-    <Compile Include="Assets/Scripts/Inventory/InventoryUI.cs" />
-    <Compile Include="Assets/Scripts/MenuTransition.cs" />
-    <Compile Include="Assets/Scripts/state/Pause.cs" />
+    <Compile Include="Assets/Scripts/UI/PopUpAnimations.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
