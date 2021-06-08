@@ -74,10 +74,10 @@
     <Compile Include="Assets/Scripts/Updater.cs" />
     <Compile Include="Assets/Scripts/state/Talking.cs" />
     <Compile Include="Assets/Scripts/Inventory/InventoryUI.cs" />
+    <Compile Include="Assets/Scripts/Inventory/ItemIndex.cs" />
     <Compile Include="Assets/Scripts/Inventory/Inventory.cs" />
     <Compile Include="Assets/Scripts/Inventory/Item.cs" />
     <Compile Include="Assets/Scripts/Npc.cs" />
-    <Compile Include="Assets/Scripts/Interactable.cs" />
     <Compile Include="Assets/Scripts/state/PlayerState.cs" />
     <Compile Include="Assets/Scripts/state/Interact.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/NPC.cs" />

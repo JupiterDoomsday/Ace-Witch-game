@@ -17,7 +17,25 @@ public class Inventory
     }
     public void AddItem(Item item)
     {
+        Item target = getItem(item.id);
+        if (target == null)
             item_list.Add(item);
+        else
+            target.amount++;
+    }
+    
+    public Item RemoveItem(int id)
+    {
+        Item target = getItem(id);
+        if (target == null)
+            return null;
+
+        if (target.amount > 1)
+          target.amount--;
+        else
+          item_list.Remove(target);
+
+        return target;
     }
     /*
      * public Item getItem(int id)

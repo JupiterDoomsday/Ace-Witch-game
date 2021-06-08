@@ -37,10 +37,11 @@ public class MenuTransition : MonoBehaviour
         transition.enabled = true;
         transition.SetTrigger("menu_up");
         yield return new WaitForSeconds(transitiontime);
+        transition.SetTrigger("done");
         transition.enabled = false;
-        marji.enabled = true;
         canvas.SetActive(false);
         ui.SetActive(false);
         dialouge_ui.SetActive(true);
+        marji.enabled = true;
     }
 }

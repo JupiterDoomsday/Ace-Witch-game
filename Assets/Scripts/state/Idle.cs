@@ -11,6 +11,7 @@ public class Idle : PlayerState
     {
         if (Input.GetKey(KeyCode.Z))
             {
+
                 Canvas.SetActive(true);
                 menu_panel.SetActive(true);
                 menu.loadMenu();
