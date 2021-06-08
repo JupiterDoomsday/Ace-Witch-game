@@ -6,8 +6,10 @@ using UnityEngine;
 public class Interact : PlayerState { 
 
     private RaycastHit2D hit;
+    public float dist = 4f;
     public void handleInput(Player player)
     {
+
         switch (player.dir)
         {
             case DIRECTION.UP:
@@ -32,6 +34,7 @@ public class Interact : PlayerState {
 
     public void UpdateState(Player player)
     {
+        //float area = Vector2.Distance(player.transform.position, hit.transform.position);
         if (hit.collider != null && hit.distance < 2f)
         {
             switch(hit.collider.tag)
@@ -41,17 +44,21 @@ public class Interact : PlayerState {
                     Npc target = hit.collider.GetComponentInParent<Npc>();
                     if (target.startScript != null && target.corespondingDir(player))
                     {
+                        
                         player.act = ACT.TALKING;
                         target.speak();
                         player.UpdateAct();
+                        hit = new RaycastHit2D();
                         return;
+                        
                     }
                     break;
 
                 case "item":
                     Debug.Log("You Hit ITEM!");
                     Item pickup = hit.collider.GetComponentInParent<Item>();
-                break;
+                    hit = new RaycastHit2D();
+                    break;
 
             }
         }

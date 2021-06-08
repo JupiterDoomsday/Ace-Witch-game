@@ -13,10 +13,16 @@ public enum SOCIAL_STANDING
     AQUINTANCE,
     RIVAL
 };
-
+public enum NPC_TYPE
+{
+    SHOPKEEPER,
+    NPC,
+    JATT
+};
 public class Npc : MonoBehaviour
 {
     public ACT act;
+    public NPC_TYPE type;
     public SOCIAL_STANDING player_relationship;
     public DIRECTION dir;
 

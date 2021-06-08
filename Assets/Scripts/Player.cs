@@ -38,6 +38,7 @@ public class  Player : MonoBehaviour
     static Interact interactState;
     public Talking talkingState;
     public Sprite profile;
+    [SerializeField] private InventoryUI invoUI;
     public Dictionary<string,Sprite> expressions;
     public Sprite[] sitting = new Sprite[3];
     public Sprite[] dirSprites= new Sprite[4];
@@ -47,17 +48,12 @@ public class  Player : MonoBehaviour
     public int sittingTime;
     public Animator player_animator;
     public Rigidbody2D rgb2d;
-    public float x;
-    public float y;
-
 
     // Start is called before the first frame update
     private void Awake()
     {
         invo = new Inventory();
-    }
-    void Start()
-    {
+        invoUI.setInvo(invo);
         idleState = new Idle();
         idleState.menu = this.menu;
         idleState.Canvas = this.canvas;
@@ -71,9 +67,6 @@ public class  Player : MonoBehaviour
         interactState = new Interact();
         curState = idleState;
         talkingState.player = this;
-        //x = -7.98f;
-        //y = -2.03f;
-
     }
     private void FixedUpdate()
     {
