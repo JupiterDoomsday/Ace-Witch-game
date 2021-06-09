@@ -11,7 +11,6 @@ public class Idle : PlayerState
     {
         if (Input.GetKey(KeyCode.Z))
             {
-
                 Canvas.SetActive(true);
                 menu_panel.SetActive(true);
                 menu.loadMenu();
@@ -19,7 +18,8 @@ public class Idle : PlayerState
         if (Input.GetKeyDown(KeyCode.X))
         {
             player.act = ACT.INTERACTING;
-            player.UpdateAct();
+            OnExit(player);
+            player.handleInputNow(); //get the latest input RIGHT AWAY;
             return;
         }
         float axisX = Input.GetAxisRaw("Horizontal");
@@ -35,7 +35,7 @@ public class Idle : PlayerState
         if (axisX == -1 || axisX == 1 || axisY == 1 || axisY == -1)
         {
             player.act = ACT.WALKING;
-            player.UpdateAct();
+            OnExit(player);
         }
     }
     public void OnExit(Player player)

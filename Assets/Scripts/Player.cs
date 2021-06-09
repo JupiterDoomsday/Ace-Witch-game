@@ -42,7 +42,7 @@ public class  Player : MonoBehaviour
     public Dictionary<string,Sprite> expressions;
     public Sprite[] sitting = new Sprite[3];
     public Sprite[] dirSprites= new Sprite[4];
-    PlayerState curState = null;
+    private PlayerState curState = null;
     public SpriteRenderer spriteRender;
     public int speed=4;
     public int sittingTime;
@@ -78,10 +78,11 @@ public class  Player : MonoBehaviour
     }
 
     //is the bones for handeling the talking event
-    public void isTalking()
+    public void isTalking(Npc npc)
     {
         act = ACT.TALKING;
         curState.OnExit(this);
+        npc.speak();
     }
     //this resets the player state to idle
     public void setIdle()
@@ -114,6 +115,10 @@ public class  Player : MonoBehaviour
             case ACT.SITTING:
                 break;
         }
+    }
+    public void handleInputNow()
+    {
+        curState.handleInput(this);
     }
     public void ExitStateRightAway()
     {
