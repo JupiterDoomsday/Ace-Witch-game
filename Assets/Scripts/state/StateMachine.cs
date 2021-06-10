@@ -16,13 +16,4 @@ public class StateMachine : MonoBehaviour
         curState = new_state;
         new_state.Enter();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }

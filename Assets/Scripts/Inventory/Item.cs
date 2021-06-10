@@ -8,26 +8,23 @@ public enum ITEM_TYPE
     TOOL,
     LORE
 };
-public class Item
+[CreateAssetMenu]
+public class Item: ScriptableObject
 {
     public int id;
-    public int amount;
     public bool tradeable;
     public List<string> wordKeys;
     public string item_name;
     public ITEM_TYPE type;
     public string desc;
     public Sprite icon;
-    public Item(string n, ITEM_TYPE t)
+    public Item(int id,string n, string desc, ITEM_TYPE type, List<string> descript, Sprite img)
     {
         this.item_name = n;
-        this.type = t;
-        this.amount = 1;
-    }
-    public Item(string n, ITEM_TYPE t, int amt)
-    {
-        this.item_name = n;
-        this.type = t;
-        this.amount = amt;
+        this.id = id;
+        this.desc = desc;
+        this.type = type;
+        this.wordKeys = descript;
+        this.icon = img;
     }
 }

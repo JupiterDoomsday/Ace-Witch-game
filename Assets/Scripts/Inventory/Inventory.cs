@@ -5,28 +5,28 @@ using UnityEngine;
 public class Inventory
 {
     [SerializeField]
-    public List<Item> item_list;
+    public List<ItemSlot> item_list;
 
     public Inventory()
     {
-        item_list = new List<Item>();
+        item_list = new List<ItemSlot>();
     }
-    public Item getItem(int id)
+    public ItemSlot getItem(int id)
     {
-        return item_list.Find(item => item.id == id);
+        return item_list.Find(item => item.item_id == id);
     }
-    public void AddItem(Item item)
+    public void AddItem(Item item, int amt)
     {
-        Item target = getItem(item.id);
+        ItemSlot target = getItem(item.id);
         if (target == null)
-            item_list.Add(item);
+            item_list.Add(new ItemSlot(item,amt));
         else
-            target.amount++;
+            target.amount+= amt;
     }
     
-    public Item RemoveItem(int id)
+    public ItemSlot RemoveItem(int id)
     {
-        Item target = getItem(id);
+        ItemSlot target = getItem(id);
         if (target == null)
             return null;
 
