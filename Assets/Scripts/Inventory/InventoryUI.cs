@@ -4,6 +4,7 @@ using TMPro;
 public class InventoryUI : MonoBehaviour
 {
     Inventory player_invo;
+    private GameObject curItem;
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
     public Transform itemAmtMarker;
@@ -41,8 +42,8 @@ public class InventoryUI : MonoBehaviour
                 y++;
             }
             Transform item_btn = ItemSlotRectTransform.GetChild(0);
-            item_btn.gameObject.SetActive(true);
-            item_btn.GetComponent<Image>().sprite = i.item.icon;
+            //item_btn.gameObject.SetActive(true);
+            item_btn.GetChild(0).GetComponent<Image>().sprite = i.item.icon;
             if (i.amount > 1)
             {
                 Transform icon = item_btn.GetChild(1);
@@ -50,5 +51,10 @@ public class InventoryUI : MonoBehaviour
                 icon.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.amount.ToString();
             }
         }
+
+    }
+    public void setCurItem(GameObject curItem)
+    {
+        this.curItem = curItem;
     }
 }
