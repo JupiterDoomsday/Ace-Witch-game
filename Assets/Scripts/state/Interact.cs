@@ -50,7 +50,10 @@ public class Interact : PlayerState {
 
                 case "item":
                     Debug.Log("You Hit ITEM!");
-                    Item pickup = hit.collider.GetComponentInParent<Item>();
+                        PickUp pickup = hit.collider.GetComponentInParent<PickUp>();
+                        player.invo.AddItem(pickup.item, pickup.amt);
+                        pickup.gameObject.SetActive(false);
+                        //hit.collider.enabled = false;
                     break;
             }
         }

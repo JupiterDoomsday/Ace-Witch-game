@@ -4,15 +4,10 @@ using TMPro;
 public class InventoryUI : MonoBehaviour
 {
     Inventory player_invo;
-    private Transform itemSlotContainer;
-    private Transform itemSlotTemplate;
+    public Transform itemSlotContainer;
+    public Transform itemSlotTemplate;
     public Transform itemAmtMarker;
     public Transform popUp;
-    private void Awake()
-    {
-        itemSlotContainer = transform.Find("inventoryPanel");
-        itemSlotTemplate = transform.Find("invo_slot");
-    }
 
     public void setInvo(Inventory i)
     {
@@ -34,7 +29,7 @@ public class InventoryUI : MonoBehaviour
         int y = 0;
 
         float cellSize = 64;
-        foreach(Item i in player_invo.item_list)
+        foreach(ItemSlot i in player_invo.item_list)
         {
             RectTransform ItemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             ItemSlotRectTransform.gameObject.SetActive(true);
@@ -45,12 +40,14 @@ public class InventoryUI : MonoBehaviour
                 x = 0;
                 y++;
             }
-            ItemSlotRectTransform.Find("icon").GetComponent <Image>().sprite = i.icon;
-            if(i.amount > 1)
+            Transform item_btn = ItemSlotRectTransform.GetChild(0);
+            item_btn.gameObject.SetActive(true);
+            item_btn.GetComponent<Image>().sprite = i.item.icon;
+            if (i.amount > 1)
             {
-                Transform icon = itemSlotTemplate.Find("amount");
+                Transform icon = item_btn.GetChild(1);
                 icon.gameObject.SetActive(true);
-                icon.GetComponent<TextMeshPro>().text += i.amount;
+                icon.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.amount.ToString();
             }
         }
     }
