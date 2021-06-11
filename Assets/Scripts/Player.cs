@@ -7,6 +7,7 @@ public enum ACT
 {
     IDLE,
     WALKING,
+    MENU,
     FLYING,
     INSPECTING,
     TALKING,
@@ -30,13 +31,12 @@ public class  Player : MonoBehaviour
     public ACT act;
     public DIRECTION dir;
     public MenuTransition menu;
-    public GameObject canvas;
-    public GameObject menu_panel;
     public Inventory invo;
     static Walking walkingState;
     static Idle idleState;
     static Interact interactState;
     public Talking talkingState;
+    public Menu menuState;
     public Sprite profile;
     [SerializeField] private InventoryUI invoUI;
     public Dictionary<string,Sprite> expressions;
@@ -55,9 +55,6 @@ public class  Player : MonoBehaviour
         invo = new Inventory();
         invoUI.setInvo(invo);
         idleState = new Idle();
-        idleState.menu = this.menu;
-        idleState.Canvas = this.canvas;
-        idleState.menu_panel = this.menu_panel;
 
         expressions = new Dictionary<string, Sprite>();
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
@@ -117,6 +114,14 @@ public class  Player : MonoBehaviour
                 curState = interactState;
                 break;
             case ACT.SITTING:
+                break;
+            case ACT.MENU:
+                menuState.canvas_objct.SetActive(true);
+                menuState.menu_panel.SetActive(true);
+                menuState.isAtMainMenu();
+                menuState.state = MenuState.IDLE;
+                menuState.transition.loadMenu();
+                curState = menuState;
                 break;
         }
     }

@@ -16,6 +16,7 @@ public class Item: ScriptableObject
     public List<string> wordKeys;
     public string item_name;
     public ITEM_TYPE type;
+    [TextArea(15,20)]
     public string desc;
     public Sprite icon;
     public Item(int id,string n, string desc, ITEM_TYPE type, List<string> descript, Sprite img)

@@ -10,7 +10,6 @@ public class MenuTransition : MonoBehaviour
     public GameObject dialouge_ui;
     public GameObject canvas;
     public float transitiontime = 1f;
-    public Player marji;
     public void loadMenu()
 
     {
@@ -24,7 +23,6 @@ public class MenuTransition : MonoBehaviour
     IEnumerator MenuEnter()
     {
         dialouge_ui.SetActive(false);
-        marji.enabled = false;
         transition.enabled = true;
         transition.SetTrigger("menu_down");
         yield return new WaitForSeconds(transitiontime);
@@ -42,6 +40,5 @@ public class MenuTransition : MonoBehaviour
         canvas.SetActive(false);
         ui.SetActive(false);
         dialouge_ui.SetActive(true);
-        marji.enabled = true;
     }
 }

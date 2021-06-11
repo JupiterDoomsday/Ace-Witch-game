@@ -5,9 +5,13 @@ public class InventoryUI : MonoBehaviour
 {
     Inventory player_invo;
     private GameObject curItem;
+    public TextMeshProUGUI inspectName;
+    public TextMeshProUGUI inspectdesc;
+    public Item cur_item_data;
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
     public Transform itemAmtMarker;
+    public Menu playerMenuState;
     public Transform popUp;
 
     public void setInvo(Inventory i)
@@ -41,20 +45,60 @@ public class InventoryUI : MonoBehaviour
                 x = 0;
                 y++;
             }
+            PickUp slot = ItemSlotRectTransform.GetComponent<PickUp>();
+            slot.amt = i.amount;
+            slot.item = i.item;
             Transform item_btn = ItemSlotRectTransform.GetChild(0);
-            //item_btn.gameObject.SetActive(true);
+            Button btn = item_btn.GetComponent<Button>();
+            btn.onClick.AddListener(
+                delegate{
+                    setCurItem(ItemSlotRectTransform.gameObject, slot.item);
+                    popUp.gameObject.SetActive(true);
+                    playerMenuState.isAtItemSelected();
+                    deactivateAllItems();
+                });
             item_btn.GetChild(0).GetComponent<Image>().sprite = i.item.icon;
             if (i.amount > 1)
             {
                 Transform icon = item_btn.GetChild(1);
-                icon.gameObject.SetActive(true);
+
                 icon.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.amount.ToString();
             }
         }
 
     }
-    public void setCurItem(GameObject curItem)
+    public void setCurItem(GameObject curItem, Item data)
     {
         this.curItem = curItem;
+        this.cur_item_data = data;
+    }
+    public void deactivateAllItems()
+    {
+        foreach (Transform child in itemSlotContainer)
+        {
+            Transform item_btn = child.GetChild(0);
+            Button btn = item_btn.GetComponent<Button>();
+            btn.interactable = false;
+            
+            
+        }
+    }
+    public void activateAllItems()
+    {
+        this.curItem = null;
+        this.cur_item_data = null;
+        foreach (Transform child in itemSlotContainer)
+        {
+            Transform item_btn = child.GetChild(0);
+            Button btn = item_btn.GetComponent<Button>();
+            btn.interactable = true;
+        }
+    }
+    public void setDesc()
+    {
+        if (this.curItem = null)
+            return;
+        inspectName.text = cur_item_data.item_name;
+        inspectdesc.text = cur_item_data.desc;
     }
 }
