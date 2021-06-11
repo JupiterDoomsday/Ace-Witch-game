@@ -4,17 +4,13 @@ using UnityEngine;
 using state;
 public class Idle : PlayerState
 {
-    public MenuTransition menu;
-    public GameObject Canvas;
-    public GameObject menu_panel;
     public void handleInput(Player player)
     {
         if (Input.GetKey(KeyCode.Z))
             {
-                Canvas.SetActive(true);
-                menu_panel.SetActive(true);
-                menu.loadMenu();
-            }
+            player.act = ACT.MENU;
+            OnExit(player);
+        }
         if (Input.GetKeyDown(KeyCode.X))
         {
             player.act = ACT.INTERACTING;
