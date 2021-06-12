@@ -58,12 +58,11 @@ public class InventoryUI : MonoBehaviour
                     deactivateAllItems();
                 });
             item_btn.GetChild(0).GetComponent<Image>().sprite = i.item.icon;
+            Transform icon = item_btn.GetChild(1);
             if (i.amount > 1)
-            {
-                Transform icon = item_btn.GetChild(1);
-
                 icon.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.amount.ToString();
-            }
+            else
+                icon.gameObject.SetActive(false);
         }
 
     }
