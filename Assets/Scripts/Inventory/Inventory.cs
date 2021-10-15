@@ -1,15 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Inventory
 {
     [SerializeField]
     public List<ItemSlot> item_list;
-
+    
     public Inventory()
     {
         item_list = new List<ItemSlot>();
+    }
+    public Inventory(Inventory i)
+    {
+        item_list = new List<ItemSlot>();
+        foreach(ItemSlot id in i.item_list)
+        {
+            item_list.Add(id);
+        }
     }
     public ItemSlot getItem(int id)
     {
@@ -31,11 +39,24 @@ public class Inventory
             return null;
 
         if (target.amount > 1)
-          target.amount--;
+        {
+            target.amount--;
+            return new ItemSlot(target.item);
+        }
+          
         else
           item_list.Remove(target);
 
         return target;
+    }
+    public bool hasItem(int id)
+    {
+        foreach(ItemSlot i in item_list)
+        {
+            if (i.item_id == id)
+                return true;
+        }
+        return false;
     }
     /*
      * public Item getItem(int id)

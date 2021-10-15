@@ -7,8 +7,9 @@ public class Walking : PlayerState
     public int playerId;
     public Player player;
     public Vector2 moveDir;
-    public void handleInput(Player player)
+    public void handleInput(StateMachine mach)
     {
+        Player player = mach.player;
         float axisX = Input.GetAxisRaw("Horizontal");
         float axisY = Input.GetAxisRaw("Vertical");
         player.player_animator.SetInteger("x", (int)axisX);
@@ -32,7 +33,7 @@ public class Walking : PlayerState
                 return;
             default:
                 player.act = ACT.IDLE;
-                OnExit(player);
+                OnExit(mach);
                 break;
         }
 
@@ -61,18 +62,19 @@ public class Walking : PlayerState
         }
  
     }
-    public void OnExit(Player p)
+    public void OnExit(StateMachine mach)
     {
+        Player p = mach.player;
         p.rgb2d.velocity = Vector2.zero;
         p.player_animator.enabled = false;
         setDirection(p);
         p.setIdle();
-        p.UpdateAct();
+        mach.UpdateAct();
     }
     // Update is called once per frame
-    public void UpdateState(Player player)
+    public void UpdateState(StateMachine mach)
     {
-        
+        Player player = mach.player;
         switch (player.dir)
         {
             case DIRECTION.LEFT:

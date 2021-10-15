@@ -57,18 +57,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/cust_Yarn/CustomeDiaUI.cs" />
+    <Compile Include="Assets/Scripts/AI/FieldOfView.cs" />
     <Compile Include="Assets/Scripts/state/Walking.cs" />
     <Compile Include="Assets/Scripts/IUpdate.cs" />
     <Compile Include="Assets/Scripts/state/StateMachine.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/MobileOnly.cs" />
+    <Compile Include="Assets/Scripts/state/Menu.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
     <Compile Include="Assets/Scripts/state/GameState.cs" />
     <Compile Include="Assets/Scripts/ShopKeeper.cs" />
     <Compile Include="Assets/ChangeSorting.cs" />
+    <Compile Include="Assets/Scripts/state/AppUI.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/CameraFollow.cs" />
     <Compile Include="Assets/FollowPlayer.cs" />
     <Compile Include="Assets/Scripts/state/Pause.cs" />
-    <Compile Include="Assets/Scripts/state/State.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/SpriteSwitcher.cs" />
     <Compile Include="Assets/Scripts/state/Idle.cs" />
     <Compile Include="Assets/Scripts/Updater.cs" />
@@ -76,20 +78,28 @@
     <Compile Include="Assets/Scripts/Inventory/InventoryUI.cs" />
     <Compile Include="Assets/Scripts/Inventory/Inventory.cs" />
     <Compile Include="Assets/Scripts/Inventory/Item.cs" />
+    <Compile Include="Assets/Quest/ScavengerHunt.cs" />
     <Compile Include="Assets/Scripts/Npc.cs" />
+    <Compile Include="Assets/Quest/QuestDatabase.cs" />
+    <Compile Include="Assets/Scripts/AI/Enemy.cs" />
+    <Compile Include="Assets/Scripts/GlobalData.cs" />
+    <Compile Include="Assets/Scripts/Inventory/TradeNBarter.cs" />
     <Compile Include="Assets/Scripts/Inventory/ItemSlot.cs" />
     <Compile Include="Assets/Scripts/state/PlayerState.cs" />
+    <Compile Include="Assets/Quest/Quest.cs" />
     <Compile Include="Assets/Scripts/state/Interact.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/NPC.cs" />
     <Compile Include="Assets/Scripts/LevelLoader.cs" />
     <Compile Include="Assets/Scripts/Save.cs" />
+    <Compile Include="Assets/Scripts/state/AutomataStack.cs" />
+    <Compile Include="Assets/Quest/QuestSystemUI.cs" />
     <Compile Include="Assets/Scripts/Inventory/PickUp.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/NodeVisitedTracker.cs" />
     <Compile Include="Assets/Scripts/MenuTransition.cs" />
+    <Compile Include="Assets/Scripts/MeshMath.cs" />
     <Compile Include="Assets/change_side.cs" />
     <Compile Include="Assets/Samples/Yarn Spinner/1.2.6/Space/Scripts/PlayerCharacter.cs" />
     <Compile Include="Assets/Scripts/UI/PopUpAnimations.cs" />
-    <Compile Include="Assets/Scripts/state/Menu.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

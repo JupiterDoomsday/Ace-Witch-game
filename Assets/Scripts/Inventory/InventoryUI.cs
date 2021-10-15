@@ -23,7 +23,7 @@ public class InventoryUI : MonoBehaviour
     {
         this.enabled = false;
     }
-    public void RefreshInventory()
+    public void Refresh()
     {
         foreach(Transform child in itemSlotContainer)
         {
@@ -52,6 +52,7 @@ public class InventoryUI : MonoBehaviour
             Button btn = item_btn.GetComponent<Button>();
             btn.onClick.AddListener(
                 delegate{
+                    playerMenuState.popUp = this.popUp.gameObject;
                     setCurItem(ItemSlotRectTransform.gameObject, slot.item);
                     popUp.gameObject.SetActive(true);
                     playerMenuState.isAtItemSelected();

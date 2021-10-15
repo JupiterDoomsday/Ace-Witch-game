@@ -8,16 +8,16 @@ using state;
 public enum SOCIAL_STANDING
 {
     COMARADE,
+    AQUINTANCE,
     FAMILY,
     BEST_FIREND,
-    AQUINTANCE,
-    RIVAL
 };
 public enum NPC_TYPE
 {
     SHOPKEEPER,
     NPC,
-    JATT
+    JATT,
+    ENEMIE
 };
 public class Npc : MonoBehaviour
 {
@@ -90,7 +90,6 @@ public class Npc : MonoBehaviour
 
     public void speak()
     {
-        //act = ACT.TALKING;
         runner.StartDialogue(startNode);
     }
 

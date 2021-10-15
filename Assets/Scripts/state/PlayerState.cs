@@ -5,8 +5,8 @@ namespace state
 {
     interface PlayerState
     {
-        void handleInput(Player player);
-        void UpdateState(Player player);
-        void OnExit(Player player);
+        void handleInput(StateMachine player);
+        void UpdateState(StateMachine player);
+        void OnExit(StateMachine player);
     }
 }
