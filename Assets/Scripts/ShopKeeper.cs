@@ -7,23 +7,47 @@ public class ShopKeeper : Npc
 {
     //this represents how much the shopkeeper loves the current trade
     public float favor;
+    public SHOPKEEPER_TYPE shop_type;
     public float sway;
-    public List<Item> item_stock;
-    public List<Item> trade_stock;
+    
+    public Inventory goods;
     public Dictionary<string,int> adorations;
-   
-    public void AddItem(Item i)
+
+    public void Start()
     {
-        item_stock.Add(i);
+        goods = GlobalData.Instance.getShopKeeperInventory(shop_type);
     }
-    public bool willTrade()
+
+    private int getPersonalValue(Item i) {
+        int sum = 0;
+        foreach (string key in i.wordKeys)
+        {
+            if (adorations.ContainsKey(key))
+                sum += adorations[key];
+        }
+        return sum;
+    }
+    public bool willTrade(Inventory stock, Inventory trade)
     {
+        int stock_sum = checkInvoValue(stock);
+        int barter_sum = checkInvoValue(trade);
+        //check to see if it apeaes the shopkeeper
+        if (barter_sum >= stock_sum)
+            return true;
         return false;
     }
     public List<string> favItems = new List<string>();
     public List<int> favor_val = new List<int>();
 
-
+    public int checkInvoValue(Inventory stock)
+    {
+        int sum = 0;
+        foreach (ItemSlot i in stock.item_list)
+        {
+            sum += getPersonalValue(i.item) * i.amount;
+        }
+        return sum;
+    }
     public override void OnBeforeSerialize()
     {
         favItems.Clear();
@@ -42,7 +66,10 @@ public class ShopKeeper : Npc
             favor_val.Add(kvp.Value);
         }
     }
-
+    public void saveShopKeeper()
+    {
+        GlobalData.Instance.copyShopKeeperInvo(shop_type, goods);
+    }
     public override void OnAfterDeserialize()
     {
         adorations = new Dictionary<string, int>();

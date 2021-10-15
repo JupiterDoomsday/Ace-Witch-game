@@ -5,17 +5,17 @@ using state;
 
 public class Pause : PlayerState
 {
-    public void handleInput(Player player)
+    public void handleInput(StateMachine player)
     {
         throw new System.NotImplementedException();
     }
 
-    public void OnExit(Player player)
+    public void OnExit(StateMachine player)
     {
         throw new System.NotImplementedException();
     }
 
-    public void UpdateState(Player player)
+    public void UpdateState(StateMachine player)
     {
         throw new System.NotImplementedException();
     }

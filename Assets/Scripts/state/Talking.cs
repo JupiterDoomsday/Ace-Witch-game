@@ -91,18 +91,17 @@ public class Talking : MonoBehaviour, PlayerState
 
 
     // Start is called before the first frame update
-    public void handleInput(Player player)
+    public void handleInput(StateMachine player)
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
             //Debug.Log("Pressing x to continue");
             diaUI.MarkLineComplete();
             //
-
         }
 
     }
-    public void UpdateState(Player player)
+    public void UpdateState(StateMachine player)
     {
         if (dialogueRunner.IsDialogueRunning == false)
         {
@@ -110,9 +109,8 @@ public class Talking : MonoBehaviour, PlayerState
         }
 
     }
-    public void OnExit(Player player)
+    public void OnExit(StateMachine player)
     {
-        player.act = ACT.IDLE;
         player.UpdateAct();
     }
 

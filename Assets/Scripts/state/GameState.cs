@@ -1,23 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum GAMESTATE {
-    ACTIVE,
-    PAUSE,
-    CUTSCENE,
-    INVENTORY,
-    MENU,
-    END
-};
-public abstract class GameState : MonoBehaviour
+namespace state
 {
-    public GAMESTATE mode;
-    public Player marji;
-    public StateMachine stateMachine;
-    // Start is called before the first frame update
-    public virtual void Enter() { }
-    public virtual void HandleInput() { }
-    public virtual void LogicUpdate() { }
-    public virtual void PhysicsUpdate() { }
-    public virtual void Exit() { }
+    public enum GAMESTATE_TYPE
+    {
+        PLAYER,
+        NPC,
+        ENEMY
+    };
+    public abstract class GameState : MonoBehaviour
+    {
+        public GAMESTATE_TYPE ver;
+        public int priority;
+        protected GameState()
+        {
+            priority = int.MinValue;
+        }
+        public int Priority { get; protected set; }
+        // Start is called before the first frame update
+        public virtual void Enter() { }
+         public virtual void HandleInput() { }
+         public virtual void LogicUpdate() { }
+         public virtual void PhysicsUpdate() { }
+         public virtual void Exit() { }
+    }
 }

@@ -30,105 +30,37 @@ public class  Player : MonoBehaviour
 {
     public ACT act;
     public DIRECTION dir;
-    public MenuTransition menu;
     public Inventory invo;
-    static Walking walkingState;
-    static Idle idleState;
-    static Interact interactState;
-    public Talking talkingState;
-    public Menu menuState;
+
     public Sprite profile;
-    [SerializeField] private InventoryUI invoUI;
     public Dictionary<string,Sprite> expressions;
     public Sprite[] sitting = new Sprite[3];
     public Sprite[] dirSprites= new Sprite[4];
-    private PlayerState curState = null;
     public SpriteRenderer spriteRender;
     public int speed=4;
     public int sittingTime;
     public Animator player_animator;
     public Rigidbody2D rgb2d;
 
-    // Start is called before the first frame update
     private void Awake()
     {
-        invo = new Inventory();
-        invoUI.setInvo(invo);
-        idleState = new Idle();
+        invo = GlobalData.Instance.playerInvo;
+        
 
         expressions = new Dictionary<string, Sprite>();
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
-
-        walkingState = new Walking();
-        interactState = new Interact();
-        curState = idleState;
-        talkingState.player = this;
     }
-    private void FixedUpdate()
+    public void savePlayer()
     {
-        curState.UpdateState(this);
-    }
-    //handle the change of states
-    void Update() {
-        curState.handleInput(this);
+        GlobalData.Instance.playerInvo = invo;
     }
 
-    //is the bones for handeling the talking event
-    public void isTalking(Npc npc)
-    {
-        act = ACT.TALKING;
-        npc.speak();
-        curState.OnExit(this);
-    }
+    
     //this resets the player state to idle
     public void setIdle()
     {
         act = ACT.IDLE;
-      
-    }
-    public void handleInputNow()
-    {
-        curState.handleInput(this);
-    }
-    /*
-     * this function allows us to change the curAct pointer
-     * to update to its respective PlayerState object 
-     * after we chang the Players ACT Enum
-     */
-    public void UpdateAct()
-    {
-        switch (act)
-        {
-            case ACT.IDLE:
-                curState = idleState;
-                break;
-            case ACT.WALKING:
-                curState = walkingState;
-                player_animator.enabled = true;
-                break;
-            case ACT.TALKING:
-                curState = talkingState;
-                break;
-            case ACT.INTERACTING:
-                curState = interactState;
-                break;
-            case ACT.SITTING:
-                break;
-            case ACT.MENU:
-                menuState.canvas_objct.SetActive(true);
-                menuState.menu_panel.SetActive(true);
-                menuState.isAtMainMenu();
-                menuState.state = MenuState.IDLE;
-                menuState.transition.loadMenu();
-                curState = menuState;
-                break;
-        }
-    }
-    public void ExitStateRightAway()
-    {
-        this.act = ACT.IDLE;
-        curState.OnExit(this);
     }
 
     public Sprite getExpression(string exp)
@@ -138,6 +70,10 @@ public class  Player : MonoBehaviour
         else
             return null;
     }
+    /*  --------------------------------------------------------------------------------
+     * | This is code to set up a "serilizable" dictionary using serializable lists     |
+     *  --------------------------------------------------------------------------------
+     */
     public List<string> _keys = new List<string>();
     public List<Sprite> _values = new List<Sprite>();
     private object idelState;
