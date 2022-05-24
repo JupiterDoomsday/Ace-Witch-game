@@ -1,26 +1,23 @@
 ﻿<Properties StartupConfiguration="{26F11631-FE60-7D0B-FABF-598A1CF42C32}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Quest/QuestSystemUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/state/AutomataStack.cs">
     <Files>
       <File FileName="Assets/Scripts/Npc.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/Inventory/InventoryUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Quest/QuestSystemUI.cs" Line="81" Column="19" />
-      <File FileName="Assets/Scripts/ShopKeeper.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ShopKeeper.cs" />
       <File FileName="Assets/Scripts/Player.cs" />
-      <File FileName="Assets/Scripts/GlobalData.cs" />
-      <File FileName="Assets/Scripts/state/StateMachine.cs" />
-      <File FileName="Assets/Quest/Quest.cs" />
-      <File FileName="Assets/Quest/QuestDatabase.cs" Line="1" Column="1" />
-      <File FileName="Assets/Quest/ScavengerHunt.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/state/Menu.cs" Line="78" Column="51" />
+      <File FileName="Assets/Scripts/state/Menu.cs" />
+      <File FileName="Assets/Scripts/GameData.cs" />
+      <File FileName="Assets/Scripts/editor/NodeEditor.cs" />
+      <File FileName="Assets/Scripts/state/Idle.cs" />
+      <File FileName="Assets/Scripts/state/GameState.cs" />
+      <File FileName="Assets/Scripts/state/AutomataStack.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/state/Pause.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bcaa95f4-9f58-44a3-ba1b-1de3ebcb68a3" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="990020bc-3770-4fb1-ab1a-a7df243ca74b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/CosmicHorror/Desktop/GitRepo/Ace-Witch-game/Assets/Scripts/state/AutomataStack.cs" relfile="Assets/Scripts/state/AutomataStack.cs" line="23" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

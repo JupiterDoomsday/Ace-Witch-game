@@ -5,7 +5,10 @@ using UnityEngine;
 public enum E_STATE
 {
     WALK,
+    ALERT,
+    ALARM,
     SEE,
+    STALK,
     ATTACK
 };
 public class Enemy : MonoBehaviour

@@ -18,6 +18,8 @@ MonoBehaviour:
   - tonic
   - sweet
   - sleepy
+  - diy
+  - classic
   item_name: Witch's Milk
   type: 0
   desc: "A nauseatingly sweet drink that is the favored beverage of fletchings and
