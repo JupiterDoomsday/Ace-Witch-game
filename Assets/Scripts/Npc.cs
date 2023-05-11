@@ -46,6 +46,7 @@ public class Npc : MonoBehaviour
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
     }
+
     public void resetNPCDir(Player marji)
     {
         switch (marji.dir)

@@ -15,6 +15,7 @@ public class Talking : MonoBehaviour, PlayerState
     public Player player;
     public GameObject NPCContainer;
     public AudioSource audioSource;
+    public Owl jatt;
     private Dictionary<string, Npc> actors;
     //private Npc curActor;
     public void Start()
@@ -22,12 +23,19 @@ public class Talking : MonoBehaviour, PlayerState
         //grab all of the npcs contained in the array and add them to our
         actors = new Dictionary<string, Npc>();
         Npc[] npcs = NPCContainer.GetComponentsInChildren<Npc>();
-        foreach(Npc child in npcs)
+        foreach (Npc child in npcs)
         {
-            actors.Add(child.Name.ToLower(),child);
+            actors.Add(child.Name.ToLower(), child);
         }
         dialogueRunner.AddCommandHandler("profile", ShowProfile);
         dialogueRunner.AddCommandHandler("sound", PlayAudio);
+        dialogueRunner.AddCommandHandler("Save", SaveGame);
+    }
+
+    [YarnCommand("Save")]
+    public void SaveGame(string[] save)
+    {
+        jatt.Save();
     }
     
     //this is a custome action in unity that creates the
@@ -76,6 +84,7 @@ public class Talking : MonoBehaviour, PlayerState
         target.SetNativeSize();
         target.enabled = true;
     }
+
     [YarnCommand("sound")]
     public void PlayAudio(string[] str)
     {

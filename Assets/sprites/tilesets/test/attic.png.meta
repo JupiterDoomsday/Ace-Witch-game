@@ -285,7 +285,7 @@ TextureImporter:
       213: -7370750947559411268
     second: attic_93
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -306,6 +306,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -315,8 +316,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -344,6 +345,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -371,6 +373,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2368,6 +2382,101 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      attic_6: 8150596087086783754
+      attic_34: 7482910189769964463
+      attic_15: 2361896044412133831
+      attic_59: -3109456246337401925
+      attic_19: 1209952919986331638
+      attic_14: 6709074603814278215
+      attic_25: 4731083549803940765
+      attic_41: -2101878149306386651
+      attic_78: 5662826682965909256
+      attic_23: -3908229718548317169
+      attic_1: 5677108473813770683
+      attic_32: -1720049375685012819
+      attic_64: 4152776298554761989
+      attic_73: 8258727644869074465
+      attic_70: -6702746751813006542
+      attic_76: 2391618966734753878
+      attic_8: 8465904574594693608
+      attic_67: -6173671738980562744
+      attic_63: -1648296675281210827
+      attic_87: 7831471009638729816
+      attic_88: -1208291022629681772
+      attic_84: 64506769605226925
+      attic_28: -3812417372064557741
+      attic_11: 2046714429726727126
+      attic_71: -1864774623995948911
+      attic_48: 6834947948778256543
+      attic_83: 624742083869749826
+      attic_38: -3565578420409601153
+      attic_20: -6889604025194919957
+      attic_74: -4179085992291155222
+      attic_47: -3811965075068970714
+      attic_50: 967334294597644655
+      attic_57: 1435894431009033406
+      attic_90: 7356100559920686857
+      attic_75: -4645582030897835971
+      attic_61: -8808075681098578934
+      attic_56: 5102084688091756638
+      attic_81: 8913782591891771325
+      attic_54: -4339592485776108267
+      attic_49: 8235026421679134280
+      attic_7: 4468839268882835116
+      attic_68: -6845168847235619164
+      attic_66: -7354149636457744484
+      attic_45: -4378182621900210747
+      attic_0: 2946035868099471240
+      attic_42: -5005541667519867959
+      attic_44: -7334137980831251199
+      attic_40: 510290644232415872
+      attic_18: 5358086579172751331
+      attic_10: -7058826616266099049
+      attic_85: 6359300504272048574
+      attic_24: -6629631650904674315
+      attic_43: 7245902916352462008
+      attic_13: -308917986048169953
+      attic_17: 4064317996648799926
+      attic_72: -4446121189017814607
+      attic_91: -1356123170036791625
+      attic_86: -7428536062226679472
+      attic_12: -2876187688422116964
+      attic_31: -1777870275775811721
+      attic_4: 7266718124573095997
+      attic_22: 5349718477173381099
+      attic_30: -9203984409782774870
+      attic_79: -5955231296381465773
+      attic_36: 154988975440030433
+      attic_26: 4864633277677505681
+      attic_27: 7334537032419188579
+      attic_35: 2088884200186514995
+      attic_29: -8229665421326664974
+      attic_21: -5666734138036243787
+      attic_39: 3730771678576770141
+      attic_52: -4245826694217939805
+      attic_9: -3445181072538251979
+      attic_58: 8914396583093403153
+      attic_69: -5501223667376624193
+      attic_77: -7222644917355075745
+      attic_89: 4371432771833622451
+      attic_37: -4470739838963216667
+      attic_46: -1454174866025825884
+      attic_82: -5630627281124693937
+      attic_92: -7029205238420459580
+      attic_5: -1135022497094144482
+      attic_65: -7732149520453484974
+      attic_16: 2880535600756894088
+      attic_33: -1444912573052915287
+      attic_53: -4300524736328178885
+      attic_60: 9040829467382950062
+      attic_3: -1170389180797795682
+      attic_55: 4520634717394782509
+      attic_62: 393057178063127411
+      attic_93: -7370750947559411268
+      attic_80: 8198693987817993896
+      attic_51: -2273104488282455451
+      attic_2: -7046636332020441860
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
