@@ -22,12 +22,9 @@ MonoBehaviour:
   - classic
   item_name: Witch's Milk
   type: 0
-  desc: "A nauseatingly sweet drink that is the favored beverage of fletchings and
-    hatchlings alike. Created mostly to care for newborns in need of an extra source
-    of magical energy, Witches\u2019 milk tends not to be synthesized by adults unless
-    needed. As such, many young witches find witches milk to be their first alchemical
-    concoction when taking matters into their own hands.\n\nLuckily for most youth,
-    Witches milk can be easily synthesized from nightshade, dandelions, milk weed
-    sap, river water, honey, and sage; all can be found during a quick jaunt in the
-    woods.\n\n\n"
+  desc: '
+
+
+
+'
   icon: {fileID: 21300000, guid: ff357e3b540cc4b39b0e318c4d7ec982, type: 3}

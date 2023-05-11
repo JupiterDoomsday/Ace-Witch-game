@@ -1,29 +1,32 @@
 title: Jatt_Start
 tags: 
 colorID: 0
-position: 900,-1333
+position: 98,-1429
 ---
 <<sound jatt>>
 <<profile jatt left>> 
 <<profile marji right lookat>> 
 Jatt: Hoot hoot!
-[[Talk to me comrade!|convos_choices ]]
+[[Talk to me comrade!|convos_choices]]
 [[I want to save my game|save_game]] 
 [[Give belly rubs|Belly_rubs]]
 ===
 title: Belly_rubs
 tags: 
 colorID: 0
-position: -553,-455
+position: 188,-1065
 ---
-Jatt: You can't save yet!
+Jatt: curses! Some eldritch god has taken away my ability to have belly rubs and I need it back!!
 ===
 title: save_game
 tags: 
 colorID: 0
-position: -489,-176
+position: -83,-1064
 ---
-Jatt: curses! Some eldritch god has taken away my ability to have belly rubs and I need it back!!
+Jatt: Alrighty! Marji!
+Jatt: Are you ready?
+Jatt: Vibe check!
+<<Save>>
 ===
 title: jatt_cnv1_
 tags: 

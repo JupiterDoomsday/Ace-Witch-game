@@ -26,7 +26,7 @@ public enum DIRECTION
     LEFT,
     RIGHT
 };
-public class  Player : MonoBehaviour
+public class  Player : MonoBehaviour, IDataPersistence
 {
     public ACT act;
     public DIRECTION dir;
@@ -44,16 +44,9 @@ public class  Player : MonoBehaviour
 
     private void Awake()
     {
-        invo = GlobalData.Instance.playerInvo;
-        
-
         expressions = new Dictionary<string, Sprite>();
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
-    }
-    public void savePlayer()
-    {
-        GlobalData.Instance.playerInvo = invo;
     }
 
     
@@ -61,6 +54,10 @@ public class  Player : MonoBehaviour
     public void setIdle()
     {
         act = ACT.IDLE;
+    }
+    public void setTalking()
+    {
+        act = ACT.TALKING;
     }
 
     public Sprite getExpression(string exp)
@@ -97,4 +94,16 @@ public class  Player : MonoBehaviour
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
     }
+
+    public void LoadData(GameData data)
+    {
+        Debug.Log("load data");
+        this.transform.position = data.playerPosition;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.playerPosition = this.transform.position;
+    }
+
 }
