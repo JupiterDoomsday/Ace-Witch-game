@@ -9,7 +9,7 @@ using state;
 public class Talking : MonoBehaviour, PlayerState
 {
     public DialogueRunner dialogueRunner;
-    public CustomeDiaUI diaUI;
+    public LineView lineViewer;
     public Image left;
     public Image right;
     public Player player;
@@ -27,9 +27,9 @@ public class Talking : MonoBehaviour, PlayerState
         {
             actors.Add(child.Name.ToLower(), child);
         }
-        dialogueRunner.AddCommandHandler("profile", ShowProfile);
-        dialogueRunner.AddCommandHandler("sound", PlayAudio);
-        dialogueRunner.AddCommandHandler("Save", SaveGame);
+        //dialogueRunner.AddCommandHandler("profile", ShowProfile);
+        //dialogueRunner.AddCommandHandler("sound", PlayAudio);
+        //dialogueRunner.AddCommandHandler("Save", SaveGame);
     }
 
     [YarnCommand("Save")]
@@ -104,9 +104,7 @@ public class Talking : MonoBehaviour, PlayerState
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            //Debug.Log("Pressing x to continue");
-            diaUI.MarkLineComplete();
-            //
+            lineViewer.UserRequestedViewAdvancement();
         }
 
     }
