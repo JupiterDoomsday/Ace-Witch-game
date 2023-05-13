@@ -1,0 +1,287 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.15f1 (e8e88683f834) revision 15263878'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'en' Physical Memory: 32561 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.15f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/PISAces/Documents/github/Ace-Witch-game
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+51055
+Successfully changed project path to: C:/Users/PISAces/Documents/github/Ace-Witch-game
+C:/Users/PISAces/Documents/github/Ace-Witch-game
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [22020] Host "[IP] 192.168.0.10 [Port] 0 [Flags] 2 [Guid] 523147643 [EditorId] 523147643 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-5VL7U15) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [22020] Host "[IP] 192.168.0.10 [Port] 0 [Flags] 2 [Guid] 523147643 [EditorId] 523147643 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-5VL7U15) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 92.31 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.15f1 (e8e88683f834)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/PISAces/Documents/github/Ace-Witch-game/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 (ID=0x2206)
+    Vendor:   NVIDIA
+    VRAM:     10078 MB
+    Driver:   31.0.15.1694
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56016
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.15f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.007816 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 41.90 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.486 seconds
+Domain Reload Profiling:
+	ReloadAssembly (486ms)
+		BeginReloadAssembly (54ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (343ms)
+			LoadAssemblies (53ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (79ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (19ms)
+			SetupLoadedEditorAssemblies (201ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (42ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (109ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.017866 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 40.73 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+Adding registration method Yarn.Unity.Generated.ActionRegistration.RegisterActions
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Yarn.Unity.Actions:AddRegistrationMethod (System.Action`1<Yarn.Unity.IActionRegistration>) (at Library/PackageCache/dev.yarnspinner.unity@5944b0e03d/Runtime/Commands/Actions.cs:606)
+Yarn.Unity.Generated.ActionRegistration:AddRegisterFunction () (at YarnSpinner.Unity.SourceCodeGenerator/ActionRegistrationSourceGenerator/YarnActionRegistration-YarnSpinnerTests.CommandsInAnAssemblyDefinition.Generated.cs:12)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+(Filename: Library/PackageCache/dev.yarnspinner.unity@5944b0e03d/Runtime/Commands/Actions.cs Line: 606)
+
+Adding registration method Yarn.Unity.DefaultActions.RegisterActions
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Yarn.Unity.Actions:AddRegistrationMethod (System.Action`1<Yarn.Unity.IActionRegistration>) (at Library/PackageCache/dev.yarnspinner.unity@5944b0e03d/Runtime/Commands/Actions.cs:606)
+Yarn.Unity.DefaultActions:AddRegisterFunction () (at Library/PackageCache/dev.yarnspinner.unity@5944b0e03d/Runtime/Commands/DefaultActions.cs:18)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+(Filename: Library/PackageCache/dev.yarnspinner.unity@5944b0e03d/Runtime/Commands/Actions.cs Line: 606)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.927 seconds
+Domain Reload Profiling:
+	ReloadAssembly (927ms)
+		BeginReloadAssembly (85ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (745ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (237ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (354ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (41ms)
+				BeforeProcessingInitializeOnLoad (65ms)
+				ProcessInitializeOnLoadAttributes (188ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.97 ms, found 7 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2981 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 121 unused Assets / (59.4 KB). Loaded Objects now: 3358.
+Memory consumption went from 130.5 MB to 130.5 MB.
+Total: 4.188700 ms (FindLiveObjects: 0.232400 ms CreateObjectMapping: 0.074000 ms MarkObjects: 3.738400 ms  DeleteObjects: 0.142900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 15544.708292 seconds.
+  path: Assets/sprites/tilesets/test/attic_81.asset
+  artifactKey: Guid(f987079345cc74b4cb1e3518a773c6c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/tilesets/test/attic_81.asset using Guid(f987079345cc74b4cb1e3518a773c6c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba113ef03356aa579f8995a00047bdee') in 0.074929 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/sprites/tilesets/test/attic_71.asset
+  artifactKey: Guid(de9a352784ff543c5ae22d12351a516c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/tilesets/test/attic_71.asset using Guid(de9a352784ff543c5ae22d12351a516c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97d0d0c0e314a3c8c83ce82f87aa80ba') in 0.012119 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.210431 seconds.
+  path: Assets/sprites/tilesets/test/attic_84.asset
+  artifactKey: Guid(9659892e6ae814bbda007a441c2e235a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/tilesets/test/attic_84.asset using Guid(9659892e6ae814bbda007a441c2e235a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41695a7432d996081c6adfc6cde1858e') in 0.010747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/sprites/tilesets/test/attic_92.asset
+  artifactKey: Guid(8f9b8c769402040a6a5664570f95c154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/tilesets/test/attic_92.asset using Guid(8f9b8c769402040a6a5664570f95c154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a9a02718ff050189cfa698519aaae37') in 0.011196 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/sprites/tilesets/test/attic_93.asset
+  artifactKey: Guid(62e09e820bed946dfb9f95d6a88df5dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/tilesets/test/attic_93.asset using Guid(62e09e820bed946dfb9f95d6a88df5dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b18e04015837ec709415e5247dc810f0') in 0.009843 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/sprites/tilesets/test/attic_91.asset
+  artifactKey: Guid(f1dadbc4cd09a4750b0bf7c3cac2abae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/sprites/tilesets/test/attic_91.asset using Guid(f1dadbc4cd09a4750b0bf7c3cac2abae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5c69fab3d2c0e3ec4e776a08c3dbeb6') in 0.010135 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 86.511424 seconds.
+  path: Assets/YarnScripts/ace_day.yarn
+  artifactKey: Guid(626cf9ce9117742d98e7da4ebf94af38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YarnScripts/ace_day.yarn using Guid(626cf9ce9117742d98e7da4ebf94af38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7df6e9ba5be72aef36977eab0023a6ed') in 0.010178 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 75.248170 seconds.
+  path: Assets/prefabs/Ari.prefab
+  artifactKey: Guid(1e36817c31d494eb69d5f25bdb3b36d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/prefabs/Ari.prefab using Guid(1e36817c31d494eb69d5f25bdb3b36d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ccc6c7a631eed18b1631f7403a669a3') in 0.055124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.300424 seconds.
+  path: Assets/Samples/DialogueRunnerTest.unity
+  artifactKey: Guid(bee12598260d3497eb07355cd41b2821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/DialogueRunnerTest.unity using Guid(bee12598260d3497eb07355cd41b2821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f50494d4d71876c321a2239b30a7036') in 0.007657 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.979741 seconds.
+  path: Assets/Samples/Yarn Spinner
+  artifactKey: Guid(d918b87386b864e3ca65f9367a86c629) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Yarn Spinner using Guid(d918b87386b864e3ca65f9367a86c629) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acac1492634ad481c10ef3fc2113a9b9') in 0.007814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.128939 seconds.
+  path: Packages/dev.yarnspinner.unity
+  artifactKey: Guid(b24d79956c628248aa0d0f55ff9449d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/dev.yarnspinner.unity using Guid(b24d79956c628248aa0d0f55ff9449d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83d5ef8d4a6d5be8f1cecef35968bc61') in 0.007827 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.064481 seconds.
+  path: Packages/dev.yarnspinner.unity/package.json
+  artifactKey: Guid(e6335304c5696c743aedd0a77a6533ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/dev.yarnspinner.unity/package.json using Guid(e6335304c5696c743aedd0a77a6533ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b21751a3f94fa65edbc22b077874b53') in 0.013134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.226538 seconds.
+  path: Packages/dev.yarnspinner.unity/Prefabs
+  artifactKey: Guid(2affbffb26bb7407c9b20ca1ea63bf00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/dev.yarnspinner.unity/Prefabs using Guid(2affbffb26bb7407c9b20ca1ea63bf00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8f697d05b01d219b1358ad6bc7508c8') in 0.007302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.058084 seconds.
+  path: Packages/dev.yarnspinner.unity/Prefabs/Dialogue System.prefab
+  artifactKey: Guid(7f29e5f7ffdea4a6793cefb278b61f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/dev.yarnspinner.unity/Prefabs/Dialogue System.prefab using Guid(7f29e5f7ffdea4a6793cefb278b61f0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1170cb224ab7037bfa2ffbcc66e67fbd') in 0.048112 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Packages/dev.yarnspinner.unity/Prefabs/Option View.prefab
+  artifactKey: Guid(3ff4e0d87ab7d4789a1565ac303e8261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/dev.yarnspinner.unity/Prefabs/Option View.prefab using Guid(3ff4e0d87ab7d4789a1565ac303e8261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04f230120a333961b8bb3c65ba723afb') in 0.029698 seconds 

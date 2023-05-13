@@ -12,7 +12,7 @@ public class Owl : Npc
 
     private void Start()
     {
-        runner.Add(startScript);
+        //runner.Add(startScript);
         expressions = new Dictionary<string, Sprite>();
 
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)

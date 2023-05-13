@@ -31,7 +31,7 @@ public class Npc : MonoBehaviour
     public bool dirMoves = false;
     public string Name;
     public  string startNode;
-    public YarnProgram startScript;
+    public YarnProject startScript;
     public DialogueRunner runner;
     public AudioClip audioSFX;
 
@@ -40,7 +40,7 @@ public class Npc : MonoBehaviour
 
     private void Start()
     {
-        runner.Add(startScript);
+        //runner.Add(startScript);
         expressions = new Dictionary<string, Sprite>();
 
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
