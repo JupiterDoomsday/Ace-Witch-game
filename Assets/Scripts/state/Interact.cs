@@ -45,7 +45,7 @@ public class Interact : PlayerState {
                 case "npc":
                     Debug.Log("You Hit NPC!");
                     Npc target = hit.collider.GetComponentInParent<Npc>();
-                    if (target.startScript != null && target.corespondingDir(player))
+                    if (target.corespondingDir(player))
                     {
                         player.act = ACT.TALKING;
                         mach.UpdateAct();

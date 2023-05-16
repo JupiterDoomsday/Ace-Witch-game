@@ -33,7 +33,7 @@ public class Talking : MonoBehaviour, PlayerState
     }
 
     [YarnCommand("Save")]
-    public void SaveGame(string[] save)
+    public void SaveGame()
     {
         jatt.Save();
     }
@@ -41,42 +41,29 @@ public class Talking : MonoBehaviour, PlayerState
     //this is a custome action in unity that creates the
     //talking settings for the
     [YarnCommand("profile")]
-    public void ShowProfile(string [] profile)
+    public void ShowProfile(string actor, string pos, string emote)
     {
         Sprite witch = null;
         Image target = right;
-        bool hasSprite = actors.ContainsKey(profile[0].ToLower());
+        bool hasSprite = actors.ContainsKey(actor);
         if (hasSprite == false)
         {
-            if(profile[0].Equals("marji"))
+            if(actor.Equals("marji"))
             {
-                Debug.Log("printing out marji");
-                if (profile.Length == 3)
-                {
-                    Debug.Log("Array is 3 printing out " + profile[2]);
-                    witch = player.getExpression(profile[2]);
-                }  
-                else
-                    witch = player.profile;
+               witch = player.getExpression(emote);
             }
             else
                 Debug.Log("ERROR actor doesn't exsist");
         }
         else
         {
-            //this is bad styling, I know, but its 12AM and I'm tired UwU
-            if (profile.Length == 3)
-            {
-                witch = actors[profile[0]].getExpression(profile[2]);
-            }
-            else
-                witch = actors[(profile[0])].Profile;
+            witch = actors[actor].getExpression(emote);
         }
 
         if (witch == null)
             return;
         //check the position you want the player to be in
-        if (profile[1].Equals("left"))
+        if (pos.Equals("left"))
         {
             target = left;
         }
@@ -86,13 +73,13 @@ public class Talking : MonoBehaviour, PlayerState
     }
 
     [YarnCommand("sound")]
-    public void PlayAudio(string[] str)
+    public void PlayAudio(string actor)
     {
         Debug.Log("Finding soundFX");
-        bool hasSprite = actors.ContainsKey(str[0]);
+        bool hasSprite = actors.ContainsKey(actor);
         if (hasSprite == false)
             return;
-        Npc npc = actors[(str[0])];
+        Npc npc = actors[actor];
         if (npc.audioSFX == null)
             return;
         audioSource.PlayOneShot(npc.audioSFX, .9f);
