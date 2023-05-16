@@ -30,8 +30,7 @@ public class Npc : MonoBehaviour
     public Sprite Profile;
     public bool dirMoves = false;
     public string Name;
-    public  string startNode;
-    public YarnProject startScript;
+    public string startNode;
     public DialogueRunner runner;
     public AudioClip audioSFX;
 
