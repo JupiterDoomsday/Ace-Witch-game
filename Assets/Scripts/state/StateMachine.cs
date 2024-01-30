@@ -7,6 +7,7 @@ public class StateMachine : MonoBehaviour
 {
     static Walking walkingState;
     static Idle idleState;
+    public AudioSource footstepsSoundFX;
     [SerializeField] private QuestSystemUI QuestUI;
     [SerializeField] private InventoryUI invoUI;
     private AutomataStack automataStack;
@@ -73,6 +74,7 @@ public class StateMachine : MonoBehaviour
             case ACT.WALKING:
                 curState = walkingState;
                 player.player_animator.enabled = true;
+                footstepsSoundFX.enabled = true;
                 break;
             case ACT.TALKING:
                 curState = talkingState;
