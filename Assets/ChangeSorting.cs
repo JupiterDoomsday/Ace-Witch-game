@@ -28,8 +28,8 @@ public class ChangeSorting : MonoBehaviour
             }
             else
             {
-                layerDest = "foreground";
-                layer.sortingOrder = 0;
+                layerDest = "Fence";
+                layer.sortingOrder = 1;
             }
             layer.sortingLayerID = SortingLayer.NameToID(layerDest);
             for (int i = 0; i < len; i++)
@@ -41,6 +41,7 @@ public class ChangeSorting : MonoBehaviour
 
 
     }
+
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("Player"))

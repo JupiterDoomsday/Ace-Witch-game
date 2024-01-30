@@ -336,7 +336,7 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
--analyzer:"Library/PackageCache/dev.yarnspinner.unity@5944b0e03d/SourceGenerator/YarnSpinner.Unity.SourceCodeGenerator.dll"
+-analyzer:"Library/PackageCache/dev.yarnspinner.unity@1ebd52fe24/SourceGenerator/YarnSpinner.Unity.SourceCodeGenerator.dll"
 "Library/PackageCache/com.unity.collab-proxy@1.17.7/Editor/PlasticSCM/ApplicationDataPath.cs"
 "Library/PackageCache/com.unity.collab-proxy@1.17.7/Editor/PlasticSCM/AssemblyInfo.cs"
 "Library/PackageCache/com.unity.collab-proxy@1.17.7/Editor/PlasticSCM/AssetMenu/AssetFilesFilterPatternsMenuBuilder.cs"

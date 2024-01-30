@@ -69,6 +69,7 @@ public class Walking : PlayerState
         p.player_animator.enabled = false;
         setDirection(p);
         p.setIdle();
+        mach.footstepsSoundFX.enabled = false;
         mach.UpdateAct();
     }
     // Update is called once per frame

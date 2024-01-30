@@ -22,10 +22,16 @@ Library\Bee\artifacts\mvdfrm\Unity.PlasticSCM.Editor.ref.dll_CBF917C274624EE2.mv
 Library\Bee\artifacts\mvdfrm\Unity.Recorder.Base.ref.dll_11FF3DB602B5EFE5.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Recorder.Editor.ref.dll_1ECB8EB8CD389761.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Recorder.ref.dll_87B5BF8DA5743550.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Core.Editor.ref.dll_57B051C6BAF6DF9D.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Core.Runtime.ref.dll_AA9CC9DBDD612E3E.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Core.ShaderLibrary.ref.dll_8EDD8A7C38E993CC.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.ref.dll_4AD9CE269414E4CC.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Rider.Editor.ref.dll_A276D0F1D4D046E3.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Searcher.Editor.ref.dll_188082AF4C893B1A.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Services.Core.Analytics.ref.dll_2B40CF9C4928A9CB.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Services.Core.Environments.ref.dll_4A67E7CED1598121.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Services.Core.ref.dll_359A71A868AEB8A3.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.ShaderGraph.Editor.ref.dll_BF69964832659484.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Subsystem.Registration.ref.dll_D6570EAC50F6C7AA.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Sysroot.Linux_x86_64.ref.dll_9C2BBB459B222BB3.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.SysrootPackage.Editor.ref.dll_E220FD5906D0D598.mvfrm

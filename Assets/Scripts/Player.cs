@@ -99,6 +99,7 @@ public class  Player : MonoBehaviour, IDataPersistence
     {
         Debug.Log("load data");
         this.transform.position = data.playerPosition;
+        this.dir = DIRECTION.UP;
     }
 
     public void SaveData(ref GameData data)
