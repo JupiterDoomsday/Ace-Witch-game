@@ -1,4 +1,4 @@
 payload.tar.7z
 lld
 ArtifactDB
-Library\ArtifactDB
+Library\ArtifactDB*
