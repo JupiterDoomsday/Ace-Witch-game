@@ -1,0 +1,8 @@
+title:start
+position: 390,304
+---
+Dani:Hey sis.
+<<moveActor Walker UP 1>>
+Dani:look at me go!
+<<PlayAndWait Marji throwup 4.1>>
+===
