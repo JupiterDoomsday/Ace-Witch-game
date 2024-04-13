@@ -1,9 +1,0 @@
-﻿{
-  "projectFileVersion": 2,
-  "sourceFiles": [
-    "**/*.yarn"
-  ],
-  "localisation": {},
-  "baseLanguage": "en",
-  "compilerOptions": {}
-}
