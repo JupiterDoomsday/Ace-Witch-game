@@ -5,7 +5,6 @@ using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.UI;
 using state;
-using System;
 
 public class Talking : MonoBehaviour, PlayerState
 {
@@ -18,7 +17,6 @@ public class Talking : MonoBehaviour, PlayerState
     public AudioSource audioSource;
     public Owl jatt;
     private Dictionary<string, Npc> actors;
-
     //private Npc curActor;
     public void Start()
     {
@@ -29,6 +27,9 @@ public class Talking : MonoBehaviour, PlayerState
         {
             actors.Add(child.Name.ToLower(), child);
         }
+        //dialogueRunner.AddCommandHandler("profile", ShowProfile);
+        //dialogueRunner.AddCommandHandler("sound", PlayAudio);
+        //dialogueRunner.AddCommandHandler("Save", SaveGame);
     }
 
     [YarnCommand("Save")]
@@ -36,79 +37,9 @@ public class Talking : MonoBehaviour, PlayerState
     {
         jatt.Save();
     }
-
-    //this is a coroutine for yarnspinner to run
-    [YarnCommand("moveActor")]
-    public static IEnumerator MoveActor(GameObject gameObject, string direction, int amt)
-    {
-        Vector3 moveDir = new Vector3(0,0,0);
-        Npc actor = gameObject.GetComponentInParent<Npc>();
-        if (actor)
-        {
-            switch(direction)
-            {
-                case "UP":
-                    actor.SetNPCDirection(DIRECTION.UP);
-                    moveDir.y = 1;
-                break;
-
-                case "LEFT":
-                actor.SetNPCDirection(DIRECTION.LEFT);
-                    moveDir.x = -1;
-                break;
-
-                case "RIGHT":
-                actor.SetNPCDirection(DIRECTION.RIGHT);
-                    moveDir.x = 1;
-                break;
-
-               case "DOWN":
-                actor.SetNPCDirection(DIRECTION.DOWN);
-                    moveDir.y = -1;
-                break;
-            }
-            Vector3 startPos = gameObject.transform.position;
-            Vector3 finalPos = startPos + (moveDir * amt);
-            float inTime = .8f * amt;
-            float elapsedTime = 0;
-            actor.actor_animator.SetTrigger(direction);
-            while(elapsedTime < inTime)
-            {
-                gameObject.transform.position = Vector3.Lerp(startPos, finalPos, elapsedTime/inTime);
-                elapsedTime += Time.fixedDeltaTime;
-                yield return null;
-            }
-            actor.actor_animator.ResetTrigger(direction);
-        }
-        yield return null;
-    }
-        //this is a custome action in unity that creates the
-        //talking settings for the
-    [YarnCommand("PlayAndWait")]
-    public static IEnumerator MoveActorAndWait(GameObject gameObject, string animation, float duration)
-    {
-        Animator actorAnimator = gameObject.GetComponentInParent<Animator>();
-        if(actorAnimator)
-        {
-            actorAnimator.enabled=true;
-            actorAnimator.SetTrigger(animation);
-            Debug.Log("length of clip "+duration);
-             yield return new WaitForSeconds(duration);
-        }
-         yield return null;
-    }
-
-    [YarnCommand("play")]
-    public void MoveActor(GameObject gameObject, string animation)
-    {
-        Animator actorAnimator = gameObject.GetComponentInParent<Animator>();
-        if(actorAnimator)
-        {
-            actorAnimator.enabled=true;
-            actorAnimator.Play(animation);
-        }
-    }
-
+    
+    //this is a custome action in unity that creates the
+    //talking settings for the
     [YarnCommand("profile")]
     public void ShowProfile(string actor, string pos, string emote)
     {
@@ -172,10 +103,9 @@ public class Talking : MonoBehaviour, PlayerState
         }
 
     }
-    public void OnExit(StateMachine mach)
+    public void OnExit(StateMachine player)
     {
-        mach.player.setIdle();
-        mach.UpdateAct();
+        player.UpdateAct();
     }
 
 

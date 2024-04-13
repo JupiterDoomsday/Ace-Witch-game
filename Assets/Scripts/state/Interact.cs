@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using state;
 using UnityEngine;
 
-public class Interact :  PlayerState 
-{ 
+public class Interact : PlayerState { 
 
-    private GameObject curIteractable;
     private RaycastHit2D hit;
     public float dist = 10f;
 
     public void handleInput(StateMachine mach)
     {
         Player player = mach.player;
-        float axisX = Input.GetAxisRaw("Horizontal");
         switch (player.dir)
         {
             case DIRECTION.UP:
@@ -33,6 +30,7 @@ public class Interact :  PlayerState
 
     public void OnExit(StateMachine player)
     {
+        player.player.setIdle();
         hit = new RaycastHit2D();
         player.UpdateAct();
     }
@@ -46,13 +44,12 @@ public class Interact :  PlayerState
             {
                 case "npc":
                     Debug.Log("You Hit NPC!");
-                    Npc actor = hit.collider.GetComponentInParent<Npc>();
-                    if (actor.corespondingDir(player))
+                    Npc target = hit.collider.GetComponentInParent<Npc>();
+                    if (target.corespondingDir(player))
                     {
-                        Debug.Log("You Hit: " + actor.Name);
                         player.act = ACT.TALKING;
-                        OnExit(mach);
-                        mach.isTalking(actor);
+                        mach.UpdateAct();
+                        mach.isTalking(target);
                         return;
                     }
                     break;
@@ -62,7 +59,7 @@ public class Interact :  PlayerState
                         PickUp pickup = hit.collider.GetComponentInParent<PickUp>();
                         player.invo.AddItem(pickup.item, pickup.amt);
                         pickup.gameObject.SetActive(false);
-                        hit.collider.enabled = false;
+                        //hit.collider.enabled = false;
                     break;
             }
         }

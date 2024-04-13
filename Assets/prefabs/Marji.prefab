@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7047113397129271276}
   - component: {fileID: 7047113397129271267}
   - component: {fileID: 7047113397129271266}
+  - component: {fileID: 7047113397129271265}
   m_Layer: 0
   m_Name: Marji
   m_TagString: Player
@@ -208,3 +209,15 @@ SortingGroup:
   m_SortingLayerID: -1446439295
   m_SortingLayer: 4
   m_SortingOrder: 0
+--- !u!114 &7047113397129271265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7047113397129271273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17be9bf8a0eb4fdd82a40c909da989d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

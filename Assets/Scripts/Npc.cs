@@ -28,12 +28,10 @@ public class Npc : MonoBehaviour
 
     public Dictionary<string,Sprite> expressions;
     public Sprite Profile;
-    private bool dirMoves = false;
-    public int speed;
+    public bool dirMoves = false;
     public string Name;
     public string startNode;
-    //public DialogueRunner runner;
-    public Animator actor_animator;
+    public DialogueRunner runner;
     public AudioClip audioSFX;
 
     //[YarnCommand("facePlayer")]
@@ -41,7 +39,7 @@ public class Npc : MonoBehaviour
 
     private void Start()
     {
-        act = ACT.IDLE;
+        //runner.Add(startScript);
         expressions = new Dictionary<string, Sprite>();
 
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
@@ -67,10 +65,6 @@ public class Npc : MonoBehaviour
 
         }
     }
-    public void SetNPCDirection(DIRECTION direction)
-    {
-        this.dir = direction;
-    }
     public bool corespondingDir(Player marji)
     {
         if (dirMoves)
@@ -93,9 +87,10 @@ public class Npc : MonoBehaviour
                 return false;
         }
     }
-    public string speak()
+
+    public void speak()
     {
-        return startNode;
+        runner.StartDialogue(startNode);
     }
 
     public Sprite getExpression(string exp)
@@ -126,11 +121,6 @@ public class Npc : MonoBehaviour
         expressions = new Dictionary<string, Sprite>();
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
-    }
-
-    public void PlayNPCAnimation(string anim)
-    {
-        actor_animator.SetTrigger(anim);
     }
 
 

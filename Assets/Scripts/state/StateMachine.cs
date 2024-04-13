@@ -32,18 +32,9 @@ public class StateMachine : MonoBehaviour
     //is the bones for handeling the talking event
     public void isTalking(Npc npc)
     {
-        talkingState.dialogueRunner.StartDialogue(npc.speak());
-    }
-
-    public void SetInteractingObject(GameObject curObject)
-    {
-        //curInteractable = curObject;
-    }
-
-    public GameObject GetInteractingObject()
-    {
-        //return curInteractable;
-        return null;
+        player.act = ACT.TALKING;
+        npc.speak();
+        curState.OnExit(this);
     }
 
     private void FixedUpdate()
@@ -92,7 +83,6 @@ public class StateMachine : MonoBehaviour
                 curState = interactState;
                 break;
             case ACT.SITTING:
-            curState = walkingState;
                 break;
             case ACT.MENU:
                 menuState.canvas_objct.SetActive(true);

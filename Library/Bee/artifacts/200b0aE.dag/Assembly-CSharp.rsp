@@ -428,7 +428,6 @@
 "Assets/Scripts/MenuTransition.cs"
 "Assets/Scripts/MeshMath.cs"
 "Assets/Scripts/Npc.cs"
-"Assets/Scripts/NPCMovement.cs"
 "Assets/Scripts/Owl.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/ShopKeeper.cs"

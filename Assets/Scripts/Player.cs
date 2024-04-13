@@ -31,6 +31,7 @@ public class  Player : MonoBehaviour, IDataPersistence
     public ACT act;
     public DIRECTION dir;
     public Inventory invo;
+
     public Sprite profile;
     public Dictionary<string,Sprite> expressions;
     public Sprite[] sitting = new Sprite[3];
@@ -54,13 +55,6 @@ public class  Player : MonoBehaviour, IDataPersistence
     {
         act = ACT.IDLE;
     }
-
-    public void SetSitting()
-    {
-        act = ACT.SITTING;
-        player_animator.SetTrigger("sit");
-    }
-
     public void setTalking()
     {
         act = ACT.TALKING;
@@ -72,11 +66,6 @@ public class  Player : MonoBehaviour, IDataPersistence
             return expressions[exp];
         else
             return null;
-    }
-
-    public void PlayAnimation(string aniState)
-    {
-        player_animator.SetTrigger(aniState);
     }
     /*  --------------------------------------------------------------------------------
      * | This is code to set up a "serilizable" dictionary using serializable lists     |
@@ -117,4 +106,5 @@ public class  Player : MonoBehaviour, IDataPersistence
     {
         data.playerPosition = this.transform.position;
     }
+
 }

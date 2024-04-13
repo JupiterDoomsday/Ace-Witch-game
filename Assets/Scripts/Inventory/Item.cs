@@ -13,7 +13,6 @@ public class Item: ScriptableObject
 {
     public int id;
     public bool tradeable;
-    public bool isPickedUp = false;
     public List<string> wordKeys;
     public string item_name;
     public ITEM_TYPE type;

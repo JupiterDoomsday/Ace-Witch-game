@@ -7,7 +7,6 @@ TagManager:
   - wall
   - npc
   - item
-  - interactable
   layers:
   - Default
   - TransparentFX

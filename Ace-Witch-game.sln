@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnity", "FMODUnity.csproj", "{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{26F11631-FE60-7D0B-FABF-598A1CF42C32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnity", "FMODUnity.csproj", "{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnityResonance", "FMODUnityResonance.csproj", "{A1AB0FB5-904F-692B-5808-8E11CA9C480D}"
 EndProject
@@ -19,14 +19,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}.Release|Any CPU.Build.0 = Release|Any CPU
 		{26F11631-FE60-7D0B-FABF-598A1CF42C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{26F11631-FE60-7D0B-FABF-598A1CF42C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26F11631-FE60-7D0B-FABF-598A1CF42C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26F11631-FE60-7D0B-FABF-598A1CF42C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97CC23AE-F46E-8DFF-181C-8FB0838FCA90}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A1AB0FB5-904F-692B-5808-8E11CA9C480D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A1AB0FB5-904F-692B-5808-8E11CA9C480D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1AB0FB5-904F-692B-5808-8E11CA9C480D}.Release|Any CPU.ActiveCfg = Release|Any CPU
