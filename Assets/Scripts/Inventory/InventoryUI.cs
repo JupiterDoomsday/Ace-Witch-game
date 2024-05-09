@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 public class InventoryUI : MonoBehaviour
 {
-    Inventory player_invo;
+    private Inventory player_invo;
     private GameObject curItem;
     public TextMeshProUGUI inspectName;
     public TextMeshProUGUI inspectdesc;
@@ -14,6 +14,10 @@ public class InventoryUI : MonoBehaviour
     public Menu playerMenuState;
     public Transform popUp;
 
+    public void Start()
+    {
+        //player_invo = GetComponent<Inventory>(Component)
+    }  
     public void setInvo(Inventory i)
     {
         player_invo = i;
@@ -25,47 +29,50 @@ public class InventoryUI : MonoBehaviour
     }
     public void Refresh()
     {
-        foreach(Transform child in itemSlotContainer)
-        {
-            if (child == itemSlotTemplate) continue;
-            Destroy(child.gameObject);
-        }
-        int x = 0;
-        int y = 0;
 
-        float cellSize = 64;
-        foreach(ItemSlot i in player_invo.item_list)
+        if(player_invo != null)
         {
-            RectTransform ItemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
-            ItemSlotRectTransform.gameObject.SetActive(true);
-            ItemSlotRectTransform.anchoredPosition = new Vector2(x * cellSize, y * cellSize);
-            x++;
-            if(x > 4)
+            foreach(Transform child in itemSlotContainer)
             {
-                x = 0;
-                y++;
+                if (child == itemSlotTemplate) continue;
+                Destroy(child.gameObject);
             }
-            PickUp slot = ItemSlotRectTransform.GetComponent<PickUp>();
-            slot.amt = i.amount;
-            slot.item = i.item;
-            Transform item_btn = ItemSlotRectTransform.GetChild(0);
-            Button btn = item_btn.GetComponent<Button>();
-            btn.onClick.AddListener(
-                delegate{
-                    playerMenuState.popUp = this.popUp.gameObject;
-                    setCurItem(ItemSlotRectTransform.gameObject, slot.item);
-                    popUp.gameObject.SetActive(true);
-                    playerMenuState.isAtItemSelected();
-                    deactivateAllItems();
-                });
-            item_btn.GetChild(0).GetComponent<Image>().sprite = i.item.icon;
-            Transform icon = item_btn.GetChild(1);
-            if (i.amount > 1)
-                icon.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.amount.ToString();
-            else
-                icon.gameObject.SetActive(false);
-        }
+            int x = 0;
+            int y = 0;
 
+            float cellSize = 64;
+            foreach(ItemSlot i in player_invo.item_list)
+            {
+                RectTransform ItemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
+                ItemSlotRectTransform.gameObject.SetActive(true);
+                ItemSlotRectTransform.anchoredPosition = new Vector2(x * cellSize, y * cellSize);
+                x++;
+                if(x > 4)
+                {
+                    x = 0;
+                    y++;
+                }
+                PickUp slot = ItemSlotRectTransform.GetComponent<PickUp>();
+                slot.amt = i.amount;
+                slot.item = i.item;
+                Transform item_btn = ItemSlotRectTransform.GetChild(0);
+                Button btn = item_btn.GetComponent<Button>();
+                btn.onClick.AddListener(
+                    delegate{
+                        playerMenuState.popUp = this.popUp.gameObject;
+                        setCurItem(ItemSlotRectTransform.gameObject, slot.item);
+                        popUp.gameObject.SetActive(true);
+                        playerMenuState.isAtItemSelected();
+                        deactivateAllItems();
+                    });
+                item_btn.GetChild(0).GetComponent<Image>().sprite = i.item.icon;
+                Transform icon = item_btn.GetChild(1);
+                if (i.amount > 1)
+                    icon.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.amount.ToString();
+                else
+                    icon.gameObject.SetActive(false);
+            }
+        }
     }
     public void setCurItem(GameObject curItem, Item data)
     {
