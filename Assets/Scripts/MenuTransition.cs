@@ -26,7 +26,7 @@ public class MenuTransition : MonoBehaviour
         transition.enabled = true;
         transition.SetTrigger("menu_down");
         yield return new WaitForSeconds(transitiontime);
-        pos.anchoredPosition = new Vector2(47, -45);
+        pos.anchoredPosition = new Vector2(-250, 3);
         transition.enabled = false;
 
     }

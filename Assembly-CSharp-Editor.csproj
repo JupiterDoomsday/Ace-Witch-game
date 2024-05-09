@@ -59,7 +59,7 @@
     <UnityVersion>2021.3.15f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\PISAces\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\PISAces\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\dev.yarnspinner.unity@1ebd52fe24\SourceGenerator\YarnSpinner.Unity.SourceCodeGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
