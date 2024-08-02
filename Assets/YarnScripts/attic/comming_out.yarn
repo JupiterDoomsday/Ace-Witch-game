@@ -1,0 +1,217 @@
+title: Start
+position: -192,-370
+---
+Marji:Hey bro!
+Dani: Hey.
+-> I have to tell you something
+    <<jump hows_day_been>> 
+-> Naw
+    <<jump quick_end>>
+===
+title: quick_end
+position: -463,-126
+---
+Dani: See you later!
+===
+title: hows_day_been
+position: 59,-369
+---
+Dani: yeah?
+Marji: Um. What'cha doin'?
+Dani: I just woke up.
+Marji: Ha! Me too!
+Dani: Hilarious.
+Dani: In fact, what's even more funny is that you're never up this early.
+Marji:...
+Dani:...
+Dani: Okay, there's either two things happening here–– One. You need help, presumably with a spell. Two. You need help, cause you messed up a spell–
+-> Pft-- I wish!
+    <<jump hdb_resp1>>
+-> I just want you love and support
+    <<jump hbd_resp2>>
+-> Nu-uh!
+    <<jump hbd_resp3>>
+===
+title: hdb_resp1
+position: 333,-361
+---
+Dani: Marji, if you're going to hex someone at least wake me up so I can see the trainwreck!
+Marji: Nah, only to my enemies.
+Dani: Right, this is comming from the witch who walked up to me and said, "I am the mighty Rat Witch give me your pizzas", pulled out a magical recorder, proceeded to summoning an army of rats, lost control of said rat army, and caused a rat infestation throughout town.
+-> Shhhhh! Nobody needs to know!
+    <<jump no_one_knows>>
+-> At least I didn't get banned from a bowling ally!
+    <<jump banned_at_ally>>
+===
+title: hbd_resp2
+position: -199,-156
+---
+Dani : Okay, Get out!
+Dani: I need to sleep for another hour before Gale notices!
+Marji: Wait!
+Dani: What?
+Marji: I mean it!
+Dani: Right, sure you do.
+Marji: For real! Its' super important and I haven't told anyone!
+Marji: so you better like- pinky swear! No fingers crossed!
+Dani: ...
+Dani: You didn't... summon anything ancient? Right?
+(Marji gives a wide grin)
+Marji: Naw!
+Dani: Okay, Good! You know how much I love calculating the non-eclidian geometry for summoning blueprints. Although, predicting the distance and position of elder stars is--
+Marji: AH-HEM! 
+Dani: What? I love math.
+Marji: We're havin' a moment! Can you let me talk!?!
+Dani: No.
+-> (throw your pillow at your brother)
+    <<jump throw_pillow>>
+-> Uh- too bad!
+    <<jump taunt_bro>>
+===
+title: no_one_knows
+position: 694,-189
+---
+Marji: It was an accident! It doesn't count!
+(Dani sprite stares off into the window, lost in thought)
+Dani: I knew I should've just hooked you up with my music seller back in Chicago-- we could've gotten you an enchanted flute instead of that peice of junk at the Wizard Hut!
+(Dani sprite looks back at Marji sprite)
+Dani: Look, I'm not a snitch so live your dreams of being the Rat Witch or whatever. Just do a better job at hidding your mischief!
+(Marji sprite kicks her bed)
+Marji: I DID! cause no one found out! Anyway-- Thats not important! I need to tell you something!
+-> I'm Asexual!
+    <<jump comming_out>>
+-> I don't like people the way others do
+    <<jump comming_outt>>
+===
+title: hbd_resp3
+position: 102,-159
+---
+Dani: Okay. Sure. Then what is it?
+Marji: Weeeeeeell, I'm gonna need ya to pinky swear!
+Dani: Pinky swear? What is this? baby's first summoning ritual?!?
+Marji: Just do the damn pinky swear!
+Dani: Fine.
+Dani: I pinky swear to not tell.
+Marji: Cool! Sooooooo--
+-> I'm Asexual!
+    <<jump comming_out>>
+-> I don't like people the way others do
+    <<jump comming_outt>>
+===
+title: banned_at_ally
+position: 393,-190
+---
+Dani: Yeah! The vending machine ate all my bread crumbs! I'm not walking away from a platter of enchilada's with my name on it!
+Marji: You're banned from the Boueling Yard for a month.
+Dani: That vending machine had an assembly construct attached to it and it still didn't work! They knew the enchantment would kick in if I roughned it up a bit with my bat!
+Marji: damn, you got issues...
+Dani: Well, I FIXED the issue by my own means when the staff FAILED to take action to do anything about it!
+Marji: But WHY'D you bring a bat to a Bowling ally?
+Dani: I told you! In case I got to beat up some fascist! We never know when one's going to pop out!
+Marji: What?
+Dani: Yes! Marji, Nazi's aren't just genocidal losers! They can also be regular people with mundane hobbies, like bowling or video games! We've been over this!
+Marji: I wish you'd beat up nazis with it. That sounds funner!
+Dani: Hey! I have!
+Marji: So you gonna let me talk or what?
+Dani: Oh, by all means sister! Talk away! Its not like we have to-
+-> I'm Asexual!
+    <<jump comming_out>>
+-> I don't like people the way others do
+    <<jump comming_outt>>
+===
+title: comming_out
+position: 419,118
+---
+Dani: You're what?
+Marji: I–
+(Marji looks away distressed)
+Marji: I– uh...
+Dani: Is this a joke?
+(Dani turns his face away)
+Dani: Heh...
+Dani: Hahahahaha
+Marji: No! You're a joke!
+<<jump dani_out>>
+===
+title: comming_outt
+position: 143,216
+---
+Dani: I mean... people get on my nerves too. I don't think its special or anything, though.
+(Marji sprite shakes her head)
+Marji: No! I don't "like" like people!
+Dani: Oh.
+Marji: I-- uh...  Don't like boys...
+Dani: Okay.
+Marji: AND I don't like girls!
+Dani: So what? Are you telling me you're Asexual?
+Marji: Yes!
+Marji: Wait-- huh!?!?
+(show Dani smirk)
+Dani: Well, well, I guess I'm not the only one in this family.
+Marji: Are you fr!?!
+Dani: Yeah.
+(Marji sprite flops to her side)
+Marji: Uuuuuugh! I was scared for NOTHING!
+Dani: Hey Marji.
+<<jump the_end>>
+===
+
+title: the_end
+position: 242,614
+---
+Marji: What?
+(show Dani smile)
+Dani: I'm proud of you! Thanks for sharing this with me.
+Marji: yeah yeah-- I love you too!
+Dani: You know what–– yeah, I love you too.
+(show Marji Happy)
+(show Daniil Happy) 
+===
+title: dani_out
+position: 463,336
+---
+Dani: Woah! Hey! I wasn't laughing at you!
+Dani: I'm laughing because-
+Dani: I'm Asexual too!
+Marji: What.
+Dani: Yeah! I have an asexual pride flag in my room!
+Marji: I'm not allowed in your room...
+Dani: I mean yeah-- but
+(show Marji annoyed)
+Marji: Why didn't you tell me?!?
+(dani sprite shrugs)
+Dani: Because you never asked.
+Marji: OH. MY. GOD.
+(Marji sprite slumps to her side)
+Dani: Oh! By the way, this doen't change anything! You're still not allowed in my room!
+Marji: Didn't even wanna go! It smells like chickens!
+Dani: Hey Sis?
+<<jump the_end>>
+===
+title: taunt_bro
+position: -37,42
+---
+Marji: I'm telling ya anyway!
+(Dani grimaces)
+(Marji smiles)
+Marji: Whatcha gonna do about it? Get up from your comfy lil spot and walk away?
+(Dani squints at Marji)
+Dani: Fine. You win this round sister. What is it?
+-> I'm Asexual!
+    <<jump comming_out>>
+-> I don't like people the way others do
+    <<jump comming_outt>>
+===
+title: throw_pillow
+position: -252,314
+---
+"(Marji throws her pillow at Dani. He immediately recoils. )
+Dani: okay! okay! It was a joke...
+Marji: Damn right it was!
+Marji lets out a sigh
+Marji: So, uh-- I... don't know how to say this but...
+-> I'm Asexual!
+    <<jump comming_out>>
+-> I don't like people the way others do
+    <<jump comming_outt>>
+===
