@@ -34,7 +34,6 @@ public class Npc : MonoBehaviour
     public string startNode;
     //public DialogueRunner runner;
     public Animator actor_animator;
-    public AudioClip audioSFX;
 
     //[YarnCommand("facePlayer")]
     //alows us to change where the npc is facing when talking to the player

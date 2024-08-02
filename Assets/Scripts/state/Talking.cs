@@ -17,6 +17,7 @@ public class Talking : MonoBehaviour, PlayerState
     public GameObject NPCContainer;
     public AudioSource audioSource;
     public Owl jatt;
+    public AudioClip[] textSounds;
     private Dictionary<string, Npc> actors;
 
     //private Npc curActor;
@@ -144,14 +145,18 @@ public class Talking : MonoBehaviour, PlayerState
     [YarnCommand("sound")]
     public void PlayAudio(string actor)
     {
-        Debug.Log("Finding soundFX");
-        bool hasSprite = actors.ContainsKey(actor);
-        if (hasSprite == false)
-            return;
-        Npc npc = actors[actor];
-        if (npc.audioSFX == null)
-            return;
-        audioSource.PlayOneShot(npc.audioSFX, .9f);
+        switch(actor)
+        {
+            case "jatt":
+                audioSource.clip = textSounds[1];
+                break;
+            case "dani":
+                audioSource.clip = textSounds[2];
+                break;
+            default:
+                audioSource.clip = textSounds[0];
+                break;
+        }
     }
 
 
@@ -176,8 +181,10 @@ public class Talking : MonoBehaviour, PlayerState
     {
         left.sprite = null;
         right.sprite = null;
+        audioSource.clip = textSounds[0];
         mach.player.setIdle();
         mach.UpdateAct();
+
     }
 
 
