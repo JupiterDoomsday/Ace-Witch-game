@@ -174,6 +174,8 @@ public class Talking : MonoBehaviour, PlayerState
     }
     public void OnExit(StateMachine mach)
     {
+        left.sprite = null;
+        right.sprite = null;
         mach.player.setIdle();
         mach.UpdateAct();
     }
