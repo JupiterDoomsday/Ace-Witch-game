@@ -1,6 +1,8 @@
 title: Start
 position: -192,-370
 ---
+<<profile GameStateMachine marji right smile>> 
+<<profile GameStateMachine walker left default>> 
 Marji:Hey bro!
 Dani: Hey.
 -> I have to tell you something
@@ -21,9 +23,11 @@ Marji: Um. What'cha doin'?
 Dani: I just woke up.
 Marji: Ha! Me too!
 Dani: Hilarious.
+<<profile GameStateMachine walker left lookaway>>
 Dani: In fact, what's even more funny is that you're never up this early.
 Marji:...
 Dani:...
+<<profile GameStateMachine walker left default>> 
 Dani: Okay, there's either two things happening here–– One. You need help, presumably with a spell. Two. You need help, cause you messed up a spell–
 -> Pft-- I wish!
     <<jump hdb_resp1>>
@@ -37,6 +41,7 @@ position: 333,-361
 ---
 Dani: Marji, if you're going to hex someone at least wake me up so I can see the trainwreck!
 Marji: Nah, only to my enemies.
+<<profile GameStateMachine walker left lookaway>>
 Dani: Right, this is comming from the witch who walked up to me and said, "I am the mighty Rat Witch give me your pizzas", pulled out a magical recorder, proceeded to summoning an army of rats, lost control of said rat army, and caused a rat infestation throughout town.
 -> Shhhhh! Nobody needs to know!
     <<jump no_one_knows>>
@@ -74,7 +79,7 @@ position: 694,-189
 Marji: It was an accident! It doesn't count!
 (Dani sprite stares off into the window, lost in thought)
 Dani: I knew I should've just hooked you up with my music seller back in Chicago-- we could've gotten you an enchanted flute instead of that peice of junk at the Wizard Hut!
-(Dani sprite looks back at Marji sprite)
+<<profile GameStateMachine walker left default>>
 Dani: Look, I'm not a snitch so live your dreams of being the Rat Witch or whatever. Just do a better job at hidding your mischief!
 (Marji sprite kicks her bed)
 Marji: I DID! cause no one found out! Anyway-- Thats not important! I need to tell you something!
@@ -101,6 +106,7 @@ Marji: Cool! Sooooooo--
 title: banned_at_ally
 position: 393,-190
 ---
+<<profile GameStateMachine walker left default>>
 Dani: Yeah! The vending machine ate all my bread crumbs! I'm not walking away from a platter of enchilada's with my name on it!
 Marji: You're banned from the Boueling Yard for a month.
 Dani: That vending machine had an assembly construct attached to it and it still didn't work! They knew the enchantment would kick in if I roughned it up a bit with my bat!
@@ -111,8 +117,10 @@ Dani: I told you! In case I got to beat up some fascist! We never know when one'
 Marji: What?
 Dani: Yes! Marji, Nazi's aren't just genocidal losers! They can also be regular people with mundane hobbies, like bowling or video games! We've been over this!
 Marji: I wish you'd beat up nazis with it. That sounds funner!
+<<profile GameStateMachine walker left grimace>>
 Dani: Hey! I have!
 Marji: So you gonna let me talk or what?
+<<profile GameStateMachine walker left default>>
 Dani: Oh, by all means sister! Talk away! Its not like we have to-
 -> I'm Asexual!
     <<jump comming_out>>
@@ -136,9 +144,11 @@ Marji: No! You're a joke!
 title: comming_outt
 position: 143,216
 ---
+<<profile GameStateMachine walker left lookaway>>
 Dani: I mean... people get on my nerves too. I don't think its special or anything, though.
 (Marji sprite shakes her head)
 Marji: No! I don't "like" like people!
+<<profile GameStateMachine walker left default>>
 Dani: Oh.
 Marji: I-- uh...  Don't like boys...
 Dani: Okay.
@@ -160,7 +170,7 @@ title: the_end
 position: 242,614
 ---
 Marji: What?
-(show Dani smile)
+<<profile GameStateMachine walker left smile>>
 Dani: I'm proud of you! Thanks for sharing this with me.
 Marji: yeah yeah-- I love you too!
 Dani: You know what–– yeah, I love you too.
@@ -192,10 +202,10 @@ title: taunt_bro
 position: -37,42
 ---
 Marji: I'm telling ya anyway!
-(Dani grimaces)
+<<profile GameStateMachine walker left grimace>> 
 (Marji smiles)
 Marji: Whatcha gonna do about it? Get up from your comfy lil spot and walk away?
-(Dani squints at Marji)
+<<profile GameStateMachine walker left default>>
 Dani: Fine. You win this round sister. What is it?
 -> I'm Asexual!
     <<jump comming_out>>
@@ -205,7 +215,7 @@ Dani: Fine. You win this round sister. What is it?
 title: throw_pillow
 position: -252,314
 ---
-"(Marji throws her pillow at Dani. He immediately recoils. )
+(Marji throws her pillow at Dani. He immediately recoils. )
 Dani: okay! okay! It was a joke...
 Marji: Damn right it was!
 Marji lets out a sigh

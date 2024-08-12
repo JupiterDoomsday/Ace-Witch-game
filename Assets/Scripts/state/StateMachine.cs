@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using state;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class StateMachine : MonoBehaviour
 {
     static Walking walkingState;
     static Idle idleState;
+    [SerializeField]
+    private PlayableDirector timeline;
     public AudioSource footstepsSoundFX;
     [SerializeField] private QuestSystemUI QuestUI;
     [SerializeField] private InventoryUI invoUI;
@@ -16,6 +19,7 @@ public class StateMachine : MonoBehaviour
     public Talking talkingState;
     public Menu menuState;
     private PlayerState curState = null;
+    private bool isCutscenePlaying = false;
     public Player player;
 
     public void Start()
@@ -32,8 +36,39 @@ public class StateMachine : MonoBehaviour
     //is the bones for handeling the talking event
     public void isTalking(Npc npc)
     {
-        talkingState.dialogueRunner.StartDialogue(npc.speak());
+        
+        PlayableAsset introCutscene = npc.GetCutscene();
+        if(introCutscene)
+        {
+            timeline.playableAsset = introCutscene;
+            isCutscenePlaying = true;
+            StartCoroutine(Cutscene(npc));
+        }
+        else
+        {
+            talkingState.dialogueRunner.StartDialogue(npc.speak());
+        }
+        
     }
+
+    IEnumerator Cutscene(Npc npc)
+    {
+        timeline.Play();
+        while (isCutscenePlaying)
+        {
+            if (timeline.state == PlayState.Playing)
+            {
+                yield return null;
+            }
+            else
+            {
+                isCutscenePlaying = false;
+                talkingState.dialogueRunner.StartDialogue(npc.speak());
+                yield break;
+            }
+        }
+    }
+
 
     public void SetInteractingObject(GameObject curObject)
     {
@@ -48,17 +83,26 @@ public class StateMachine : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //we want to put a "hold on updating anyting if we have cutscenes;
+        if (isCutscenePlaying)
+            return;
+
         curState.UpdateState(this);
     }
 
     //handle the change of states
     void Update()
     {
+        //we want to put a "hold on updating anyting if we have cutscenes;
+        if (isCutscenePlaying)
+            return;
+
         curState.handleInput(this);
     }
 
     public void handleInputNow()
     {
+
         curState.handleInput(this);
     }
 

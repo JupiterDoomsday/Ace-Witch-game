@@ -17,6 +17,7 @@ public class Talking : MonoBehaviour, PlayerState
     public GameObject NPCContainer;
     public AudioSource audioSource;
     public Owl jatt;
+    public bool isCutsceneAndWait = false;
     public AudioClip[] textSounds;
     private Dictionary<string, Npc> actors;
 
@@ -88,15 +89,16 @@ public class Talking : MonoBehaviour, PlayerState
     [YarnCommand("PlayAndWait")]
     public static IEnumerator MoveActorAndWait(GameObject gameObject, string animation, float duration)
     {
+
         Animator actorAnimator = gameObject.GetComponentInParent<Animator>();
-        if(actorAnimator)
+        if (actorAnimator)
         {
             actorAnimator.enabled=true;
             actorAnimator.SetTrigger(animation);
             Debug.Log("length of clip "+duration);
              yield return new WaitForSeconds(duration);
         }
-         yield return null;
+        yield return null;
     }
 
     [YarnCommand("play")]
@@ -165,6 +167,7 @@ public class Talking : MonoBehaviour, PlayerState
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
+            //audioSource.Play();
             lineViewer.UserRequestedViewAdvancement();
         }
 
@@ -184,7 +187,6 @@ public class Talking : MonoBehaviour, PlayerState
         audioSource.clip = textSounds[0];
         mach.player.setIdle();
         mach.UpdateAct();
-
     }
 
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using state;
+using UnityEngine.Playables;
 //this is an enum that represents the relationship of an NPC and
 public enum SOCIAL_STANDING
 {
@@ -30,6 +31,8 @@ public class Npc : MonoBehaviour
     public Sprite Profile;
     private bool dirMoves = false;
     public int speed;
+    [SerializeField]
+    private PlayableAsset introCutscene;
     public string Name;
     public string startNode;
     //public DialogueRunner runner;
@@ -125,6 +128,12 @@ public class Npc : MonoBehaviour
         expressions = new Dictionary<string, Sprite>();
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
+    }
+
+
+    public PlayableAsset GetCutscene()
+    {
+        return introCutscene;
     }
 
     public void PlayNPCAnimation(string anim)
