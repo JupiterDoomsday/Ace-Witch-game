@@ -32,6 +32,8 @@ public class Npc : MonoBehaviour
     private bool dirMoves = false;
     public int speed;
     [SerializeField]
+    private Sprite[] defaultSprites = new Sprite[1];
+    [SerializeField]
     private PlayableAsset introCutscene;
     public string Name;
     public string startNode;
@@ -44,8 +46,8 @@ public class Npc : MonoBehaviour
     private void Start()
     {
         act = ACT.IDLE;
+        //render.sprite = defaultSprites[0];
         expressions = new Dictionary<string, Sprite>();
-
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
     }
@@ -130,7 +132,17 @@ public class Npc : MonoBehaviour
             expressions.Add(_keys[i], _values[i]);
     }
 
+    public Sprite ChangeDefaultSprite(int i)
+    {
+        if (i >= defaultSprites.Length)
+        {
+            Debug.Log("int is too big for sprite");
+            return null;
+        }
+        Debug.Log("changing render sprite");
 
+        return defaultSprites[i];
+    }
     public PlayableAsset GetCutscene()
     {
         return introCutscene;

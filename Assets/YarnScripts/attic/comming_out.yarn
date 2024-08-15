@@ -20,10 +20,11 @@ position: 59,-369
 ---
 Dani: yeah?
 Marji: Um. What'cha doin'?
-Dani: I just woke up.
-Marji: Ha! Me too!
+Dani: I just woke up and I'm reading a book.
+Marji: Ha! Me too! I mean-- the waking up part, not the book part!
 Dani: Hilarious.
 <<profile GameStateMachine walker left lookaway>>
+<<PlayAndWaitCutscene GameStateMachine 0>>
 Dani: In fact, what's even more funny is that you're never up this early.
 Marji:...
 Dani:...
@@ -52,7 +53,7 @@ title: hbd_resp2
 position: -199,-156
 ---
 Dani : Okay, Get out!
-Dani: I need to sleep for another hour before Gale notices!
+Dani: I'm trying to finish this book before our shift starts!
 Marji: Wait!
 Dani: What?
 Marji: I mean it!

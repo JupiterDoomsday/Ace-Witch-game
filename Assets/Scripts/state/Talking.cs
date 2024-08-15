@@ -5,6 +5,7 @@ using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.UI;
 using state;
+using UnityEngine.Playables;
 using System;
 
 public class Talking : MonoBehaviour, PlayerState
@@ -16,6 +17,10 @@ public class Talking : MonoBehaviour, PlayerState
     public Player player;
     public GameObject NPCContainer;
     public AudioSource audioSource;
+    [SerializeField]
+    private PlayableDirector timeline;
+    [SerializeField]
+    private PlayableAsset[] cutscenes;
     public Owl jatt;
     public bool isCutsceneAndWait = false;
     public AudioClip[] textSounds;
@@ -44,7 +49,7 @@ public class Talking : MonoBehaviour, PlayerState
     public static IEnumerator MoveActor(GameObject gameObject, string direction, int amt)
     {
         Vector3 moveDir = new Vector3(0,0,0);
-        Npc actor = gameObject.GetComponentInParent<Npc>();
+        Npc actor = gameObject.GetComponent<Npc>();
         if (actor)
         {
             switch(direction)
@@ -82,33 +87,42 @@ public class Talking : MonoBehaviour, PlayerState
             }
             actor.actor_animator.ResetTrigger(direction);
         }
-        yield return null;
     }
         //this is a custome action in unity that creates the
         //talking settings for the
-    [YarnCommand("PlayAndWait")]
-    public static IEnumerator MoveActorAndWait(GameObject gameObject, string animation, float duration)
+    [YarnCommand("PlayAndWaitCutscene")]
+    public void PlayAndWaitCutscene(int index)
     {
-
-        Animator actorAnimator = gameObject.GetComponentInParent<Animator>();
-        if (actorAnimator)
-        {
-            actorAnimator.enabled=true;
-            actorAnimator.SetTrigger(animation);
-            Debug.Log("length of clip "+duration);
-             yield return new WaitForSeconds(duration);
-        }
-        yield return null;
+        if (index >= cutscenes.Length)
+            return;
+        isCutsceneAndWait = true;
+        StartCoroutine(PlayCutscene(index));
     }
 
     [YarnCommand("play")]
-    public void MoveActor(GameObject gameObject, string animation)
+    public void PlayAnimation(GameObject gameObject, string animation)
     {
-        Animator actorAnimator = gameObject.GetComponentInParent<Animator>();
+        Animator actorAnimator = gameObject.GetComponent<Animator>();
         if(actorAnimator)
         {
             actorAnimator.enabled=true;
             actorAnimator.Play(animation);
+        }
+    }
+
+    [YarnCommand("cutscene")]
+    IEnumerator PlayCutscene(int i)
+    {
+        if (i >= cutscenes.Length)
+            yield break;
+        timeline.playableAsset = cutscenes[i];
+        timeline.Play();
+        while (isCutsceneAndWait)
+        {
+            if (timeline.state == PlayState.Playing)
+                yield return null;
+            else
+                isCutsceneAndWait = false;
         }
     }
 
@@ -165,6 +179,8 @@ public class Talking : MonoBehaviour, PlayerState
     // Start is called before the first frame update
     public void handleInput(StateMachine player)
     {
+        if (isCutsceneAndWait)
+            return;
         if (Input.GetKeyDown(KeyCode.X))
         {
             //audioSource.Play();
@@ -174,6 +190,9 @@ public class Talking : MonoBehaviour, PlayerState
     }
     public void UpdateState(StateMachine player)
     {
+        if (isCutsceneAndWait)
+            return;
+
         if (dialogueRunner.IsDialogueRunning == false)
         {
             OnExit(player);

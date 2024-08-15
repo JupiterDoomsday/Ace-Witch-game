@@ -440,6 +440,7 @@
 "Assets/Scripts/state/Menu.cs"
 "Assets/Scripts/state/Pause.cs"
 "Assets/Scripts/state/PlayerState.cs"
+"Assets/Scripts/state/Sitting.cs"
 "Assets/Scripts/state/StateMachine.cs"
 "Assets/Scripts/state/Talking.cs"
 "Assets/Scripts/state/Walking.cs"

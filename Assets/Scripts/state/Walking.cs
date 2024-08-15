@@ -14,6 +14,7 @@ public class Walking : PlayerState
         float axisY = Input.GetAxisRaw("Vertical");
         player.player_animator.SetInteger("x", (int)axisX);
         player.player_animator.SetInteger("y", (int)axisY);
+        //if(player.)
         switch(axisX){
             case -1:
                 player.dir = DIRECTION.LEFT;

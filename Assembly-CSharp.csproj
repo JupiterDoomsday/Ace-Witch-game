@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\MenuTransition.cs" />
     <Compile Include="Assets\change_side.cs" />
     <Compile Include="Assets\Scripts\UI\PopUpAnimations.cs" />
+    <Compile Include="Assets\Scripts\state\Sitting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
