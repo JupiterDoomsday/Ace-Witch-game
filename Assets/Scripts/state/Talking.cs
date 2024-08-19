@@ -15,12 +15,15 @@ public class Talking : MonoBehaviour, PlayerState
     public Image left;
     public Image right;
     public Player player;
-    public GameObject NPCContainer;
+    [SerializeField]
+    private GameObject NPCContainer;
     public AudioSource audioSource;
     [SerializeField]
     private PlayableDirector timeline;
     [SerializeField]
     private PlayableAsset[] cutscenes;
+    [SerializeField]
+    private GameObject GameUI;
     public Owl jatt;
     public bool isCutsceneAndWait = false;
     public AudioClip[] textSounds;
@@ -91,12 +94,16 @@ public class Talking : MonoBehaviour, PlayerState
         //this is a custome action in unity that creates the
         //talking settings for the
     [YarnCommand("PlayAndWaitCutscene")]
-    public void PlayAndWaitCutscene(int index)
+    public void PlayAndWaitCutscene(int index, bool hidden)
     {
+        if(hidden)
+        {
+            GameUI.SetActive(false);
+        }
         if (index >= cutscenes.Length)
             return;
         isCutsceneAndWait = true;
-        StartCoroutine(PlayCutscene(index));
+        StartCoroutine(PlayCutscene(index, hidden));
     }
 
     [YarnCommand("play")]
@@ -111,7 +118,7 @@ public class Talking : MonoBehaviour, PlayerState
     }
 
     [YarnCommand("cutscene")]
-    IEnumerator PlayCutscene(int i)
+    IEnumerator PlayCutscene(int i, bool hidden)
     {
         if (i >= cutscenes.Length)
             yield break;
@@ -122,7 +129,13 @@ public class Talking : MonoBehaviour, PlayerState
             if (timeline.state == PlayState.Playing)
                 yield return null;
             else
+            {
+                if(hidden)
+                {
+                    GameUI.SetActive(true);
+                }
                 isCutsceneAndWait = false;
+            }
         }
     }
 

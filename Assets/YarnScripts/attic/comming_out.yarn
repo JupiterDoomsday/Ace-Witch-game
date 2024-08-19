@@ -24,7 +24,7 @@ Dani: I just woke up and I'm reading a book.
 Marji: Ha! Me too! I mean-- the waking up part, not the book part!
 Dani: Hilarious.
 <<profile GameStateMachine walker left lookaway>>
-<<PlayAndWaitCutscene GameStateMachine 0>>
+<<PlayAndWaitCutscene GameStateMachine 0 true>>
 Dani: In fact, what's even more funny is that you're never up this early.
 Marji:...
 Dani:...
