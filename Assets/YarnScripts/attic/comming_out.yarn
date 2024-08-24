@@ -3,15 +3,28 @@ position: -192,-370
 ---
 <<profile GameStateMachine marji right smile>> 
 <<profile GameStateMachine walker left default>> 
+///checks to see if the user has come out as Ace
+<<declare $cameOutAce = false>>
+<<declare $birdBook = false>>
+<<if $cameOutAce is false>>
 Marji:Hey bro!
 Dani: Hey.
 -> I have to tell you something
     <<jump hows_day_been>> 
 -> Naw
     <<jump quick_end>>
+<<elseif $birdBook is false>>
+-> Whatcha reading?
+    <<jump Gleeb>>
+-> Naw
+    <<jump quick_end>>
+<<else>>
+Marji: Sooooo! Did you find that bird?
+Dani: Not yet.
+<<endif>>
 ===
 title: quick_end
-position: -463,-126
+position: -551,-158
 ---
 Dani: See you later!
 ===
@@ -177,6 +190,8 @@ Marji: yeah yeah-- I love you too!
 Dani: You know what–– yeah, I love you too.
 (show Marji Happy)
 (show Daniil Happy) 
+<<set $cameOutAce to true>>
+<<PlayAndWaitCutscene GameStateMachine 1 true>>
 ===
 title: dani_out
 position: 463,336
@@ -226,3 +241,11 @@ Marji: So, uh-- I... don't know how to say this but...
 -> I don't like people the way others do
     <<jump comming_outt>>
 ===
+title: Gleeb
+position: -454,50
+---
+Dani: The Midwest Guide to indentifying Passerines
+Marji: Is that one of your bird books or...
+Dani: Yes, a bird stole my pizza slice yesterday and I need to know who it is...
+<<set $birdBook to true>>
+=== 
