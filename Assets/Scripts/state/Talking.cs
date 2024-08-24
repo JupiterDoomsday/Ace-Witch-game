@@ -11,13 +11,15 @@ using System;
 public class Talking : MonoBehaviour, PlayerState
 {
     public DialogueRunner dialogueRunner;
-    public LineView lineViewer;
+    public CustomLineView lineViewer;
     public Image left;
     public Image right;
     public Player player;
     [SerializeField]
     private GameObject NPCContainer;
     public AudioSource audioSource;
+    [SerializeField]
+    private GameObject textButton;
     [SerializeField]
     private PlayableDirector timeline;
     [SerializeField]
@@ -96,12 +98,12 @@ public class Talking : MonoBehaviour, PlayerState
     [YarnCommand("PlayAndWaitCutscene")]
     public void PlayAndWaitCutscene(int index, bool hidden)
     {
-        if(hidden)
+        if (index >= cutscenes.Length)
+            return;
+        if (hidden)
         {
             GameUI.SetActive(false);
         }
-        if (index >= cutscenes.Length)
-            return;
         isCutsceneAndWait = true;
         StartCoroutine(PlayCutscene(index, hidden));
     }
@@ -196,7 +198,7 @@ public class Talking : MonoBehaviour, PlayerState
             return;
         if (Input.GetKeyDown(KeyCode.X))
         {
-            //audioSource.Play();
+            textButton.SetActive(false);
             lineViewer.UserRequestedViewAdvancement();
         }
 

@@ -188,10 +188,10 @@ Marji: What?
 Dani: I'm proud of you! Thanks for sharing this with me.
 Marji: yeah yeah-- I love you too!
 Dani: You know what–– yeah, I love you too.
+<<PlayAndWaitCutscene GameStateMachine 1 true>>
 (show Marji Happy)
 (show Daniil Happy) 
 <<set $cameOutAce to true>>
-<<PlayAndWaitCutscene GameStateMachine 1 true>>
 ===
 title: dani_out
 position: 463,336

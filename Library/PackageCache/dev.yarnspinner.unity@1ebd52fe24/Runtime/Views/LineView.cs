@@ -147,6 +147,9 @@ namespace Yarn.Unity
         [SerializeField]
         internal UnityEngine.Events.UnityEvent onCharacterTyped;
 
+        [SerializeField]
+        internal UnityEngine.Events.UnityEvent onTextDoneTyping;
+
         /// <summary>
         /// A Unity Event that is called when a pause inside of the typewriter effect occurs.
         /// </summary>
