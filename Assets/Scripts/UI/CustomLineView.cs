@@ -78,6 +78,9 @@ namespace Yarn.Unity
         [SerializeField]
         internal UnityEngine.Events.UnityEvent onTextDoneTyping;
 
+        [SerializeField]
+        internal UnityEngine.Events.UnityEvent OnNextLine;
+
         /// <summary>
         /// A Unity Event that is called when a pause inside of the typewriter effect occurs.
         /// </summary>
@@ -429,6 +432,7 @@ namespace Yarn.Unity
             {
                 // No animation is now running. Signal that we want to
                 // interrupt the line instead.
+                OnNextLine.Invoke();
                 requestInterrupt?.Invoke();
             }
         }

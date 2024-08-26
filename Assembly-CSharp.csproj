@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AI\FieldOfView.cs" />
     <Compile Include="Assets\Scripts\state\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\UI\CustomYarnEffects.cs" />
     <Compile Include="Assets\Scripts\state\GameState.cs" />
     <Compile Include="Assets\Scripts\ShopKeeper.cs" />
     <Compile Include="Assets\Scripts\state\AppUI.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\Scripts\DataPersistence\Data\GameData.cs" />
     <Compile Include="Assets\SwitchExitTransitions.cs" />
     <Compile Include="Assets\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\UI\CustomLineView.cs" />
     <Compile Include="Assets\Scripts\state\Pause.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\DataPrivacyOptInFlow.cs" />
@@ -105,8 +107,6 @@
     <Compile Include="Assets\Scripts\MenuTransition.cs" />
     <Compile Include="Assets\change_side.cs" />
     <Compile Include="Assets\Scripts\UI\PopUpAnimations.cs" />
-    <Compile Include="Assets\Scripts\UI\CustomYarnEffects.cs" />
-    <Compile Include="Assets\Scripts\UI\CustomLineView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
