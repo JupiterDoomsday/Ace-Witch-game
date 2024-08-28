@@ -1,25 +1,25 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: C:/Users/isaai/Documents/GitHub/Ace-Witch-game/Packages/manifest.json
+    m_FilePath: C:/Users/PISAces/Documents/github/Ace-Witch-game/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638581655377275143
+      ticks: 638485908602280793
     m_Hash: 4087473704
   m_LockFileStatus:
-    m_FilePath: C:/Users/isaai/Documents/GitHub/Ace-Witch-game/Packages/packages-lock.json
+    m_FilePath: C:/Users/PISAces/Documents/github/Ace-Witch-game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638581655377288106
+      ticks: 638581690120971337
     m_Hash: 2628699599
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: C:/Users/isaai/Documents/GitHub/Ace-Witch-game/Packages
+m_ProjectPath: C:/Users/PISAces/Documents/github/Ace-Witch-game/Packages
 m_EditorVersion: 2021.3.15f1 (e8e88683f834)
 m_ResolvedPackages:
 - packageId: com.unity.2d.animation@7.0.13
@@ -27,7 +27,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 7.0.13
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.2d.animation@7.0.13
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.2d.animation@7.0.13
   assetPath: Packages/com.unity.2d.animation
   name: com.unity.2d.animation
   displayName: 2D Animation
@@ -237,7 +237,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 5.0.3
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.2d.pixel-perfect@5.0.3
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.2d.pixel-perfect@5.0.3
   assetPath: Packages/com.unity.2d.pixel-perfect
   name: com.unity.2d.pixel-perfect
   displayName: 2D Pixel Perfect
@@ -314,7 +314,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 6.0.6
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.2d.psdimporter@6.0.6
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.2d.psdimporter@6.0.6
   assetPath: Packages/com.unity.2d.psdimporter
   name: com.unity.2d.psdimporter
   displayName: 2D PSD Importer
@@ -476,7 +476,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.2d.sprite@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.2d.sprite@1.0.0
   assetPath: Packages/com.unity.2d.sprite
   name: com.unity.2d.sprite
   displayName: 2D Sprite
@@ -528,7 +528,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 7.0.6
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.2d.spriteshape@7.0.6
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.2d.spriteshape@7.0.6
   assetPath: Packages/com.unity.2d.spriteshape
   name: com.unity.2d.spriteshape
   displayName: 2D SpriteShape
@@ -702,7 +702,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.2d.tilemap@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.2d.tilemap@1.0.0
   assetPath: Packages/com.unity.2d.tilemap
   name: com.unity.2d.tilemap
   displayName: 2D Tilemap Editor
@@ -753,7 +753,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.17.7
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.collab-proxy@1.17.7
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.collab-proxy@1.17.7
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -920,7 +920,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.16
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.ide.rider@3.0.16
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.ide.rider@3.0.16
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -1027,7 +1027,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.22
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.ide.visualstudio@2.0.22
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.ide.visualstudio@2.0.22
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -1115,7 +1115,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.2.5
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.ide.vscode@1.2.5
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.ide.vscode@1.2.5
   assetPath: Packages/com.unity.ide.vscode
   name: com.unity.ide.vscode
   displayName: Visual Studio Code Editor
@@ -1124,7 +1124,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: 
   description: Code editor integration for supporting Visual Studio Code as code
     editor for unity. Adds support for generating csproj files for intellisense purposes,
     auto discovery of installations, etc.
@@ -1159,7 +1159,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637800255360000000
   documentationUrl: 
@@ -1177,7 +1177,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.3
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.recorder@3.0.3
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.recorder@3.0.3
   assetPath: Packages/com.unity.recorder
   name: com.unity.recorder
   displayName: Recorder
@@ -1290,7 +1290,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 12.1.8
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.shadergraph@12.1.8
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.shadergraph@12.1.8
   assetPath: Packages/com.unity.shadergraph
   name: com.unity.shadergraph
   displayName: Shader Graph
@@ -1457,7 +1457,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.1.33
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.test-framework@1.1.33
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.test-framework@1.1.33
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -1591,7 +1591,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.0.6
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.textmeshpro@3.0.6
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.textmeshpro@3.0.6
   assetPath: Packages/com.unity.textmeshpro
   name: com.unity.textmeshpro
   displayName: TextMeshPro
@@ -1778,7 +1778,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.6.4
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.timeline@1.6.4
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.timeline@1.6.4
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1951,7 +1951,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 0.1.20-preview
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.toolchain.macos-x86_64-linux-x86_64@0.1.20-preview
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.toolchain.macos-x86_64-linux-x86_64@0.1.20-preview
   assetPath: Packages/com.unity.toolchain.macos-x86_64-linux-x86_64
   name: com.unity.toolchain.macos-x86_64-linux-x86_64
   displayName: Toolchain MacOS Linux x64
@@ -2063,7 +2063,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.ugui@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.ugui@1.0.0
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -2129,7 +2129,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 4.2.0
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.xr.management@4.2.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.xr.management@4.2.0
   assetPath: Packages/com.unity.xr.management
   name: com.unity.xr.management
   displayName: XR Plugin Management
@@ -2269,7 +2269,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.4.0
   source: 5
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\dev.yarnspinner.unity@1ebd52fe24
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\dev.yarnspinner.unity@1ebd52fe24
   assetPath: Packages/dev.yarnspinner.unity
   name: dev.yarnspinner.unity
   displayName: Yarn Spinner
@@ -2357,7 +2357,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.ai@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.ai@1.0.0
   assetPath: Packages/com.unity.modules.ai
   name: com.unity.modules.ai
   displayName: AI
@@ -2406,7 +2406,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.androidjni@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.androidjni@1.0.0
   assetPath: Packages/com.unity.modules.androidjni
   name: com.unity.modules.androidjni
   displayName: Android JNI
@@ -2454,7 +2454,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.animation@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.animation@1.0.0
   assetPath: Packages/com.unity.modules.animation
   name: com.unity.modules.animation
   displayName: Animation
@@ -2503,7 +2503,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.assetbundle@1.0.0
   assetPath: Packages/com.unity.modules.assetbundle
   name: com.unity.modules.assetbundle
   displayName: Asset Bundle
@@ -2552,7 +2552,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.audio@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.audio@1.0.0
   assetPath: Packages/com.unity.modules.audio
   name: com.unity.modules.audio
   displayName: Audio
@@ -2601,7 +2601,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.cloth@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.cloth@1.0.0
   assetPath: Packages/com.unity.modules.cloth
   name: com.unity.modules.cloth
   displayName: Cloth
@@ -2654,7 +2654,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.director@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.director@1.0.0
   assetPath: Packages/com.unity.modules.director
   name: com.unity.modules.director
   displayName: Director
@@ -2711,7 +2711,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.imageconversion@1.0.0
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
@@ -2761,7 +2761,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.imgui@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.imgui@1.0.0
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -2810,7 +2810,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -2859,7 +2859,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.particlesystem@1.0.0
   assetPath: Packages/com.unity.modules.particlesystem
   name: com.unity.modules.particlesystem
   displayName: Particle System
@@ -2908,7 +2908,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.physics@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.physics@1.0.0
   assetPath: Packages/com.unity.modules.physics
   name: com.unity.modules.physics
   displayName: Physics
@@ -2957,7 +2957,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.physics2d@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.physics2d@1.0.0
   assetPath: Packages/com.unity.modules.physics2d
   name: com.unity.modules.physics2d
   displayName: Physics 2D
@@ -3006,7 +3006,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.screencapture@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.screencapture@1.0.0
   assetPath: Packages/com.unity.modules.screencapture
   name: com.unity.modules.screencapture
   displayName: Screen Capture
@@ -3059,7 +3059,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.terrain@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.terrain@1.0.0
   assetPath: Packages/com.unity.modules.terrain
   name: com.unity.modules.terrain
   displayName: Terrain
@@ -3108,7 +3108,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0
   assetPath: Packages/com.unity.modules.terrainphysics
   name: com.unity.modules.terrainphysics
   displayName: Terrain Physics
@@ -3165,7 +3165,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.tilemap@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.tilemap@1.0.0
   assetPath: Packages/com.unity.modules.tilemap
   name: com.unity.modules.tilemap
   displayName: Tilemap
@@ -3217,7 +3217,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.ui@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.ui@1.0.0
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -3266,7 +3266,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.uielements@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.uielements@1.0.0
   assetPath: Packages/com.unity.modules.uielements
   name: com.unity.modules.uielements
   displayName: UIElements
@@ -3331,7 +3331,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.umbra@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.umbra@1.0.0
   assetPath: Packages/com.unity.modules.umbra
   name: com.unity.modules.umbra
   displayName: Umbra
@@ -3380,7 +3380,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0
   assetPath: Packages/com.unity.modules.unityanalytics
   name: com.unity.modules.unityanalytics
   displayName: Unity Analytics
@@ -3437,7 +3437,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequest
   name: com.unity.modules.unitywebrequest
   displayName: Unity Web Request
@@ -3486,7 +3486,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
   name: com.unity.modules.unitywebrequestassetbundle
   displayName: Unity Web Request Asset Bundle
@@ -3543,7 +3543,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestaudio
   name: com.unity.modules.unitywebrequestaudio
   displayName: Unity Web Request Audio
@@ -3600,7 +3600,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequesttexture
   name: com.unity.modules.unitywebrequesttexture
   displayName: Unity Web Request Texture
@@ -3657,7 +3657,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0
   assetPath: Packages/com.unity.modules.unitywebrequestwww
   name: com.unity.modules.unitywebrequestwww
   displayName: Unity Web Request WWW
@@ -3730,7 +3730,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.vehicles@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.vehicles@1.0.0
   assetPath: Packages/com.unity.modules.vehicles
   name: com.unity.modules.vehicles
   displayName: Vehicles
@@ -3783,7 +3783,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.video@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.video@1.0.0
   assetPath: Packages/com.unity.modules.video
   name: com.unity.modules.video
   displayName: Video
@@ -3844,7 +3844,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.vr@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.vr@1.0.0
   assetPath: Packages/com.unity.modules.vr
   name: com.unity.modules.vr
   displayName: VR
@@ -3907,7 +3907,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.wind@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.wind@1.0.0
   assetPath: Packages/com.unity.modules.wind
   name: com.unity.modules.wind
   displayName: Wind
@@ -3956,7 +3956,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.xr@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.xr@1.0.0
   assetPath: Packages/com.unity.modules.xr
   name: com.unity.modules.xr
   displayName: XR
@@ -4017,7 +4017,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.subsystems@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.subsystems@1.0.0
   assetPath: Packages/com.unity.modules.subsystems
   name: com.unity.modules.subsystems
   displayName: Subsystems
@@ -4070,7 +4070,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.modules.uielementsnative@1.0.0
   assetPath: Packages/com.unity.modules.uielementsnative
   name: com.unity.modules.uielementsnative
   displayName: UIElements Native
@@ -4130,7 +4130,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.1.10
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.xr.legacyinputhelpers@2.1.10
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.xr.legacyinputhelpers@2.1.10
   assetPath: Packages/com.unity.xr.legacyinputhelpers
   name: com.unity.xr.legacyinputhelpers
   displayName: XR Legacy Input Helpers
@@ -4226,7 +4226,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.1.0
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.subsystemregistration@1.1.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.subsystemregistration@1.1.0
   assetPath: Packages/com.unity.subsystemregistration
   name: com.unity.subsystemregistration
   displayName: Subsystem Registration
@@ -4292,7 +4292,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 0.1.19-preview
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.sysroot@0.1.19-preview
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.sysroot@0.1.19-preview
   assetPath: Packages/com.unity.sysroot
   name: com.unity.sysroot
   displayName: Sysroot Base
@@ -4384,7 +4384,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 0.1.14-preview
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.sysroot.linux-x86_64@0.1.14-preview
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.sysroot.linux-x86_64@0.1.14-preview
   assetPath: Packages/com.unity.sysroot.linux-x86_64
   name: com.unity.sysroot.linux-x86_64
   displayName: Sysroot Linux x64
@@ -4475,7 +4475,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.6
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.ext.nunit@1.0.6
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.ext.nunit@1.0.6
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -4540,7 +4540,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 12.1.8
   source: 2
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.render-pipelines.core@12.1.8
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.render-pipelines.core@12.1.8
   assetPath: Packages/com.unity.render-pipelines.core
   name: com.unity.render-pipelines.core
   displayName: Core RP Library
@@ -4708,7 +4708,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 4.9.1
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.searcher@4.9.1
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.searcher@4.9.1
   assetPath: Packages/com.unity.searcher
   name: com.unity.searcher
   displayName: Searcher
@@ -4775,7 +4775,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.6.0
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.services.core@1.6.0
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.services.core@1.6.0
   assetPath: Packages/com.unity.services.core
   name: com.unity.services.core
   displayName: Services Core
@@ -4881,7 +4881,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.6
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.mathematics@1.2.6
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.mathematics@1.2.6
   assetPath: Packages/com.unity.mathematics
   name: com.unity.mathematics
   displayName: Mathematics
@@ -4951,7 +4951,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 5.0.2
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.2d.path@5.0.2
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.2d.path@5.0.2
   assetPath: Packages/com.unity.2d.path
   name: com.unity.2d.path
   displayName: 2D Path
@@ -4960,7 +4960,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 2D
-  type: asset
+  type: 
   description: "2D Path provides tooling to edit shapes (polygons and B\xE9zier splines)
     in EditorWindows and the SceneView."
   status: 0
@@ -5004,7 +5004,7 @@ m_ResolvedPackages:
     isDefault: 1
     capabilities: 7
     configSource: 0
-  hideInEditor: 0
+  hideInEditor: 1
   isAssetStorePackage: 0
   datePublishedTicks: 637817447940000000
   documentationUrl: 
@@ -5022,7 +5022,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 6.0.7
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.2d.common@6.0.7
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.2d.common@6.0.7
   assetPath: Packages/com.unity.2d.common
   name: com.unity.2d.common
   displayName: 2D Common
@@ -5153,7 +5153,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 3.0.2
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2
   assetPath: Packages/com.unity.nuget.newtonsoft-json
   name: com.unity.nuget.newtonsoft-json
   displayName: Newtonsoft Json
@@ -5228,7 +5228,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.6.6
   source: 1
-  resolvedPath: C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\com.unity.burst@1.6.6
+  resolvedPath: C:\Users\PISAces\Documents\github\Ace-Witch-game\Library\PackageCache\com.unity.burst@1.6.6
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
