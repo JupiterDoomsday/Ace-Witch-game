@@ -37,7 +37,7 @@ Dani: I just woke up and I'm reading a book.
 Marji: Ha! Me too! I mean-- the waking up part, not the book part!
 Dani: Hilarious.
 <<profile GameStateMachine walker left lookaway>>
-<<PlayAndWaitCutscene GameStateMachine 0 true>>
+<<playAndWait GameStateMachine walker book_down>>
 Dani: In fact, what's even more funny is that you're never up this early.
 Marji:...
 Dani:...
@@ -188,9 +188,7 @@ Marji: What?
 Dani: I'm proud of you! Thanks for sharing this with me.
 Marji: yeah yeah-- I love you too!
 Dani: You know what–– yeah, I love you too.
-<<PlayAndWaitCutscene GameStateMachine 1 true>>
-(show Marji Happy)
-(show Daniil Happy) 
+<<playAndWait GameStateMachine walker book_up>>
 <<set $cameOutAce to true>>
 ===
 title: dani_out

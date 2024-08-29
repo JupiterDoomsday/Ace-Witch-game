@@ -61,21 +61,25 @@ public class Talking : MonoBehaviour, PlayerState
             {
                 case "UP":
                     actor.SetNPCDirection(DIRECTION.UP);
+                    actor.actor_animator.SetInteger("y", 1);
                     moveDir.y = 1;
                 break;
 
                 case "LEFT":
                 actor.SetNPCDirection(DIRECTION.LEFT);
+                    actor.actor_animator.SetInteger("x", -1);
                     moveDir.x = -1;
                 break;
 
                 case "RIGHT":
                 actor.SetNPCDirection(DIRECTION.RIGHT);
+                    actor.actor_animator.SetInteger("x", 1);
                     moveDir.x = 1;
                 break;
 
                case "DOWN":
                 actor.SetNPCDirection(DIRECTION.DOWN);
+                    actor.actor_animator.SetInteger("y", -1);
                     moveDir.y = -1;
                 break;
             }
@@ -83,14 +87,14 @@ public class Talking : MonoBehaviour, PlayerState
             Vector3 finalPos = startPos + (moveDir * amt);
             float inTime = .8f * amt;
             float elapsedTime = 0;
-            actor.actor_animator.SetTrigger(direction);
             while(elapsedTime < inTime)
             {
                 gameObject.transform.position = Vector3.Lerp(startPos, finalPos, elapsedTime/inTime);
                 elapsedTime += Time.fixedDeltaTime;
                 yield return null;
             }
-            actor.actor_animator.ResetTrigger(direction);
+            actor.actor_animator.SetInteger("y", 0);
+            actor.actor_animator.SetInteger("x", 0);
         }
     }
         //this is a custome action in unity that creates the
@@ -108,7 +112,44 @@ public class Talking : MonoBehaviour, PlayerState
         StartCoroutine(PlayCutscene(index, hidden));
     }
 
-    [YarnCommand("play")]
+    [YarnCommand("playAndWait")]
+    public void PlayAndWait(GameObject gameObject, string anim)
+    {
+        Animator actorAnimator = gameObject.GetComponent<Animator>();
+        if(actorAnimator)
+        {
+            isCutsceneAndWait = true;
+            GameUI.SetActive(false);
+            int hash = Animator.StringToHash("Base Layer." + anim);
+            StartCoroutine(PlayAnimationAndWait(actorAnimator, hash));
+        }
+    }
+
+    IEnumerator PlayAnimationAndWait(Animator actorAnimator, int hash)
+    {
+        actorAnimator.Play(hash);
+        //a flag that lets us know to ignore the "default" state at the start of playing an animtion clip
+        bool hitFrameZero = true; 
+        while (isCutsceneAndWait)
+        {
+            AnimatorStateInfo stateInfo = actorAnimator.GetCurrentAnimatorStateInfo(0);
+            if (stateInfo.fullPathHash == hash || hitFrameZero)
+            {
+                //shut down this flag so we write it to false once
+                if (hitFrameZero) 
+                    hitFrameZero = false;
+                yield return null;
+            }
+            else
+            {
+                GameUI.SetActive(true);
+                isCutsceneAndWait = false;
+                yield break;
+            }
+        }
+    }
+
+  
     public void PlayAnimation(GameObject gameObject, string animation)
     {
         Animator actorAnimator = gameObject.GetComponent<Animator>();

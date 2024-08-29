@@ -2163,7 +2163,6 @@ GameObject:
   - component: {fileID: 476432978}
   - component: {fileID: 476432981}
   - component: {fileID: 476432982}
-  - component: {fileID: 476432983}
   m_Layer: 6
   m_Name: walker
   m_TagString: npc
@@ -2308,7 +2307,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3697676, y: 0.14982152}
+  m_Offset: {x: -0.5940005, y: -0.09855771}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2319,67 +2318,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2619816, y: 2.733541}
+  m_Size: {x: 1.7104474, y: 3.2302995}
   m_EdgeRadius: 0
---- !u!114 &476432983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476432977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 19812b3e066768e4586dce1ae15f447e, type: 2}
-    - {fileID: 11400000, guid: 255a3b39f7f22714fa0672bb7516c638, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 476432979}
-          m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
-          m_MethodName: set_sprite
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1320451494, guid: 6f950f65c0af0d748a6836e8c5c3bf9f,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 680577537}
-          m_TargetAssemblyTypeName: Talking, Assembly-CSharp
-          m_MethodName: Start
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 476432979}
-          m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
-          m_MethodName: set_sprite
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: -1265513341, guid: 6f950f65c0af0d748a6836e8c5c3bf9f,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &496482339
 GameObject:
   m_ObjectHideFlags: 0
@@ -4038,9 +3978,7 @@ MonoBehaviour:
   audioSource: {fileID: 1992624915}
   textButton: {fileID: 1365266885}
   timeline: {fileID: 680577541}
-  cutscenes:
-  - {fileID: 11400000, guid: b89a46f74d8c3224ca87fb27b010e3ea, type: 2}
-  - {fileID: 11400000, guid: 45986ed768018ee468273362e888460e, type: 2}
+  cutscenes: []
   GameUI: {fileID: 35153087}
   jatt: {fileID: 465443351}
   isCutsceneAndWait: 0
@@ -4190,14 +4128,10 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 300883777627112798, guid: b89a46f74d8c3224ca87fb27b010e3ea, type: 2}
-    value: {fileID: 476432978}
-  - key: {fileID: 9176118345088491939, guid: b89a46f74d8c3224ca87fb27b010e3ea, type: 2}
-    value: {fileID: 476432983}
-  - key: {fileID: 9044206078711569429, guid: 45986ed768018ee468273362e888460e, type: 2}
-    value: {fileID: 476432978}
-  - key: {fileID: 236707726546250881, guid: 45986ed768018ee468273362e888460e, type: 2}
-    value: {fileID: 476432983}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - c5248c6777f6f714e9df6e5361c470ef: {fileID: 476432977}
