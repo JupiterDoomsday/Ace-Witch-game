@@ -13,7 +13,7 @@ public class StateMachine : MonoBehaviour
     public AudioSource footstepsSoundFX;
     [SerializeField] private QuestSystemUI QuestUI;
     [SerializeField] private InventoryUI invoUI;
-    private AutomataStack automataStack;
+    //private AutomataStack automataStack;
     // public MenuTransition menu;
     static Interact interactState;
     public Talking talkingState;
@@ -24,12 +24,12 @@ public class StateMachine : MonoBehaviour
 
     public void Start()
     {
-        automataStack = new AutomataStack();
+        //automataStack = new AutomataStack();
         walkingState = new Walking();
         interactState = new Interact();
         idleState = new Idle();
         curState = idleState;
-        talkingState.player = player;
+        //talkingState.player = player;
         invoUI.setInvo(player.invo);
     }
 

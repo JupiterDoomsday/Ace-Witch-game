@@ -34,18 +34,20 @@ position: 59,-369
 Dani: yeah?
 Marji: Um. What'cha doin'?
 Dani: I just woke up and I'm reading a book.
-Marji: Ha! Me too! I mean-- the waking up part, not the book part!
+Marji: Ha! Me too! I mean-- not the book part tho!
 Dani: Hilarious.
 <<profile GameStateMachine walker left lookaway>>
 <<playAndWait GameStateMachine walker book_down>>
 Dani: In fact, what's even more funny is that you're never up this early.
 Marji:...
 Dani:...
+<<moveActor Marji LEFT 3 .8>>
+<<SetDirection GameStateMachine marji RIGHT>>
 <<profile GameStateMachine walker left default>> 
 Dani: Okay, there's either two things happening here–– One. You need help, presumably with a spell. Two. You need help, cause you messed up a spell–
 -> Pft-- I wish!
     <<jump hdb_resp1>>
--> I just want you love and support
+-> I just want your love and support
     <<jump hbd_resp2>>
 -> Nu-uh!
     <<jump hbd_resp3>>
@@ -75,12 +77,11 @@ Marji: For real! Its' super important and I haven't told anyone!
 Marji: so you better like- pinky swear! No fingers crossed!
 Dani: ...
 Dani: You didn't... summon anything ancient? Right?
-(Marji gives a wide grin)
 Marji: Naw!
-Dani: Okay, Good! You know how much I love calculating the non-eclidian geometry for summoning blueprints. Although, predicting the distance and position of elder stars is--
+Dani: Okay, Good! You know how much I love calculating the non-eclidian geometry for summoning blueprints. Although, doing stellar parralax on elder stars is--
 Marji: AH-HEM! 
 Dani: What? I love math.
-Marji: We're havin' a moment! Can you let me talk!?!
+Marji: We're havin' a moment! Can you not ruin it your nerd shit and let me talk!?!
 Dani: No.
 -> (throw your pillow at your brother)
     <<jump throw_pillow>>
@@ -229,7 +230,7 @@ Dani: Fine. You win this round sister. What is it?
 title: throw_pillow
 position: -252,314
 ---
-(Marji throws her pillow at Dani. He immediately recoils. )
+<<PlayAndWaitCutscene GameStateMachine 0 true>>
 Dani: okay! okay! It was a joke...
 Marji: Damn right it was!
 Marji lets out a sigh

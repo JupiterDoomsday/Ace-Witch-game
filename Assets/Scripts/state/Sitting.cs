@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Sitting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    public int sittingTime;
+    private DIRECTION SittingDir;
+    public void handleInput(StateMachine mach)
     {
-        
+        Player player = mach.player;
+        float X = 0;
+        float Y = 0;
+        if (!player.IsSitting())
+        {
+            player.act = ACT.WALKING;
+            return;
+        }
+        switch(SittingDir)
+        {
+            case DIRECTION.DOWN:
+            case DIRECTION.UP:
+                float axisY = Input.GetAxisRaw("Vertical");
+                break;
+            case DIRECTION.LEFT:
+            case DIRECTION.RIGHT:
+                float axisX = Input.GetAxisRaw("Horizontal");
+                break;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }

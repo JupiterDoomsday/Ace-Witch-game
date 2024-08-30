@@ -447,6 +447,7 @@
 "Assets/Scripts/UI/CustomLineView.cs"
 "Assets/Scripts/UI/CustomYarnEffects.cs"
 "Assets/Scripts/UI/PopUpAnimations.cs"
+"Assets/SitOnEvent.cs"
 "Assets/SwitchExitTransitions.cs"
 -langversion:9.0
 

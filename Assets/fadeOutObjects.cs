@@ -36,8 +36,8 @@ public class fadeOutObjects : MonoBehaviour
 
     private void OnDisable()
     {
-        FadeInSwitch.SetActive(true);
         StopAllCoroutines();
+        FadeInSwitch.SetActive(true);
     }
 
     private IEnumerator AlterAlpha(float curFOA, float curFIA, float reqFIAlpha, float reqFOAlpha, float fadeDelay, bool isFadeReverse) 

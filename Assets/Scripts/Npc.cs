@@ -71,6 +71,28 @@ public class Npc : MonoBehaviour
 
         }
     }
+
+    public void SetDirection(string direction)
+    {
+        switch (direction)
+        {
+            case "UP":
+                dir = DIRECTION.UP;            
+                break;
+
+            case "LEFT":
+               dir = DIRECTION.LEFT;
+                break;
+
+            case "RIGHT":
+                dir = DIRECTION.RIGHT;
+                break;
+
+            case "DOWN":
+                dir = DIRECTION.DOWN;
+                break;
+        }
+    }
     public void SetNPCDirection(DIRECTION direction)
     {
         this.dir = direction;

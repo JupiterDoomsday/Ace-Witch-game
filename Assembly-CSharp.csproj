@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\UI\CustomYarnEffects.cs" />
     <Compile Include="Assets\Scripts\state\GameState.cs" />
     <Compile Include="Assets\Scripts\ShopKeeper.cs" />
+    <Compile Include="Assets\SitOnEvent.cs" />
     <Compile Include="Assets\Scripts\state\AppUI.cs" />
     <Compile Include="Assets\Scripts\NPCMovement.cs" />
     <Compile Include="Assets\Scripts\state\Idle.cs" />

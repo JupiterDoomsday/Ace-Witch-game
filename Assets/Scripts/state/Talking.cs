@@ -14,9 +14,11 @@ public class Talking : MonoBehaviour, PlayerState
     public CustomLineView lineViewer;
     public Image left;
     public Image right;
-    public Player player;
+    private Player player;
     [SerializeField]
     private GameObject NPCContainer;
+    [SerializeField]
+    private GameObject playerObject;
     public AudioSource audioSource;
     [SerializeField]
     private GameObject textButton;
@@ -41,6 +43,7 @@ public class Talking : MonoBehaviour, PlayerState
         {
             actors.Add(child.Name.ToLower(), child);
         }
+        player = playerObject.GetComponent<Player>();
     }
 
     [YarnCommand("Save")]
@@ -48,54 +51,75 @@ public class Talking : MonoBehaviour, PlayerState
     {
         jatt.Save();
     }
-
+    [YarnCommand("SetDirection")]
+    public void SetSpriteDirection(string actor, string direction)
+    {
+        Npc npc;
+        if (  actors.TryGetValue(actor.ToLower(), out npc))
+        {
+            npc.SetDirection(direction);
+        }
+        else
+        {
+            player.SetDirection(direction);
+            player.setDirectionSprite();
+        }
+    }
     //this is a coroutine for yarnspinner to run
     [YarnCommand("moveActor")]
-    public static IEnumerator MoveActor(GameObject gameObject, string direction, int amt)
+    public static IEnumerator MoveActor(GameObject gameObject, string direction, int amt, float speed)
     {
-        Vector3 moveDir = new Vector3(0,0,0);
+
         Npc actor = gameObject.GetComponent<Npc>();
+        Player play = gameObject.GetComponent<Player>();
         if (actor)
         {
-            switch(direction)
-            {
-                case "UP":
-                    actor.SetNPCDirection(DIRECTION.UP);
-                    actor.actor_animator.SetInteger("y", 1);
-                    moveDir.y = 1;
-                break;
-
-                case "LEFT":
-                actor.SetNPCDirection(DIRECTION.LEFT);
-                    actor.actor_animator.SetInteger("x", -1);
-                    moveDir.x = -1;
-                break;
-
-                case "RIGHT":
-                actor.SetNPCDirection(DIRECTION.RIGHT);
-                    actor.actor_animator.SetInteger("x", 1);
-                    moveDir.x = 1;
-                break;
-
-               case "DOWN":
-                actor.SetNPCDirection(DIRECTION.DOWN);
-                    actor.actor_animator.SetInteger("y", -1);
-                    moveDir.y = -1;
-                break;
-            }
-            Vector3 startPos = gameObject.transform.position;
-            Vector3 finalPos = startPos + (moveDir * amt);
-            float inTime = .8f * amt;
-            float elapsedTime = 0;
-            while(elapsedTime < inTime)
-            {
-                gameObject.transform.position = Vector3.Lerp(startPos, finalPos, elapsedTime/inTime);
-                elapsedTime += Time.fixedDeltaTime;
-                yield return null;
-            }
-            actor.actor_animator.SetInteger("y", 0);
-            actor.actor_animator.SetInteger("x", 0);
+            actor.SetDirection(direction);
         }
+        else
+        {
+            play.SetDirection(direction);
+        }
+        Vector3 moveDir = new Vector3(0, 0, 0);
+        Animator actorAnimator = gameObject.GetComponent<Animator>();
+        actorAnimator.enabled = true;
+        switch (direction)
+        {
+            case "UP":
+                moveDir.y = -1;
+                actorAnimator.SetInteger("y", 1);
+                break;
+            case "DOWN":
+                moveDir.y = 1;
+                actorAnimator.SetInteger("y", -1);
+                break;
+            case "LEFT":
+                moveDir.x = -1;
+                actorAnimator.SetInteger("x", -1);
+                break;
+            case "RIGHT":
+                moveDir.x = 1;
+                actorAnimator.SetInteger("x", 1);
+                break;
+
+        }
+        Vector3 startPos = gameObject.transform.position;
+        Vector3 finalPos = startPos + (moveDir * amt);
+        float inTime = speed * amt;
+        float elapsedTime = 0;
+        while (elapsedTime < inTime)
+        {
+            gameObject.transform.position = Vector3.Lerp(startPos, finalPos, elapsedTime / inTime);
+            elapsedTime += Time.fixedDeltaTime;
+            yield return null;
+        }
+        actorAnimator.SetInteger("y", 0);
+        actorAnimator.SetInteger("x", 0);
+        if(play)
+        {
+            actorAnimator.enabled = false;
+        }
+
     }
         //this is a custome action in unity that creates the
         //talking settings for the
@@ -109,6 +133,7 @@ public class Talking : MonoBehaviour, PlayerState
             GameUI.SetActive(false);
         }
         isCutsceneAndWait = true;
+        player.player_animator.enabled = true;
         StartCoroutine(PlayCutscene(index, hidden));
     }
 
@@ -144,6 +169,7 @@ public class Talking : MonoBehaviour, PlayerState
             {
                 GameUI.SetActive(true);
                 isCutsceneAndWait = false;
+                player.player_animator.enabled = false;
                 yield break;
             }
         }

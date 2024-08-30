@@ -10,11 +10,16 @@ public class Walking : PlayerState
     public void handleInput(StateMachine mach)
     {
         Player player = mach.player;
+        if(player.IsSitting())
+        {
+            player.act = ACT.SITTING;
+            OnExit(mach);
+            return;
+        }
         float axisX = Input.GetAxisRaw("Horizontal");
         float axisY = Input.GetAxisRaw("Vertical");
         player.player_animator.SetInteger("x", (int)axisX);
         player.player_animator.SetInteger("y", (int)axisY);
-        //if(player.)
         switch(axisX){
             case -1:
                 player.dir = DIRECTION.LEFT;
@@ -39,37 +44,12 @@ public class Walking : PlayerState
         }
 
     }
-
-
-    //this function gets called when the walking animation breaks and we're at the idel state
-    //the play is suposed to be facing the last direction they're facing
-    //set it up in walking state so that this gets called once
-    //instead of being called each frame at the idle state
-    public void setDirection(Player p) {
-        switch (p.dir)
-        {
-            case DIRECTION.LEFT:
-                p.spriteRender.sprite = p.dirSprites[0];
-                break;
-            case DIRECTION.RIGHT:
-                p.spriteRender.sprite = p.dirSprites[1];
-                break;
-            case DIRECTION.UP:
-                p.spriteRender.sprite = p.dirSprites[2];
-                break;
-            case DIRECTION.DOWN:
-                p.spriteRender.sprite = p.dirSprites[3];
-                break;
-        }
- 
-    }
     public void OnExit(StateMachine mach)
     {
         Player p = mach.player;
         p.rgb2d.velocity = Vector2.zero;
         p.player_animator.enabled = false;
-        setDirection(p);
-        p.setIdle();
+        p.setDirectionSprite();
         mach.footstepsSoundFX.enabled = false;
         mach.UpdateAct();
     }
@@ -77,6 +57,8 @@ public class Walking : PlayerState
     public void UpdateState(StateMachine mach)
     {
         Player player = mach.player;
+        if (player.act != ACT.WALKING)
+            return;
         switch (player.dir)
         {
             case DIRECTION.LEFT:
