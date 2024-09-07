@@ -4144,6 +4144,8 @@ PlayableDirector:
     value: {fileID: 841916662}
   - key: {fileID: -3713761914255294347, guid: db49ab039c7d396408042e3c49af4652, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 5422571424661681946, guid: db49ab039c7d396408042e3c49af4652, type: 2}
+    value: {fileID: 1761096607}
   m_ExposedReferences:
     m_References:
     - c5248c6777f6f714e9df6e5361c470ef: {fileID: 476432977}
@@ -4844,7 +4846,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &841916665
@@ -5419,7 +5421,7 @@ MonoBehaviour:
   OnNextLine:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1761096607}
+      - m_Target: {fileID: 1992624915}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -5437,7 +5439,7 @@ MonoBehaviour:
   onPauseEnded:
     m_PersistentCalls:
       m_Calls: []
-  typewriterEffectSpeed: 15
+  typewriterEffectSpeed: 25
   continueButton: {fileID: 0}
   holdTime: 1
   autoAdvance: 0
@@ -8885,7 +8887,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 94e10b5c1ba52e84aaedfbd311083c46, type: 3}
+  m_audioClip: {fileID: 8300000, guid: beedc66b00cd81a40b65a5c8686a5651, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.12
   m_Pitch: 1

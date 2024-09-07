@@ -31,6 +31,8 @@ Dani: See you later!
 title: hows_day_been
 position: 59,-369
 ---
+<<moveActor Marji LEFT 3 .8>>
+<<SetDirection GameStateMachine marji RIGHT>>
 Dani: yeah?
 Marji: Um. What'cha doin'?
 Dani: I just woke up and I'm reading a book.
@@ -41,8 +43,6 @@ Dani: Hilarious.
 Dani: In fact, what's even more funny is that you're never up this early.
 Marji:...
 Dani:...
-<<moveActor Marji LEFT 3 .8>>
-<<SetDirection GameStateMachine marji RIGHT>>
 <<profile GameStateMachine walker left default>> 
 Dani: Okay, there's either two things happening here–– One. You need help, presumably with a spell. Two. You need help, cause you messed up a spell–
 -> Pft-- I wish!
@@ -81,7 +81,7 @@ Marji: Naw!
 Dani: Okay, Good! You know how much I love calculating the non-eclidian geometry for summoning blueprints. Although, doing stellar parralax on elder stars is--
 Marji: AH-HEM! 
 Dani: What? I love math.
-Marji: We're havin' a moment! Can you not ruin it your nerd shit and let me talk!?!
+Marji: We're havin' a moment! Can you not ruin it with your nerd shit and let me talk!?!
 Dani: No.
 -> (throw your pillow at your brother)
     <<jump throw_pillow>>
