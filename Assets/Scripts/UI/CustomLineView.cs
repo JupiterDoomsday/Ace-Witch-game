@@ -41,6 +41,16 @@ namespace Yarn.Unity
         [SerializeField] internal GameObject characterNameContainer = null;
 
         /// <summary>
+        /// UI asset that will show who it "Talking" in the conversation
+        /// </summary>
+        [SerializeField]
+        internal GameObject textBoxTail = null;
+        [SerializeField]
+        internal GameObject left =null;
+        [SerializeField]
+        internal GameObject right = null;
+
+        /// <summary>
         /// Controls whether the text of <see cref="lineText"/> should be
         /// gradually revealed over time.
         /// </summary>
@@ -289,12 +299,28 @@ namespace Yarn.Unity
                     if (string.IsNullOrWhiteSpace(dialogueLine.CharacterName))
                     {
                         characterNameContainer.SetActive(false);
+                        textBoxTail.SetActive(false);
                     }
                     else
                     {
                         // we have a character name text view, show the character name
                         characterNameText.text = dialogueLine.CharacterName;
                         characterNameContainer.SetActive(true);
+                        if(left.activeSelf || right.activeSelf)
+                        {
+                            //custom text to show case the text box tail on the correct side
+                            if (dialogueLine.CharacterName.ToLower() == "marji")
+                            {
+                                textBoxTail.transform.localPosition =  new Vector3(-133, -79, 0);
+                                textBoxTail.transform.localRotation = Quaternion.Euler(0, 180, 0);
+                            }
+                            else
+                            {
+                                textBoxTail.transform.localPosition = new Vector3(-323.2f, -79, 0);
+                                textBoxTail.transform.localRotation =  Quaternion.Euler(0, 0, 0);
+                            }
+                            textBoxTail.SetActive(true);
+                        }
                     }
                 }
                 else
