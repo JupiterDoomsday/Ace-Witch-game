@@ -18,6 +18,8 @@ public class Talking : MonoBehaviour, PlayerState
     [SerializeField]
     private GameObject NPCContainer;
     [SerializeField]
+    private GameObject PictureContainer;
+    [SerializeField]
     private GameObject playerObject;
     public AudioSource audioSource;
     [SerializeField]
@@ -30,7 +32,6 @@ public class Talking : MonoBehaviour, PlayerState
     private GameObject GameUI;
     public Owl jatt;
     public bool isCutsceneAndWait = false;
-    public AudioClip[] textSounds;
     private Dictionary<string, Npc> actors;
 
     //private Npc curActor;
@@ -51,6 +52,26 @@ public class Talking : MonoBehaviour, PlayerState
     {
         jatt.Save();
     }
+    [YarnCommand("clearProfile")]
+    public void ClearSprite(int side)
+    {
+        switch(side)
+        {
+            case 0:
+                left.enabled = false;
+                break;
+            case 1:
+                right.enabled = false;
+                break;
+            case 2:
+                left.enabled = false;
+                right.enabled = false;
+                break;
+            default:
+                break;
+        }
+    }
+
     [YarnCommand("SetDirection")]
     public void SetSpriteDirection(string actor, string direction)
     {
@@ -209,52 +230,38 @@ public class Talking : MonoBehaviour, PlayerState
     }
 
     [YarnCommand("profile")]
-    public void ShowProfile(string actor, string pos, string emote)
+    public void ShowProfile(string actor,  string emote)
     {
         Sprite witch = null;
         Image target = right;
-        bool hasSprite = actors.ContainsKey(actor);
-        if (hasSprite == false)
+        if (actors.ContainsKey(actor))
         {
-            if(actor.Equals("marji"))
+            witch = actors[actor].getExpression(emote);
+            target = left;
+        }
+        else
+        {
+            if (actor.Equals("marji"))
             {
-               witch = player.getExpression(emote);
+                witch = player.getExpression(emote);
             }
             else
                 Debug.Log("ERROR actor doesn't exsist");
         }
-        else
-        {
-            witch = actors[actor].getExpression(emote);
-        }
 
         if (witch == null)
             return;
-        //check the position you want the player to be in
-        if (pos.Equals("left"))
-        {
-            target = left;
-        }
         target.sprite = witch;
         target.SetNativeSize();
         target.enabled = true;
     }
 
-    [YarnCommand("sound")]
-    public void PlayAudio(string actor)
+    [YarnCommand("showImage")]
+    public void ShowImage(bool enable, bool hideProfile)
     {
-        switch(actor)
-        {
-            case "jatt":
-                audioSource.clip = textSounds[1];
-                break;
-            case "dani":
-                audioSource.clip = textSounds[2];
-                break;
-            default:
-                audioSource.clip = textSounds[0];
-                break;
-        }
+        if (hideProfile)
+            ClearSprite(2);
+        PictureContainer.SetActive(enable);
     }
 
 
@@ -285,7 +292,6 @@ public class Talking : MonoBehaviour, PlayerState
     {
         left.sprite = null;
         right.sprite = null;
-        audioSource.clip = textSounds[0];
         mach.player.setIdle();
         mach.UpdateAct();
     }

@@ -18,6 +18,7 @@ public class StateMachine : MonoBehaviour
     static Interact interactState;
     public Talking talkingState;
     public Menu menuState;
+    private Sitting sitState = null;
     private PlayerState curState = null;
     private bool isCutscenePlaying = false;
     public Player player;
@@ -28,6 +29,7 @@ public class StateMachine : MonoBehaviour
         walkingState = new Walking();
         interactState = new Interact();
         idleState = new Idle();
+        sitState = new Sitting();
         curState = idleState;
         //talkingState.player = player;
         invoUI.setInvo(player.invo);
@@ -136,7 +138,7 @@ public class StateMachine : MonoBehaviour
                 curState = interactState;
                 break;
             case ACT.SITTING:
-            curState = walkingState;
+                curState = sitState;
                 break;
             case ACT.MENU:
                 menuState.canvas_objct.SetActive(true);

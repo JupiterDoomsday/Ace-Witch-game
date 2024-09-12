@@ -46,9 +46,9 @@ namespace Yarn.Unity
         [SerializeField]
         internal GameObject textBoxTail = null;
         [SerializeField]
-        internal GameObject left =null;
+        internal Image left =null;
         [SerializeField]
-        internal GameObject right = null;
+        internal Image right = null;
 
         /// <summary>
         /// Controls whether the text of <see cref="lineText"/> should be
@@ -306,17 +306,17 @@ namespace Yarn.Unity
                         // we have a character name text view, show the character name
                         characterNameText.text = dialogueLine.CharacterName;
                         characterNameContainer.SetActive(true);
-                        if(left.activeSelf || right.activeSelf)
+                        if(left.enabled || right.enabled)
                         {
                             //custom text to show case the text box tail on the correct side
                             if (dialogueLine.CharacterName.ToLower() == "marji")
                             {
-                                textBoxTail.transform.localPosition =  new Vector3(-133, -79, 0);
+                                textBoxTail.transform.localPosition =  new Vector3(-133, -100, 0);
                                 textBoxTail.transform.localRotation = Quaternion.Euler(0, 180, 0);
                             }
                             else
                             {
-                                textBoxTail.transform.localPosition = new Vector3(-323.2f, -79, 0);
+                                textBoxTail.transform.localPosition = new Vector3(-343, -100, 0);
                                 textBoxTail.transform.localRotation =  Quaternion.Euler(0, 0, 0);
                             }
                             textBoxTail.SetActive(true);

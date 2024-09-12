@@ -4,8 +4,8 @@ colorID: 0
 position: 80,-1454
 ---
 <<sound GameStateMachine jatt>>
-<<profile GameStateMachine jatt left default>> 
-<<profile GameStateMachine marji right lookat>> 
+<<profile GameStateMachine jatt default>> 
+<<profile GameStateMachine marji lookat>> 
 Jatt: Hoot hoot! #line:0ae0914 
 // Option "Talk to me comrade!" moved to the end of this node
 // Option "I want to save my game" moved to the end of this node 
@@ -41,9 +41,7 @@ colorID: 0
 position: 1664,-401
 ---
 Jatt: ... #line:0eb7df2 
-<<sound GameStateMachine default>>
 Marji: ... #line:0409eb6 
-<<sound GameStateMachine jatt>>
 Jatt: ... #line:0abe7b2 
 Jatt: Am I supposed to say something or what? #line:0f2aef3 
 // Option " Yes" moved to the end of this node
@@ -76,19 +74,15 @@ colorID: 0
 position: 2465,329
 ---
 Jatt: Well now I feel like it cause you told me not to! #line:0ca6ded 
-<<sound GameStateMachine default>>
 Marji: I didn't say– #line:02c7fb9 
-<<profile GameStateMachine marji right default>> 
+<<profile GameStateMachine marji default>> 
 Marji: Jeeze, Jatt... Can't you just...  #line:0b4055f 
 Marji: chill? #line:0044687 
-<<profile GameStateMachine jatt left mad>>
-<<sound GameStateMachine jatt>>
+<<profile GameStateMachine jatt mad>>
 Jatt: One does not chill while surviving under capitalism. #line:09318b3 
-<<sound GameStateMachine default>>
 Marji: ... #line:019f015 
 Marji: You really are my brothers familiar #line:0f807ca 
-<<profile GameStateMachine jatt left happy>> 
-<<sound GameStateMachine jatt>>
+<<profile GameStateMachine jatt happy>> 
 Jatt: Damn right I am!!! #line:060ea74 
 ===
 title: convos_choices
