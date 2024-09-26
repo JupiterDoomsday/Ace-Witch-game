@@ -42,7 +42,7 @@ Dani: Hilarious.
 <<profile GameStateMachine walker lookaway>>
 <<playAndWait GameStateMachine walker book_down>>
 Dani: In fact, what's even more funny is you're never up this early.
-<<profile GameStateMachine marji default>> 
+<<profile GameStateMachine marji stressed>> 
 Marji:...
 Dani:...
 <<profile GameStateMachine walker default>> 
@@ -58,11 +58,11 @@ title: hdb_resp1
 position: 333,-361
 ---
 Dani: Marji, if you're going to hex someone at least wake me up so I can see the trainwreck!
-<<profile GameStateMachine marji irritated>> 
+<<profile GameStateMachine marji smile>> 
 Marji: Naw, only to my enemies.
-<<profile GameStateMachine walker lookaway>>
-<<profile GameStateMachine marji default>> 
-Dani: Right, this is comming from the witch who walked up to me and said, "I'm the mighty Rat Witch give me your pizzas", pulled out a magical recorder, proceeded to summoning an army of rats, lost control of said rat army, and caused a rat infestation throughout town.
+<<profile GameStateMachine walker sus>>
+<<profile GameStateMachine marji stressed>>
+Dani: Right, this is coming from the witch who walked up to me and said, "I'm the mighty Rat Witch give me your pizzas", pulled out a magical recorder, proceeded to summon an army of rats, lost control of said rat army, and caused a rat infestation throughout town.
 -> Shhhhh! Nobody needs to know!
     <<jump no_one_knows>>
 -> At least I didn't get banned from a bowling ally!
@@ -87,13 +87,12 @@ Marji: Naw!
 <<profile GameStateMachine walker hyper>>
 <<profile GameStateMachine marji lookat>>
 Dani: Okay, Good! You know how much I love calculating the non-eclidian geometry for summoning blueprints. Although, doing stellar parralax on elder stars is-
-<<profile GameStateMachine marji irritated>>
 Marji: AH-HEM! 
-<<profile GameStateMachine walker default>>
-Dani: What? I love math!
-<<profile GameStateMachine marji default>>
-Marji: Bro! Let me talk!
 <<profile GameStateMachine walker lookaway>>
+Dani: What? I love math!
+<<profile GameStateMachine marji irritated>>
+Marji: Bro! Let me talk!
+<<profile GameStateMachine walker default>>
 Dani: No.
 -> (throw your pillow at your brother)
     <<jump throw_pillow>>
@@ -107,9 +106,9 @@ Marji: It was an accident! That doesn't count!
 (Dani sprite stares off into the window, lost in thought)
 Dani: I knew I should've just hooked you up with my music seller back in Chicago-- we could've gotten you an enchanted flute instead of that peice of junk at the Wizard Hut!
 <<profile GameStateMachine walker default>>
-Dani: Look, I'm not a snitch so live your dreams of being the "rat witch" or whatever. Just do a better job at your pranks!
+Dani: Look, I'm not a snitch so live your dreams of being the "rat witch" or whatever. Just do a better job at your pranks and don't get caught!
 (Marji sprite kicks her bed)
-Marji: I DID! No one found out! Anyway, Thats not important! cause...
+Marji: I DID! No one found out! UGH! Let me talk! I need to tell you that-
 -> I'm Asexual!
     <<jump comming_out>>
 -> I don't like people the way others do
@@ -137,10 +136,12 @@ position: 393,-190
 ---
 <<profile GameStateMachine walker default>>
 Dani: Yeah! The vending machine ate all my bread crumbs! I'm not walking away from a platter of enchilada's with my name on it!
-Marji: You got banned for a month!
+<<profile GameStateMachine marji irritated>>
+Marji: You got banned from the Bouleling Yard for a month!
 Dani: That vending machine had an assembly construct attached to it and still didn't work! They knew the enchantment would kick in if I roughned it up a bit with my bat!
 Marji: WHY did you have a bat at a Bowling ally?!?
 Dani: I told you! In case I got to beat up fascists! You never know when one is going to pop out!
+<<profile GameStateMachine marji default>>
 Marji: What?!?
 Dani: Yes! Marji, Nazi's aren't just genocidal losers! They can have mundane hobbies, like bowling or video games! We've been over this!
 Marji: I wish you'd beat some up. That sounds funner!
@@ -149,7 +150,7 @@ Dani: Hey! I HAVE!
 <<clearProfile GameStateMachine 2>>
 Marji: (damn, you got issues...)
 <<profile GameStateMachine walker grimace>>
-<<profile GameStateMachine marji default>>
+<<profile GameStateMachine marji lookat>>
 Marji: So you gonna let me talk or what?
 Dani: Oh, by all means sister, Talk away! Its not like we have to-
 -> I'm Asexual!
@@ -183,12 +184,15 @@ Dani: Oh.
 Marji: I-- uh... Don't like boys...
 Dani: Okay.
 Marji: AAAAND I don't like girls!
+<<profile GameStateMachine walker sus>>
 Dani: So what? Are you telling me you're Asexual?
 Marji: Yes!
 Marji: Wait-- huh!?!?
 (show Dani smirk)
+<<profile GameStateMachine walker lookaway>>
 Dani: Well, well, I guess I'm not the only one in this family.
 Marji: Are you for real!?!
+<<profile GameStateMachine walker default>>
 Dani: Yeah.
 (Marji sprite flops to her side)
 Marji: Uuuuuugh! I was scared for NOTHING!
@@ -249,6 +253,7 @@ position: -252,314
 ---
 <<PlayAndWaitCutscene GameStateMachine 0 true>>
 Dani: okay! okay! It was a joke...
+<<profile GameStateMachine marji default>> 
 Marji: Damn right it was!
 Marji: *Sigh* So, uh--
 -> I'm Asexual!
