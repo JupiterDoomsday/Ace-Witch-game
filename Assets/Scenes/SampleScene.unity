@@ -1490,8 +1490,8 @@ GameObject:
   - component: {fileID: 454749186}
   - component: {fileID: 454749188}
   - component: {fileID: 454749187}
-  - component: {fileID: 454749190}
   - component: {fileID: 454749189}
+  - component: {fileID: 454749190}
   m_Layer: 1
   m_Name: beds
   m_TagString: wall
@@ -1864,8 +1864,10 @@ EdgeCollider2D:
   m_Points:
   - {x: 3.2329922, y: 5.484571}
   - {x: 3.2187834, y: 6.8600163}
-  - {x: 4.002491, y: 6.830732}
-  - {x: 4.009029, y: 4.9860415}
+  - {x: 3.6898541, y: 6.900207}
+  - {x: 3.6934428, y: 5.9569554}
+  - {x: 3.6616545, y: 5.1249914}
+  - {x: 3.9528759, y: 5.0692143}
   - {x: 4.000777, y: 3.995051}
   - {x: 3.9672751, y: 3.0122998}
   - {x: 3.233519, y: 2.9821465}
@@ -1874,8 +1876,8 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!61 &454749190
-BoxCollider2D:
+--- !u!68 &454749190
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1887,19 +1889,19 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.2607193, y: 3.773781}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.4785614, y: 6.5115914}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -2.0514283, y: 0.5199254}
+  - {x: -2.0594685, y: 3.143248}
+  - {x: -3.038273, y: 3.1391795}
+  - {x: -3.0320654, y: 5.458049}
+  - {x: -2.0429316, y: 5.4603715}
+  - {x: -2.0454144, y: 6.9874206}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &465443345
 GameObject:
   m_ObjectHideFlags: 0
@@ -8776,7 +8778,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.39812207, y: 0.09979081}
+  m_Offset: {x: 0.39812207, y: 0.48177743}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8787,7 +8789,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90785265, y: 3.075129}
+  m_Size: {x: 0.90785265, y: 2.3111558}
   m_EdgeRadius: 0
 --- !u!114 &1847160540
 MonoBehaviour:

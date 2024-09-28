@@ -17,13 +17,38 @@ public class SitOnEvent : MonoBehaviour
         marji = player.GetComponent<Player>();
     }
 
+    DIRECTION GetSitPosition()
+    {
+        switch(reqDir)
+        {
+            case DIRECTION.UP:
+                return DIRECTION.DOWN;
+            case DIRECTION.LEFT:
+                return DIRECTION.RIGHT;
+            case DIRECTION.DOWN:
+                return DIRECTION.UP;
+            case DIRECTION.RIGHT:
+                return DIRECTION.LEFT;
+        }
+        return 0;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if( collision.CompareTag("Player") && marji.dir == reqDir)
         {
             marji.transform.position = SetPosition;
             marji.player_animator.SetInteger("x", 0);
-            marji.SetSitting(reqDir);
+            marji.player_animator.SetInteger("y", 0);
+            marji.SetSitting(GetSitPosition());
+        }
+    }
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            marji.transform.position = SetPosition;
+            marji.SetSitting(GetSitPosition());
         }
     }
 

@@ -40,7 +40,6 @@ public class  Player : MonoBehaviour, IDataPersistence
     public bool isSitting = false;
     public Animator player_animator;
     public Rigidbody2D rgb2d;
-    private DIRECTION sittingDir;
 
     private void Awake()
     {
@@ -125,7 +124,7 @@ public class  Player : MonoBehaviour, IDataPersistence
     public void SetSitting(DIRECTION chairDir)
     {
         isSitting = true;
-        sittingDir = chairDir;
+        dir = chairDir;
     }
 
     public void setTalking()
@@ -173,11 +172,6 @@ public class  Player : MonoBehaviour, IDataPersistence
             _keys.Add(kvp.Key);
             _values.Add(kvp.Value);
         }
-    }
-
-    public bool CanMoveFromSeat()
-    {
-        return dir == sittingDir;
     }
 
     public void OnAfterDeserialize()

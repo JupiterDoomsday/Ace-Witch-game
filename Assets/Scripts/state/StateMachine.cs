@@ -139,6 +139,7 @@ public class StateMachine : MonoBehaviour
                 break;
             case ACT.SITTING:
                 curState = sitState;
+                Debug.Log("Set state to Sitting");
                 break;
             case ACT.MENU:
                 menuState.canvas_objct.SetActive(true);
