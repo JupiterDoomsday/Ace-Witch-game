@@ -8,7 +8,7 @@ public class Interact :  PlayerState
 
     private GameObject curIteractable;
     private RaycastHit2D hit;
-    public float dist = 10f;
+    public float dist = 2f;
 
     public void handleInput(StateMachine mach)
     {
@@ -18,17 +18,22 @@ public class Interact :  PlayerState
         {
             case DIRECTION.UP:
                 hit = Physics2D.Raycast(player.transform.position, Vector2.up, dist, LayerMask.GetMask("npc", "item"));
+                Debug.DrawRay(player.transform.position, (Vector2.up*dist), Color.green);
                 break;
             case DIRECTION.DOWN:
                 hit = Physics2D.Raycast(player.transform.position, Vector2.down, dist, LayerMask.GetMask("npc", "item"));
+                Debug.DrawRay(player.transform.position, (Vector2.down * dist), Color.green);
                 break;
             case DIRECTION.LEFT:
                 hit = Physics2D.Raycast(player.transform.position, Vector2.left, dist, LayerMask.GetMask("npc", "item"));
+                Debug.DrawRay(player.transform.position, (Vector2.left * dist), Color.green);
                 break;
             case DIRECTION.RIGHT:
                 hit = Physics2D.Raycast(player.transform.position, Vector2.right, dist, LayerMask.GetMask("npc", "item"));
+                Debug.DrawRay(player.transform.position, (Vector2.right * dist), Color.green);
                 break;
         }
+        
     }
 
     public void OnExit(StateMachine player)
@@ -40,7 +45,7 @@ public class Interact :  PlayerState
     public void UpdateState(StateMachine mach)
     {
         Player player = mach.player;
-        if (hit.collider != null && hit.distance < 2f)
+        if (hit.collider != null && hit.distance < 1f)
         {
             switch(hit.collider.tag)
             {

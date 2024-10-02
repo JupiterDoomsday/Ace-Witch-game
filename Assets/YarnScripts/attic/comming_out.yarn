@@ -31,8 +31,10 @@ Dani: See you later!
 title: hows_day_been
 position: 59,-369
 ---
-<<moveActor Marji LEFT 3 .8>>
-<<SetDirection GameStateMachine marji RIGHT>>
+<<fadeIn textGraphics CrossFade fade_in>>
+<<SetPosition GameStateMachine Marji -2.3 5>>
+<<SetDirection GameStateMachine marji RIGHT true>>
+<<fadeIn TextGraphics CrossFade fade_out>>
 Dani: yeah?
 Marji: Um. What'cha doin'?
 Dani: I just woke up and catching up on my reading.

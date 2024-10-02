@@ -43,9 +43,9 @@ public class SitOnEvent : MonoBehaviour
             marji.SetSitting(GetSitPosition());
         }
     }
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && marji.dir == reqDir)
         {
             marji.transform.position = SetPosition;
             marji.SetSitting(GetSitPosition());
@@ -56,7 +56,7 @@ public class SitOnEvent : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-           marji.IsWalking();
+          // marji.IsWalking();
         }
     }
 

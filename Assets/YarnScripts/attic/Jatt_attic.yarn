@@ -3,7 +3,6 @@ tags:
 colorID: 0
 position: 80,-1454
 ---
-<<sound GameStateMachine jatt>>
 <<profile GameStateMachine jatt default>> 
 <<profile GameStateMachine marji lookat>> 
 Jatt: Hoot hoot! #line:0ae0914 
@@ -22,7 +21,6 @@ tags:
 colorID: 0
 position: 188,-1065
 ---
-<<sound GameStateMachine jatt>>
 Jatt: curses! Some eldritch god has taken away my ability to have belly rubs and I need it back!! #line:0c079c8 
 ===
 title: save_game

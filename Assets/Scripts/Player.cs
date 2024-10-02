@@ -126,6 +126,28 @@ public class  Player : MonoBehaviour, IDataPersistence
         isSitting = true;
         dir = chairDir;
     }
+    public void SetSitting(string s)
+    {
+        isSitting = true;
+        switch (s.ToUpper())
+        {
+            case "UP":
+                dir = DIRECTION.UP;
+                break;
+
+            case "LEFT":
+                dir = DIRECTION.LEFT;
+                break;
+
+            case "RIGHT":
+                dir = DIRECTION.RIGHT;
+                break;
+
+            case "DOWN":
+                dir = DIRECTION.DOWN;
+                break;
+        }
+    }
 
     public void setTalking()
     {

@@ -30,6 +30,8 @@ public class Talking : MonoBehaviour, PlayerState
     private PlayableAsset[] cutscenes;
     [SerializeField]
     private GameObject GameUI;
+    [SerializeField]
+    private GameObject blackoutImage;
     public Owl jatt;
     public bool isCutsceneAndWait = false;
     private Dictionary<string, Npc> actors;
@@ -72,8 +74,46 @@ public class Talking : MonoBehaviour, PlayerState
         }
     }
 
+    [YarnCommand("fadeIn")]
+    public static IEnumerator FadeIn(GameObject parentGroup, GameObject gameObject, string anim)
+    {
+        if (gameObject == null)
+            yield break;
+
+        Animator actorAnimator = gameObject.GetComponent<Animator>();
+        if (actorAnimator)
+        {
+            ///parentGroup.SetActive(false);
+            bool isCutsceneAndWait = true;
+            actorAnimator.enabled = true;
+            int hash = Animator.StringToHash("Base Layer." + anim);
+            isCutsceneAndWait = true;
+            //a flag that lets us know to ignore the "default" state at the start of playing an animtion clip
+            bool hitFrameZero = true;
+            actorAnimator.Play(hash);
+            while (isCutsceneAndWait)
+            {
+                AnimatorStateInfo stateInfo = actorAnimator.GetCurrentAnimatorStateInfo(0);
+                if (stateInfo.fullPathHash == hash || hitFrameZero)
+                {
+                    //shut down this flag so we write it to false once
+                    if (hitFrameZero)
+                        hitFrameZero = false;
+                    yield return null;
+                }
+                else
+                {
+                    //parentGroup.SetActive(true);
+                    isCutsceneAndWait = false;
+                    actorAnimator.enabled = false;
+                    //yield break;
+                }
+            }
+        }
+    }
+
     [YarnCommand("SetDirection")]
-    public void SetSpriteDirection(string actor, string direction)
+    public void SetSpriteDirection(string actor, string direction, bool isSitting)
     {
         Npc npc;
         if (  actors.TryGetValue(actor.ToLower(), out npc))
@@ -82,15 +122,27 @@ public class Talking : MonoBehaviour, PlayerState
         }
         else
         {
-            player.SetDirection(direction);
+            if (isSitting)
+            {
+                player.SetSitting(direction);
+            }
+            else
+            {
+                player.SetDirection(direction);
+            }
             player.setDirectionSprite();
         }
+    }
+
+    [YarnCommand("SetPosition")]
+    public void SetPosition(GameObject gameObject, float x, float y)
+    {
+        gameObject.transform.position = new Vector2(x, y);
     }
     //this is a coroutine for yarnspinner to run
     [YarnCommand("moveActor")]
     public static IEnumerator MoveActor(GameObject gameObject, string direction, int amt, float speed)
     {
-
         Npc actor = gameObject.GetComponent<Npc>();
         Player play = gameObject.GetComponent<Player>();
         if (actor)
@@ -158,9 +210,13 @@ public class Talking : MonoBehaviour, PlayerState
         StartCoroutine(PlayCutscene(index, hidden));
     }
 
+    //this play an animation
     [YarnCommand("playAndWait")]
     public void PlayAndWait(GameObject gameObject, string anim)
     {
+        if (gameObject == null)
+            return;
+
         Animator actorAnimator = gameObject.GetComponent<Animator>();
         if(actorAnimator)
         {
@@ -191,7 +247,6 @@ public class Talking : MonoBehaviour, PlayerState
                 GameUI.SetActive(true);
                 isCutsceneAndWait = false;
                 player.player_animator.enabled = false;
-                yield break;
             }
         }
     }
