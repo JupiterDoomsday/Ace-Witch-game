@@ -28,4 +28,16 @@ public class Owl : Npc
     {
         saveFile.LoadGame();
     }
+
+    [YarnCommand("Save")]
+    public void SaveGame()
+    {
+       Save();
+    }
+
+    [YarnCommand("Load")]
+    public void LoadGame()
+    {
+        Load();
+    }
 }

@@ -1920,7 +1920,7 @@ GameObject:
   - component: {fileID: 465443350}
   - component: {fileID: 465443351}
   m_Layer: 6
-  m_Name: jatt
+  m_Name: zhat
   m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2061,9 +2061,8 @@ MonoBehaviour:
   defaultSprites:
   - {fileID: 0}
   introCutscene: {fileID: 0}
-  Name: Jatt
+  Name: zhat
   startNode: Jatt_Start
-  actor_animator: {fileID: 0}
   _keys:
   - tired
   - mad
@@ -2258,7 +2257,6 @@ MonoBehaviour:
   introCutscene: {fileID: 0}
   Name: walker
   startNode: Start
-  actor_animator: {fileID: 476432978}
   _keys:
   - default
   - lookaway
@@ -4038,8 +4036,6 @@ MonoBehaviour:
   cutscenes:
   - {fileID: 11400000, guid: db49ab039c7d396408042e3c49af4652, type: 2}
   GameUI: {fileID: 35153087}
-  blackoutImage: {fileID: 1266984138}
-  jatt: {fileID: 465443351}
   isCutsceneAndWait: 0
 --- !u!114 &680577538
 MonoBehaviour:

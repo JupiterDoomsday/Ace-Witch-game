@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using state;
+using Yarn.Unity;
+
 public enum ACT
 {
     IDLE,
@@ -170,6 +172,66 @@ public class  Player : MonoBehaviour, IDataPersistence
             return expressions[exp];
         else
             return null;
+    }
+
+    [YarnCommand("SetPosition")]
+    public void SetPosition(float x, float y)
+    {
+        transform.position = new Vector2(x, y);
+    }
+
+    [YarnCommand("SetDirection")]
+    public void SetSpriteDirection(string direction, bool isSitting)
+    {
+        if (isSitting)
+        {
+            SetSitting(direction);
+        }
+        else
+        {
+            SetDirection(direction);
+        }
+        setDirectionSprite();
+    }
+
+    private IEnumerator MoveActor(string direction, int amt, float speed)
+    {
+        SetDirection(direction);
+        Vector3 moveDir = new Vector3(0, 0, 0);
+        player_animator.enabled = true;
+        switch (direction)
+        {
+            case "UP":
+                moveDir.y = -1;
+                player_animator.SetInteger("y", 1);
+                break;
+            case "DOWN":
+                moveDir.y = 1;
+                player_animator.SetInteger("y", -1);
+                break;
+            case "LEFT":
+                moveDir.x = -1;
+                player_animator.SetInteger("x", -1);
+                break;
+            case "RIGHT":
+                moveDir.x = 1;
+                player_animator.SetInteger("x", 1);
+                break;
+
+        }
+        Vector3 startPos = transform.position;
+        Vector3 finalPos = startPos + (moveDir * amt);
+        float inTime = speed * amt;
+        float elapsedTime = 0;
+        while (elapsedTime < inTime)
+        {
+            transform.position = Vector3.Lerp(startPos, finalPos, elapsedTime / inTime);
+            elapsedTime += Time.fixedDeltaTime;
+            yield return null;
+        }
+        player_animator.SetInteger("y", 0);
+        player_animator.SetInteger("x", 0);
+        player_animator.enabled = false;
     }
 
     public void PlayAnimation(string aniState)

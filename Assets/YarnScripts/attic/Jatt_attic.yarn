@@ -3,9 +3,9 @@ tags:
 colorID: 0
 position: 80,-1454
 ---
-<<profile GameStateMachine jatt default>> 
+<<profile GameStateMachine zhat default>> 
 <<profile GameStateMachine marji lookat>> 
-Jatt: Hoot hoot! #line:0ae0914 
+Zhat: Hoot hoot! #line:0ae0914 
 // Option "Talk to me comrade!" moved to the end of this node
 // Option "I want to save my game" moved to the end of this node 
 // Option "Give belly rubs" moved to the end of this node
@@ -21,27 +21,27 @@ tags:
 colorID: 0
 position: 188,-1065
 ---
-Jatt: curses! Some eldritch god has taken away my ability to have belly rubs and I need it back!! #line:0c079c8 
+Zhat: curses! Some eldritch god has taken away my ability to have belly rubs and I need it back!! #line:0c079c8 
 ===
 title: save_game
 tags: 
 colorID: 0
 position: -83,-1064
 ---
-Jatt: Alrighty! Marji! #line:052cbd0 
-Jatt: Are you ready? #line:0e67a97 
-Jatt: Vibe check! #line:084544d 
-<<Save GameStateMachine>>
+Zhat: Alrighty! Marji! #line:052cbd0 
+Zhat: Are you ready? #line:0e67a97 
+Zhat: Vibe check! #line:084544d 
+<<Save zhat>>
 ===
 title: jatt_cnv1_
 tags: 
 colorID: 0
 position: 1664,-401
 ---
-Jatt: ... #line:0eb7df2 
+Zhat: ... #line:0eb7df2 
 Marji: ... #line:0409eb6 
-Jatt: ... #line:0abe7b2 
-Jatt: Am I supposed to say something or what? #line:0f2aef3 
+Zhat: ... #line:0abe7b2 
+Zhat: Am I supposed to say something or what? #line:0f2aef3 
 // Option " Yes" moved to the end of this node
 // Option " You don't have to if you don't wanna " moved to the end of this node
 ->  Yes #line:0a1b7ca 
@@ -54,7 +54,7 @@ tags:
 colorID: 0
 position: 633,-466
 ---
-Jatt: Head empty! Can't think! #line:033744b 
+Zhat: Head empty! Can't think! #line:033744b 
 <<set $jatt_attic to 2>>
 ===
 title: yes_talk_to_me
@@ -62,26 +62,26 @@ tags:
 colorID: 0
 position: 2346,-410
 ---
-Jatt: hmmmm... #line:08a86da 
-Jatt: OH!  #line:0b9d9b9 
-Jatt: Hows your day? #line:064c564 
+Zhat: hmmmm... #line:08a86da 
+Zhat: OH!  #line:0b9d9b9 
+Zhat: Hows your day? #line:064c564 
 ===
 title: dont_have_to
 tags: 
 colorID: 0
 position: 2465,329
 ---
-Jatt: Well now I feel like it cause you told me not to! #line:0ca6ded 
+Zhat: Well now I feel like it cause you told me not to! #line:0ca6ded 
 Marji: I didn't say– #line:02c7fb9 
 <<profile GameStateMachine marji default>> 
-Marji: Jeeze, Jatt... Can't you just...  #line:0b4055f 
+Marji: Jeeze, Zhat... Can't you just...  #line:0b4055f 
 Marji: chill? #line:0044687 
-<<profile GameStateMachine jatt mad>>
-Jatt: One does not chill while surviving under capitalism. #line:09318b3 
+<<profile GameStateMachine zhat mad>>
+Zhat: One does not chill while surviving under capitalism. #line:09318b3 
 Marji: ... #line:019f015 
 Marji: You really are my brothers familiar #line:0f807ca 
-<<profile GameStateMachine jatt happy>> 
-Jatt: Damn right I am!!! #line:060ea74 
+<<profile GameStateMachine zhat happy>> 
+Zhat: Damn right I am!!! #line:060ea74 
 ===
 title: convos_choices
 tags: 
@@ -93,7 +93,7 @@ position: 1378,-1050
 <<elseif $jatt_attic is 1>> 
 <<jump jatt_cnv2>>
 <<else>>
-Jatt: Witch! I want belly rubs! #line:0204b96 
+Zhat: Witch! I want belly rubs! #line:0204b96 
 <<endif>>
 <<set $jatt_attic to 1>>
 ===

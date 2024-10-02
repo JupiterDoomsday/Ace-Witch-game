@@ -38,7 +38,8 @@ public class Npc : MonoBehaviour
     public string Name;
     public string startNode;
     //public DialogueRunner runner;
-    public Animator actor_animator;
+    //private Transform transform;
+    private Animator actor_animator;
 
     //[YarnCommand("facePlayer")]
     //alows us to change where the npc is facing when talking to the player
@@ -175,5 +176,57 @@ public class Npc : MonoBehaviour
         actor_animator.SetTrigger(anim);
     }
 
+    [YarnCommand("SetActorDirection")]
+    public void SetSpriteDirection(string direction)
+    {
+        SetDirection(direction);
+    }
+
+    [YarnCommand("moveActor")]
+    public IEnumerator MoveActor(string direction, int amt, float speed)
+    {
+        SetDirection(direction);
+        Vector3 moveDir = new Vector3(0, 0, 0);
+        actor_animator.enabled = true;
+        switch (direction)
+        {
+            case "UP":
+                moveDir.y = -1;
+                actor_animator.SetInteger("y", 1);
+                break;
+            case "DOWN":
+                moveDir.y = 1;
+                actor_animator.SetInteger("y", -1);
+                break;
+            case "LEFT":
+                moveDir.x = -1;
+                actor_animator.SetInteger("x", -1);
+                break;
+            case "RIGHT":
+                moveDir.x = 1;
+                actor_animator.SetInteger("x", 1);
+                break;
+
+        }
+        Vector3 startPos = transform.position;
+        Vector3 finalPos = startPos + (moveDir * amt);
+        float inTime = speed * amt;
+        float elapsedTime = 0;
+        while (elapsedTime < inTime)
+        {
+            transform.position = Vector3.Lerp(startPos, finalPos, elapsedTime / inTime);
+            elapsedTime += Time.fixedDeltaTime;
+            yield return null;
+        }
+        actor_animator.SetInteger("y", 0);
+        actor_animator.SetInteger("x", 0);
+        actor_animator.enabled = false;
+    }
+
+    [YarnCommand("SetActorPosition")]
+    public void SetPosition(float x, float y)
+    {
+        transform.position = new Vector2(x, y);
+    }
 
 }
