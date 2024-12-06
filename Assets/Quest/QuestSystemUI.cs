@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class QuestSystemUI : MonoBehaviour
 {
-    public QuestDatabase questSystem;
+    public QuestManager questSystem;
     //private GameObject m_curItem;
     //public GameObject desc;
     public TextMeshProUGUI inspectName;
@@ -28,9 +28,12 @@ public class QuestSystemUI : MonoBehaviour
             Destroy(child.gameObject);
         }
         int y = 0;
-        foreach (Quest q in questSystem.GetQuestList())
+        foreach (int i in questSystem.playerQuests)
         {
-            if (q.getState() == Quest_State.INACTIVE || q.getState() == Quest_State.COMPLETE)
+            Quest curQuest = questSystem.getQuest(i);
+            if (curQuest == null)
+                continue;
+            if (curQuest.getState() == Quest_State.INACTIVE || curQuest.getState() == Quest_State.COMPLETE)
                 continue;
             RectTransform questSlotRectTransform = Instantiate(questSlotTemplate, questSlotContainer).GetComponent<RectTransform>();
             questSlotRectTransform.gameObject.SetActive(true);
@@ -39,14 +42,14 @@ public class QuestSystemUI : MonoBehaviour
             Transform q_btn = questSlotRectTransform.GetChild(0);
             Button btn = q_btn.GetComponent<Button>();
             TextMeshProUGUI label = btn.GetComponentInChildren<TextMeshProUGUI>();
-            label.text = q.title;
+            label.text = curQuest.title;
 
             btn.onClick.AddListener(
                 delegate {
                     playerMenuState.popUp = this.popup;
                     popup.SetActive(true);
-                    setCurQuest(q);
-                    ActivateAllQuestTask(q);
+                    setCurQuest(curQuest);
+                    ActivateAllQuestTask(curQuest.GetCurTaskDesc());
                     playerMenuState.isAtQuestSelected();
                     deactivateAllItems();
                 });
@@ -62,7 +65,7 @@ public class QuestSystemUI : MonoBehaviour
             btn.interactable = false;
         }
     }
-    public void setCurQuest( Quest data)
+    public void setCurQuest(Quest data)
     {
         inspectName.text = data.title;
         inspectdesc.text = data.desc;
@@ -76,20 +79,14 @@ public class QuestSystemUI : MonoBehaviour
             btn.interactable = true;
         }
     }
-    private void ActivateAllQuestTask(Quest quest)
+    private void ActivateAllQuestTask(string desc)
     {
-        int y = 0;
-
-        foreach (QuestTask q in quest.taskList)
-        {
             RectTransform taskSlotRectTransform = Instantiate(taskSlotTemplate, taskSlotContainer).GetComponent<RectTransform>();
             taskSlotRectTransform.gameObject.SetActive(true);
-            taskSlotRectTransform.anchoredPosition = new Vector2(100, y * 20);
-            y++;
+            taskSlotRectTransform.anchoredPosition = new Vector2(100, 0);
             Transform q_img = taskSlotRectTransform.GetChild(1);
             TextMeshProUGUI label = q_img.GetComponent<TextMeshProUGUI>();
-            label.text = q.desc;
-        }
+            label.text = desc;
     }
     public void DeactivateAllQuestTask()
     {

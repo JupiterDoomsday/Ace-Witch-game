@@ -16,14 +16,7 @@ MonoBehaviour:
   title: Coming out
   desc: 'Take a deep breath. There''s always a first, and tho it won''t be your last,
     think of it like  as the final weight off your chest. '
+  taskDescs:
+  - Talk to your brother.
   questId: 0
-  taskList:
-  - desc: talk to Bro
-    taskNum: 0
-    reqTask: -1
-    target_id: -1
-  - desc: come out as asexual
-    taskNum: 1
-    reqTask: 0
-    target_id: -1
   state: 1

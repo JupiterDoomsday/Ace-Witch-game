@@ -8,6 +8,6 @@ public class ScavengerHunt : Quest
 
     public bool hasAllItems(Player player)
     {
-        return false;
+        return  false;
     }
 }

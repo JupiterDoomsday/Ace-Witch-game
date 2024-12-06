@@ -9,16 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21d4ac6850ff046dfb573fe34abf8c86, type: 3}
-  m_Name: New Quest
+  m_Script: {fileID: 11500000, guid: a63c3d81057974e1983a969bd811f03b, type: 3}
+  m_Name: QuestLog
   m_EditorClassIdentifier: 
-  oracle: 
-  title: wait I dont know what I'm doing
-  desc: yes.
-  questId: 0
-  taskList:
-  - desc: talk to Raiden
-    taskNum: 0
-    reqTask: 0
-    target_id: 0
-  state: 0
+  Quests:
+  - {fileID: 11400000, guid: 74a1ad2792bfb4bcb9219af180090351, type: 2}

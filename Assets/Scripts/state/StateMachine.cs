@@ -10,6 +10,7 @@ public class StateMachine : MonoBehaviour
     static Idle idleState;
     [SerializeField]
     private PlayableDirector timeline;
+    private QuestManager m_QManager;
     public AudioSource footstepsSoundFX;
     [SerializeField] private QuestSystemUI QuestUI;
     [SerializeField] private InventoryUI invoUI;

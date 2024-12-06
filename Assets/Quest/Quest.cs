@@ -22,10 +22,11 @@ using UnityEngine;
         public string title;
         [TextArea(10, 15)]
         public string desc;
+        [SerializeField]
+        [TextArea(2, 10)]
+        private List<string> taskDescs;
         private bool m_isComplete = false;
         public int questId;
-        [SerializeField]
-        public List<QuestTask> taskList;
 
         [SerializeField]
         private Quest_State state;
@@ -41,8 +42,14 @@ using UnityEngine;
         }
         public string GetCurTaskDesc()
         {
-            return taskList[curTask].desc;
+            return taskDescs[curTask];
         }
+        public void moveToNextTask()
+        {
+            curTask++;
+            if(curTask == taskDescs.Count) //check to see if the task is completed
+                m_isComplete = true;
+        }   
        public bool isQuestCompleted()
         {
             return m_isComplete;
@@ -64,9 +71,7 @@ using UnityEngine;
     [System.Serializable]
     public class QuestTask
     {
-        [SerializeField]
-        [TextArea(2, 10)]
-        public string desc;
+
         [SerializeField]
         public int taskNum;
         [SerializeField]

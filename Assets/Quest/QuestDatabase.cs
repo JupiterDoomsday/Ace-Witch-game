@@ -6,25 +6,42 @@ using UnityEngine;
 public class QuestDatabase : ScriptableObject
 {
     [SerializeField]
-    List<Quest> playerQuests;
+    List<Quest> Quests;
 
     public void AcceptQuest(int questId)
     {
-        playerQuests[questId].SetToActive();
+        if (questId < Quests.Count)
+            Quests[questId].SetToActive();
     }
 
     public void DeactivateQuest(int questId)
     {
-        playerQuests[questId].SetToInactive();
+        if (questId < Quests.Count)
+            Quests[questId].SetToInactive();
+    }
+    public void nextStep(int questId)
+    {
+        if (questId < Quests.Count)
+            Quests[questId].moveToNextTask();
+    }
+
+    public string GetDesc(int id)
+    {
+        if (id >= Quests.Count)
+            return null;
+       
+        return  Quests[id].desc;
     }
 
     public Quest GetQuest(int id)
     {
-        return playerQuests[id];
+        if (id >= Quests.Count)
+            return null;
+        return Quests[id];
     }
 
     public List<Quest> GetQuestList()
     {
-        return playerQuests;
+        return Quests;
     }
 }
