@@ -7,17 +7,14 @@ public class ItemSlot
     // Start is called before the first frame update
     public int item_id;
     public int amount;
-    public Item item;
-    public ItemSlot(Item item)
+    public ItemSlot(int id)
     {
-        item_id = item.id;
+        item_id = id;
         amount = 1;
-        this.item = item;
     }
-    public ItemSlot(Item item, int amt)
+    public ItemSlot(int item, int amt)
     {
-        item_id = item.id;
+        item_id = item;
         amount = amt;
-        this.item = item;
     }
 }

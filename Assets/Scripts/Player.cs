@@ -32,7 +32,8 @@ public class  Player : MonoBehaviour, IDataPersistence
 {
     public ACT act;
     public DIRECTION dir;
-    public Inventory invo;
+    public Inventory invo = new();
+    private int selectedItem = -1;
     public Sprite profile;
     public Dictionary<string,Sprite> expressions;
     public Sprite[] sitting = new Sprite[4];
@@ -46,6 +47,7 @@ public class  Player : MonoBehaviour, IDataPersistence
     private void Awake()
     {
         expressions = new Dictionary<string, Sprite>();
+        invo.AddItem(0, 1);
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
     }
@@ -99,6 +101,21 @@ public class  Player : MonoBehaviour, IDataPersistence
                     break;
             }
         }
+    }
+
+    //These functions set up the player
+    public void SetSelectedItem(int newItem)
+    {
+        selectedItem = newItem;
+    }
+    public void UnselectItem()
+    {
+        selectedItem = -1;
+    }
+
+    public int GetSelectedItem()
+    {
+        return selectedItem;
     }
 
     public void SetDirection(string direction)

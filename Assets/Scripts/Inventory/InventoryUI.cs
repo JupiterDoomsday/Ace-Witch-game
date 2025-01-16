@@ -4,7 +4,10 @@ using TMPro;
 public class InventoryUI : MonoBehaviour
 {
     private Inventory player_invo;
+    public Player player;
     private GameObject curItem;
+    [SerializeField]
+    private ItemDataBase data;
     public TextMeshProUGUI inspectName;
     public TextMeshProUGUI inspectdesc;
     public Item cur_item_data;
@@ -54,7 +57,7 @@ public class InventoryUI : MonoBehaviour
                 }
                 PickUp slot = ItemSlotRectTransform.GetComponent<PickUp>();
                 slot.amt = i.amount;
-                slot.item = i.item;
+                slot.item = i.item_id;
                 Transform item_btn = ItemSlotRectTransform.GetChild(0);
                 Button btn = item_btn.GetComponent<Button>();
                 btn.onClick.AddListener(
@@ -65,7 +68,7 @@ public class InventoryUI : MonoBehaviour
                         playerMenuState.isAtItemSelected();
                         deactivateAllItems();
                     });
-                item_btn.GetChild(0).GetComponent<Image>().sprite = i.item.icon;
+                item_btn.GetChild(0).GetComponent<Image>().sprite = data.GetIcon(i.item_id);
                 Transform icon = item_btn.GetChild(1);
                 if (i.amount > 1)
                     icon.GetChild(0).GetComponent<TextMeshProUGUI>().text = i.amount.ToString();
@@ -74,10 +77,10 @@ public class InventoryUI : MonoBehaviour
             }
         }
     }
-    public void setCurItem(GameObject curItem, Item data)
+    public void setCurItem(GameObject curItem, int index)
     {
         this.curItem = curItem;
-        this.cur_item_data = data;
+        this.cur_item_data = data.GetItem(index);
     }
     public void deactivateAllItems()
     {
@@ -100,6 +103,10 @@ public class InventoryUI : MonoBehaviour
             Button btn = item_btn.GetComponent<Button>();
             btn.interactable = true;
         }
+    }
+    public void  SetSelectedItem()
+    {
+        player.SetSelectedItem(cur_item_data.id);
     }
     public void setDesc()
     {

@@ -7,8 +7,6 @@ public class MenuTransition : MonoBehaviour
     public Animator transition;
     public RectTransform pos;
     public GameObject ui;
-    public GameObject dialouge_ui;
-    public GameObject canvas;
     public float transitiontime = 1f;
     public void loadMenu()
 
@@ -22,7 +20,6 @@ public class MenuTransition : MonoBehaviour
     }
     IEnumerator MenuEnter()
     {
-        dialouge_ui.SetActive(false);
         transition.enabled = true;
         transition.SetTrigger("menu_down");
         yield return new WaitForSeconds(transitiontime);
@@ -37,8 +34,6 @@ public class MenuTransition : MonoBehaviour
         yield return new WaitForSeconds(transitiontime);
         transition.SetTrigger("done");
         transition.enabled = false;
-        canvas.SetActive(false);
         ui.SetActive(false);
-        dialouge_ui.SetActive(true);
     }
 }

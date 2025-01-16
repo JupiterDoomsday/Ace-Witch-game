@@ -12,15 +12,18 @@ public class ShopKeeper : Npc
     
     public Inventory goods;
     public Dictionary<string,int> adorations;
+    [SerializeField]
+    private ItemDataBase data;
 
     public void Start()
     {
         goods = GlobalData.Instance.getShopKeeperInventory(shop_type);
     }
 
-    private int getPersonalValue(Item i) {
+    private int getPersonalValue(int i) {
         int sum = 0;
-        foreach (string key in i.wordKeys)
+        Item target = data.GetItem(i);
+        foreach (string key in target.wordKeys)
         {
             if (adorations.ContainsKey(key))
                 sum += adorations[key];
@@ -44,7 +47,7 @@ public class ShopKeeper : Npc
         int sum = 0;
         foreach (ItemSlot i in stock.item_list)
         {
-            sum += getPersonalValue(i.item) * i.amount;
+            sum += getPersonalValue(i.item_id) * i.amount;
         }
         return sum;
     }

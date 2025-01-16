@@ -8,7 +8,7 @@ public enum ITEM_TYPE
     TOOL,
     LORE
 };
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Item", menuName = "Item/Item", order = 2)]
 public class Item: ScriptableObject
 {
     public int id;

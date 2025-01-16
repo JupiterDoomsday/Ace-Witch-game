@@ -5,6 +5,6 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public int amt;
-    public Item item;
+    public int item;
 
 }

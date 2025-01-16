@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   tradeable: 1
+  isPickedUp: 0
   wordKeys:
   - fungi
   - green-ish
@@ -22,11 +23,5 @@ MonoBehaviour:
   - white
   item_name: Death Cap
   type: 0
-  desc: "An elegant white mushroom with a history suiting its name. Used for millennia,
-    these mushrooms have been strangely coveted for their ability to make even the
-    hardiest witches keel over with nausea, intestinal pain, and other less desirable
-    symptoms. Death Caps have been a constant staple of every prankster\u2019s repository,
-    although in recent years the casual ingestion of the fungi has been met with
-    more and more ire by older witches. Luckily for many hatchlings, Death Cap mushrooms
-    are hilariously easy to find."
+  desc: 
   icon: {fileID: 21300000, guid: 1aa2f4c722b9f4400b1128133fed121d, type: 3}

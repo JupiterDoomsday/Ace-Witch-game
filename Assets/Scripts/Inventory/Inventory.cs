@@ -23,9 +23,9 @@ public class Inventory
     {
         return item_list.Find(item => item.item_id == id);
     }
-    public void AddItem(Item item, int amt)
+    public void AddItem(int item, int amt)
     {
-        ItemSlot target = getItem(item.id);
+        ItemSlot target = getItem(item);
         if (target == null)
             item_list.Add(new ItemSlot(item,amt));
         else
@@ -41,7 +41,7 @@ public class Inventory
         if (target.amount > 1)
         {
             target.amount--;
-            return new ItemSlot(target.item);
+            return null;
         }
           
         else
