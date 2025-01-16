@@ -74,9 +74,11 @@
     <Compile Include="Assets\fadeOutObjects.cs" />
     <Compile Include="Assets\Quest\ScavengerHunt.cs" />
     <Compile Include="Assets\Quest\QuestDatabase.cs" />
+    <Compile Include="Assets\Scripts\Inventory\ItemDataBase.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\DataPersistenceManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\TradeNBarter.cs" />
     <Compile Include="Assets\Quest\QuestManager.cs" />
+    <Compile Include="Assets\Scripts\Events.cs" />
     <Compile Include="Assets\Quest\QuestSystemUI.cs" />
     <Compile Include="Assets\Samples\Recorder\3.0.3\Screenshot Capture Sample\CaptureScreenShotExample.cs" />
     <Compile Include="Assets\Scripts\MeshMath.cs" />
@@ -103,15 +105,13 @@
     <Compile Include="Assets\Scripts\state\Interact.cs" />
     <Compile Include="Assets\Scripts\Owl.cs" />
     <Compile Include="Assets\Scripts\LevelLoader.cs" />
+    <Compile Include="Assets\Scripts\UI\SelectedItem.cs" />
     <Compile Include="Assets\Scripts\DataPersistence\Save.cs" />
     <Compile Include="Assets\Scripts\state\AutomataStack.cs" />
     <Compile Include="Assets\Scripts\Inventory\PickUp.cs" />
     <Compile Include="Assets\Scripts\MenuTransition.cs" />
     <Compile Include="Assets\change_side.cs" />
     <Compile Include="Assets\Scripts\UI\PopUpAnimations.cs" />
-    <Compile Include="Assets\Scripts\Inventory\ItemDataBase.cs" />
-    <Compile Include="Assets\Scripts\Events.cs" />
-    <Compile Include="Assets\Scripts\UI\SelectedItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

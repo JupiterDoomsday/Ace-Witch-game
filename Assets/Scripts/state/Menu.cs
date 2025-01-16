@@ -34,7 +34,7 @@ public class Menu : MonoBehaviour, PlayerState
     public MenuState state;
     public bool onExit;
     public void handleInput(StateMachine player) {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             state = MenuState.EXIT;
         }
