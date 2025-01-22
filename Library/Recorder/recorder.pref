@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RecordMode: 0
   m_FrameRatePlayback: 0
-  m_FrameRateType: 4
+  m_FrameRateType: 7
   m_CustomFrameRateValue: 30
   m_StartFrame: 0
   m_EndFrame: 0
@@ -37,15 +37,15 @@ MonoBehaviour:
   m_Name: Movie
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 12
+  take: 6
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
       m_Root: 5
       m_Leaf: /Users/CosmicHorror/Desktop
       m_ForceAssetFolder: 0
-      m_AbsolutePath: C:/Users/isaai/Videos/Captures
-    m_FileName: ace_witch_game_test
+      m_AbsolutePath: C:/Users/PISAces/Videos/Captures
+    m_FileName: text_testt<Take>
   outputFormat: 0
   videoBitRateMode: 1
   captureAlpha: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   encoderColorDefinitionSelected: 0
   encoderCustomOptions: 
   m_ImageInputSelector:
-    m_Selected: cameraInputSettings
+    m_Selected: gameViewInputSettings
     gameViewInputSettings:
       m_OutputResolution:
         m_CustomWidth: 1280
@@ -113,7 +113,7 @@ MonoBehaviour:
       colorSpace: 0
       flipFinalOutput: 0
   m_AudioInputSettings:
-    preserveAudio: 0
+    preserveAudio: 1
   _accumulationSettings:
     rid: 9003486322158206976
   references:

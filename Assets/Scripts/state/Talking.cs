@@ -22,6 +22,9 @@ public class Talking : MonoBehaviour, PlayerState
     [SerializeField]
     private GameObject playerObject;
     public AudioSource audioSource;
+    public AudioSource textSource;
+    [SerializeField]
+    private AudioClip[] voices;
     [SerializeField]
     private GameObject textButton;
     [SerializeField]
@@ -194,6 +197,23 @@ public class Talking : MonoBehaviour, PlayerState
         if (hideProfile)
             ClearSprite(2);
         PictureContainer.SetActive(enable);
+    }
+
+    [YarnCommand("SetVoice")]
+    public void SetTextBlip(string name)
+    {
+        switch(name.ToLower())
+        {
+            case "marji":
+                textSource.clip = voices[0];
+                break;
+            case "danny":
+                textSource.clip = voices[1];
+                break;
+            default:
+            textSource.clip = null;
+            break;
+        }
     }
 
 

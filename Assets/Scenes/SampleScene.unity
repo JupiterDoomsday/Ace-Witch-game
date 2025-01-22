@@ -2456,8 +2456,6 @@ MonoBehaviour:
   transition: {fileID: 496482342}
   pos: {fileID: 496482340}
   ui: {fileID: 2029201580}
-  dialouge_ui: {fileID: 1014566502}
-  canvas: {fileID: 1464880924}
   transitiontime: 1
 --- !u!95 &496482342
 Animator:
@@ -4208,6 +4206,10 @@ MonoBehaviour:
   PictureContainer: {fileID: 672782906}
   playerObject: {fileID: 1350272972}
   audioSource: {fileID: 1992624915}
+  textSource: {fileID: 1761096607}
+  voices:
+  - {fileID: 8300000, guid: c705224ca40a1164fb66b9dfe192242d, type: 3}
+  - {fileID: 8300000, guid: bcb299b001d00cd4587e77cfddab073a, type: 3}
   textButton: {fileID: 1365266885}
   timeline: {fileID: 680577541}
   cutscenes:
@@ -5863,7 +5865,19 @@ MonoBehaviour:
   useTypewriterEffect: 1
   onCharacterTyped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1761096607}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTextDoneTyping:
     m_PersistentCalls:
       m_Calls:
@@ -9001,11 +9015,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a54433aec10583846bd5492dc8177181, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 88868782666443f40b4791f3443805bf, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.12
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9420,7 +9434,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: beedc66b00cd81a40b65a5c8686a5651, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.12
+  m_Volume: 0.024
   m_Pitch: 1
   Loop: 0
   Mute: 0

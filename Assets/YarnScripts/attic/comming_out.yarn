@@ -7,7 +7,9 @@ position: -192,-370
 <<declare $cameOutAce = false>>
 <<declare $birdBook = false>>
 <<if $cameOutAce is false>>
+<<SetVoice GameStateMachine marji>>
 Marji:Hey bro!
+<<SetVoice GameStateMachine danny>>
 Dani: Hey.
 -> I have to tell you something
     <<jump hows_day_been>> 
@@ -19,7 +21,9 @@ Dani: Hey.
 -> Naw
     <<jump quick_end>>
 <<else>>
+<<SetVoice GameStateMachine marji>>
 Marji: Sooooo! Did you find that bird?
+<<SetVoice GameStateMachine danny>>
 Dani: Not yet.
 <<endif>>
 ===
@@ -35,19 +39,26 @@ position: 59,-369
 <<SetPosition Marji -2.3 5>>
 <<SetDirection Marji RIGHT true>>
 <<playAndWait GameStateMachine CrossFade fade_out>>
+<<SetVoice GameStateMachine danny>>
 Dani: yeah?
+<<SetVoice GameStateMachine marji>>
 Marji: Um. What'cha doin'?
+<<SetVoice GameStateMachine danny>>
 Dani: I just woke up and catching up on my reading.
 <<profile GameStateMachine marji smile>> 
+<<SetVoice GameStateMachine marji>>
 Marji: Ha! Me too! I mean-- not the book part!
+<<SetVoice GameStateMachine danny>>
 Dani: Hilarious.
 <<profile GameStateMachine walker lookaway>>
 <<playAndWait GameStateMachine walker book_down>>
 Dani: In fact, what's even more funny is you're never up this early.
 <<profile GameStateMachine marji stressed>> 
+<<SetVoice GameStateMachine null>>
 Marji:...
 Dani:...
 <<profile GameStateMachine walker default>> 
+<<SetVoice GameStateMachine danny>>
 Dani: Okay, there's either two things happening here–– One. You need help, presumably with a spell. Two. You need help, cause you messed up a spell–
 -> Pft-- I wish!
     <<jump hdb_resp1>>
@@ -59,8 +70,10 @@ Dani: Okay, there's either two things happening here–– One. You need help, p
 title: hdb_resp1
 position: 361,-154
 ---
+<<SetVoice GameStateMachine danny>>
 Dani: Marji, if you're going to hex someone at least wake me up so I can see the trainwreck!
 <<profile GameStateMachine marji smile>> 
+<<SetVoice GameStateMachine marji>>
 Marji: Naw, only to my enemies.
 Marji: Anyways!
 -> I'm Asexual!
@@ -72,28 +85,42 @@ title: hbd_resp2
 position: -199,-156
 ---
 <<profile GameStateMachine marji lookat>>
+<<SetVoice GameStateMachine danny>>
 Dani: Okay, Get out!
 Dani: I'm trying to finish this book before our shift starts!
+<<SetVoice GameStateMachine marji>>
 Marji: Wait!
+<<SetVoice GameStateMachine danny>>
 Dani: What?
 <<profile GameStateMachine marji default>>
+<<SetVoice GameStateMachine marji>>
 Marji: I mean it!
+<<SetVoice GameStateMachine danny>>
 Dani: Right, sure you do.
+<<SetVoice GameStateMachine marji>>
 Marji: For real! Its' super important and you can't tell anyone! So you better pinky swear! No fingers crossed!
+<<SetVoice GameStateMachine null>>
 Dani: ...
+<<SetVoice GameStateMachine danny>>
 Dani: You didn't... summon anything ancient? Right?
 <<profile GameStateMachine marji smile>>
+<<SetVoice GameStateMachine marji>>
 Marji: Naw!
 <<profile GameStateMachine walker hyper>>
 <<profile GameStateMachine marji lookat>>
+<<SetVoice GameStateMachine danny>>
 Dani: Okay, Good! You know how much I love calculating the non-eclidian geometry for summoning blueprints. 
 Dani: Although, doing stellar parralax on elder stars is-
+<<SetVoice GameStateMachine marji>>
 Marji: AH-HEM! 
 <<profile GameStateMachine walker lookaway>>
+<<SetVoice GameStateMachine danny>>
 Dani: What? I love math!
 <<profile GameStateMachine marji irritated>>
+<<SetVoice GameStateMachine marji>>
 Marji: Bro! Let me talk!
 <<profile GameStateMachine walker default>>
+<<SetVoice GameStateMachine danny>>
 Dani: No.
 -> (throw your pillow at your brother)
     <<jump throw_pillow>>
@@ -103,14 +130,20 @@ Dani: No.
 title: hbd_resp3
 position: 110,-130
 ---
+<<SetVoice GameStateMachine danny>>
 Dani: Okay. Sure. Then what is it?
+<<SetVoice GameStateMachine marji>>
 Marji: Weeeeeeell, I'm gonna need ya to pinky swear!
+<<SetVoice GameStateMachine danny>>
 Dani: Pinky swear? What is this? Baby's first summoning contract?!?
+<<SetVoice GameStateMachine marji>>
 Marji: Do the damn pinky swear!
+<<SetVoice GameStateMachine danny>>
 Dani: Fine.
 <<showImage GameStateMachine true true>>
 Dani: I pinky swear not to tell.
 <<showImage GameStateMachine false false>>
+<<SetVoice GameStateMachine marji>>
 Marji: Cool! Sooooooo--
 -> I'm Asexual!
     <<jump comming_out>>
@@ -120,14 +153,18 @@ Marji: Cool! Sooooooo--
 title: comming_out
 position: 421,116
 ---
+<<SetVoice GameStateMachine danny>>
 Dani: You're what?
+<<SetVoice GameStateMachine marji>>
 Marji: I–
 (Marji looks away distressed)
 Marji: I– uh...
+<<SetVoice GameStateMachine danny>>
 Dani: Is this a joke?
 (Dani turns his face away)
 Dani: Heh...
 Dani: Hahahahaha
+<<SetVoice GameStateMachine marji>>
 Marji: No! You're a joke!
 <<jump dani_out>>
 ===
@@ -135,25 +172,37 @@ title: comming_outt
 position: 141,140
 ---
 <<profile GameStateMachine walker lookaway>>
+<<SetVoice GameStateMachine danny>>
 Dani: I mean... people get on my nerves too. I don't think its special or anything, though.
 (Marji sprite shakes her head)
+<<SetVoice GameStateMachine marji>>
 Marji: No! I don't "like" like people!
 <<profile GameStateMachine walker default>>
+<<SetVoice GameStateMachine danny>>
 Dani: Oh.
+<<SetVoice GameStateMachine marji>>
 Marji: I-- uh... Don't like boys...
+<<SetVoice GameStateMachine danny>>
 Dani: Okay.
+<<SetVoice GameStateMachine marji>>
 Marji: AAAAND I don't like girls!
 <<profile GameStateMachine walker sus>>
+<<SetVoice GameStateMachine danny>>
 Dani: So what? Are you telling me you're Asexual?
+<<SetVoice GameStateMachine marji>>
 Marji: Yes!
 Marji: Wait-- huh!?!?
-<<profile GameStateMachine walker lookaway>>
+<<SetVoice GameStateMachine danny>>
 Dani: Well, well, I guess I'm not the only one in the family.
+<<SetVoice GameStateMachine marji>>
 Marji: Are you for real!?!
 <<profile GameStateMachine walker default>>
+<<SetVoice GameStateMachine danny>>
 Dani: Yeah.
 (Marji sprite flops to her side)
+<<SetVoice GameStateMachine marji>>
 Marji: Uuuuuugh! I was scared for NOTHING!
+<<SetVoice GameStateMachine danny>>
 Dani: Hey Marji.
 <<jump the_end>>
 ===
@@ -161,10 +210,14 @@ Dani: Hey Marji.
 title: the_end
 position: 242,614
 ---
+<<SetVoice GameStateMachine marji>>
 Marji: What?
 <<profile GameStateMachine walker smile>>
+<<SetVoice GameStateMachine danny>>
 Dani: I'm proud of you! Thanks for sharing this with me.
+<<SetVoice GameStateMachine marji>>
 Marji: Yeah, yeah-- I love you too!
+<<SetVoice GameStateMachine danny>>
 Dani: You know what–– yeah, I love you too.
 <<playAndWait GameStateMachine walker book_up>>
 <<set $cameOutAce to true>>
@@ -172,31 +225,46 @@ Dani: You know what–– yeah, I love you too.
 title: dani_out
 position: 463,336
 ---
+<<SetVoice GameStateMachine danny>>
 Dani: Woah! Hey! I wasn't laughing at you!
 Dani: I'm laughing because-
 Dani: I'm Asexual too!
+<<SetVoice GameStateMachine marji>>
 Marji: What.
+<<SetVoice GameStateMachine danny>>
 Dani: Yeah! I have an asexual pride flag in my room!
+<<SetVoice GameStateMachine marji>>
 Marji: I'm not allowed in your room...
+<<SetVoice GameStateMachine danny>>
 Dani: I mean yeah-- but
+<<SetVoice GameStateMachine marji>>
 Marji: Why didn't you tell me?!?
 (dani sprite shrugs)
+<<SetVoice GameStateMachine danny>>
 Dani: Because you never asked.
+<<SetVoice GameStateMachine marji>>
 Marji: OH. MY. GOD.
+<<SetVoice GameStateMachine danny>>
 Dani: Oh! By the way, this doen't change anything! You're still not allowed in my room!
+<<SetVoice GameStateMachine marji>>
 Marji: Don't care! Smells like chickens!
+<<SetVoice GameStateMachine danny>>
 Dani: No it doesn't!
+<<SetVoice GameStateMachine marji>>
 Marji: Does too!
+<<SetVoice GameStateMachine danny>>
 Dani: Hey Sis?
 <<jump the_end>>
 ===
 title: taunt_bro
 position: -37,42
 ---
+<<SetVoice GameStateMachine marji>>
 Marji: I'm tellin' ya anyway!
 <<profile GameStateMachine walker grimace>> 
 Marji: Whatcha gonna do about it? walk away?!?
 <<profile GameStateMachine walker default>>
+<<SetVoice GameStateMachine danny>>
 Dani: Fine. You win this round sister. What is it?
 -> I'm Asexual!
     <<jump comming_out>>
@@ -207,8 +275,10 @@ title: throw_pillow
 position: -266,254
 ---
 <<PlayAndWaitCutscene GameStateMachine 0 true>>
+<<SetVoice GameStateMachine danny>>
 Dani: okay! okay! It was a joke...
 <<profile GameStateMachine marji default>> 
+<<SetVoice GameStateMachine marji>>
 Marji: Damn right it was!
 Marji: *Sigh* So, uh--
 -> I'm Asexual!
@@ -219,9 +289,15 @@ Marji: *Sigh* So, uh--
 title: Gleeb
 position: -454,50
 ---
+<<SetVoice GameStateMachine danny>>
 Dani: The Midwest Guide to indentifying Passerines
+<<SetVoice GameStateMachine marji>>
+<<profile GameStateMachine marji default>>
 Marji: Is that a bird book or...
+<<SetVoice GameStateMachine danny>>
 Dani: Yes, I had a slice of pizza stolen yesterday and I need to know who did it...
+<<SetVoice GameStateMachine marji>>
+<<profile GameStateMachine marji irritated>>
 Marji: Yeah, yeah. Cowabummer.
 <<set $birdBook to true>>
 === 

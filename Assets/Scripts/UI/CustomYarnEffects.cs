@@ -68,6 +68,14 @@ namespace Yarn.Unity
 
             // How many visible characters are present in the text?
             var characterCount = text.textInfo.characterCount;
+            //keep track of each char if its a vowel or not
+            var isVowel = false;
+            var punctWait = false;
+            var pausePunct = 0;
+            var charWait = 0;
+            var textCont = 0;
+            var isProcedeByVowel = false;
+            //var acceptableVowel
 
             // Early out if letter speed is zero, text length is zero
             if (lettersPerSecond <= 0 || characterCount == 0)
@@ -99,6 +107,13 @@ namespace Yarn.Unity
                     OnTextComplete?.Invoke();
                     yield break;
                 }
+                char c = text.textInfo.characterInfo[textCont].character;
+                isVowel = IsCharVowel(c);
+                if(isPunctuation(c) && pausePunct == 0)
+                {
+                    punctWait = true;
+                    isProcedeByVowel = false;
+                }
 
                 // We need to show as many letters as we have accumulated
                 // time for.
@@ -122,9 +137,32 @@ namespace Yarn.Unity
                             accumulator = Time.deltaTime;
                         }
                     }
-
-                    onCharacterTyped?.Invoke();
                     accumulator -= secondsPerLetter;
+                    textCont++;
+                    if(punctWait && pausePunct < 4)
+                    {
+                        pausePunct++;
+                        continue;
+                    }
+                    else{
+                        punctWait = false; 
+                        pausePunct = 0;
+                    }
+
+                    if(isProcedeByVowel && charWait < 2)
+                    {
+                        charWait++;
+                    }
+                    else {
+                        isProcedeByVowel = false;
+                    }
+
+                    if(isVowel && !isProcedeByVowel)
+                    {
+                        isProcedeByVowel = true;
+                        charWait = 0;
+                        onCharacterTyped?.Invoke();
+                    }
                 }
                 accumulator += Time.deltaTime;
 
@@ -138,5 +176,37 @@ namespace Yarn.Unity
 
             stopToken?.Complete();
         }
+        
+    private static bool IsCharVowel(char character)
+    {
+        switch (Char.ToLower(character))
+        {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            return true;
+        }
+
+        return false;
+    }
+    private static bool isPunctuation(char character)
+    {
+        switch(character)
+        {
+            case ',':
+            case '.':
+            case ';':
+            case '!':
+            case'-':
+            case '?':
+                return true;
+            default:
+                return false;
+            break;
+        }
+    }
+
     }
 }
