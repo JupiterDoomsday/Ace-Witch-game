@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CustomeInteractables;
 using state;
 using UnityEngine;
 
@@ -69,6 +70,15 @@ public class Interact :  PlayerState
                         pickup.gameObject.SetActive(false);
                         hit.collider.enabled = false;
                     break;
+                case "talkingItem":
+                Debug.Log("You Hit TALKING ITEM!");
+                    TalkableItem item = hit.collider.GetComponentInParent<TalkableItem>();
+                        player.act = ACT.TALKING;
+                        OnExit(mach);
+                        mach.talkingState.dialogueRunner.StartDialogue(item.startNode);
+                        return;
+                break;  
+
             }
         }
             player.act = ACT.IDLE;

@@ -5,6 +5,7 @@ using UnityEngine;
 using Yarn.Unity;
 using state;
 using UnityEngine.Playables;
+using CustomeInteractables;
 //this is an enum that represents the relationship of an NPC and
 public enum SOCIAL_STANDING
 {
@@ -20,7 +21,7 @@ public enum NPC_TYPE
     JATT,
     ENEMIE
 };
-public class Npc : MonoBehaviour
+public class Npc : Interactable
 {
     public ACT act;
     public NPC_TYPE type;
@@ -43,10 +44,13 @@ public class Npc : MonoBehaviour
 
     //[YarnCommand("facePlayer")]
     //alows us to change where the npc is facing when talking to the player
-
+    public Npc()
+    {
+        interacting = INTERACT_TYPE.TALK;
+        act = ACT.IDLE;
+    }
     private void Start()
     {
-        act = ACT.IDLE;
         //render.sprite = defaultSprites[0];
         expressions = new Dictionary<string, Sprite>();
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
