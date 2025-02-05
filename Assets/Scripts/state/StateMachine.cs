@@ -23,6 +23,7 @@ public class StateMachine : MonoBehaviour
     private PlayerState curState = null;
     private bool isCutscenePlaying = false;
     public Player player;
+    private ACT prevPlayerState;
 
     public void Start()
     {
@@ -118,6 +119,14 @@ public class StateMachine : MonoBehaviour
     {
         player.act = ACT.IDLE;
         curState.OnExit(this);
+    }
+    public void SetPrevState(ACT act)
+    {
+        prevPlayerState = act;
+    }
+    public ACT getPlayerPrevState()
+    {
+        return prevPlayerState;
     }
 
     public void UpdateAct()

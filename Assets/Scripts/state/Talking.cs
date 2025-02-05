@@ -12,6 +12,7 @@ public class Talking : MonoBehaviour, PlayerState
 {
     public DialogueRunner dialogueRunner;
     public CustomLineView lineViewer;
+    private ACT ExitState = ACT.IDLE;
     public Image left;
     public Image right;
     private Player player;
@@ -79,6 +80,23 @@ public class Talking : MonoBehaviour, PlayerState
     public void ShowUI()
     {
         GameUI.SetActive(true);
+    }
+
+    [YarnCommand ("ExitState")]
+    public void SetExitActState(string s)
+    {
+        switch(s)
+        {
+            case "sitting":
+                ExitState = ACT.SITTING;
+            break;
+            case "flying":
+            ExitState = ACT.FLYING;
+            break;
+            default:
+            ExitState = ACT.IDLE;
+            break;
+        }
     }
 
         //this is a custome action in unity that creates the
@@ -224,7 +242,7 @@ public class Talking : MonoBehaviour, PlayerState
     {
         left.sprite = null;
         right.sprite = null;
-        mach.player.setIdle();
+        mach.player.act = ExitState;
         mach.UpdateAct();
     }
 

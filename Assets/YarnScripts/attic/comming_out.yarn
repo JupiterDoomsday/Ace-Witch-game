@@ -35,6 +35,7 @@ position: 59,-369
 <<SetPosition Marji -2.3 5>>
 <<SetDirection Marji RIGHT true>>
 <<playAndWait GameStateMachine CrossFade fade_out>>
+<<ExitState GameStateMachine sitting>>
 Dani: yeah?
 Marji: Um. What'cha doin'?
 Dani: I just woke up and catching up on my reading.
