@@ -76,8 +76,7 @@ public class Interact :  PlayerState
                         player.act = ACT.TALKING;
                         OnExit(mach);
                         mach.talkingState.dialogueRunner.StartDialogue(item.startNode);
-                        return;
-                break;  
+                    return;
 
             }
         }

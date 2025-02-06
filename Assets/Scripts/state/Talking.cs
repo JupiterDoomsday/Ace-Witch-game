@@ -244,6 +244,7 @@ public class Talking : MonoBehaviour, PlayerState
         right.sprite = null;
         mach.player.act = ExitState;
         mach.UpdateAct();
+        ExitState = ACT.IDLE;
     }
 
 
