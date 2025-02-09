@@ -10631,6 +10631,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 7047113398565234603}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7047113398565234610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350272972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7821f6c70f60247bd3eea86a4d492e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8009807605964503098
 PrefabInstance:
   m_ObjectHideFlags: 0
