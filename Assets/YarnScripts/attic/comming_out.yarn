@@ -31,10 +31,10 @@ Dani: See you later!
 title: hows_day_been
 position: 59,-369
 ---
-<<playAndWait GameStateMachine CrossFade fade_in>>
+<<playAndWait TimeLineManager CrossFade fade_in>>
 <<SetPosition Marji -2.3 5>>
 <<SetDirection Marji RIGHT true>>
-<<playAndWait GameStateMachine CrossFade fade_out>>
+<<playAndWait TimeLineManager CrossFade fade_out>>
 <<ExitState GameStateMachine sitting>>
 Dani: yeah?
 Marji: Um. What'cha doin'?
@@ -43,7 +43,7 @@ Dani: I just woke up and catching up on my reading.
 Marji: Ha! Me too! I mean-- not the book part!
 Dani: Hilarious.
 <<profile GameStateMachine walker lookaway>>
-<<playAndWait GameStateMachine walker book_down>>
+<<playAndWait TimeLineManager walker book_down>>
 Dani: In fact, what's even more funny is you're never up this early.
 <<profile GameStateMachine marji stressed>> 
 Marji:...
@@ -167,7 +167,7 @@ Marji: What?
 Dani: I'm proud of you! Thanks for sharing this with me.
 Marji: Yeah, yeah-- I love you too!
 Dani: You know what–– yeah, I love you too.
-<<playAndWait GameStateMachine walker book_up>>
+<<playAndWait TimeLineManager walker book_up>>
 <<set $cameOutAce to true>>
 ===
 title: dani_out
@@ -207,7 +207,7 @@ Dani: Fine. You win this round sister. What is it?
 title: throw_pillow
 position: -266,254
 ---
-<<PlayAndWaitCutscene GameStateMachine 0 true>>
+<<PlayAndWaitCutscene TimeLineManager 0 true>>
 Dani: okay! okay! It was a joke...
 <<profile GameStateMachine marji default>> 
 Marji: Damn right it was!

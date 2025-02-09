@@ -17,6 +17,8 @@ public class Talking : MonoBehaviour, PlayerState
     public Image right;
     private Player player;
     [SerializeField]
+    private CutsceneManager cutsceneManager;
+    [SerializeField]
     private GameObject NPCContainer;
     [SerializeField]
     private GameObject PictureContainer;
@@ -26,13 +28,8 @@ public class Talking : MonoBehaviour, PlayerState
     [SerializeField]
     private GameObject textButton;
     [SerializeField]
-    private PlayableDirector timeline;
-    [SerializeField]
-    private PlayableAsset[] cutscenes;
-    [SerializeField]
     private GameObject GameUI;
     [SerializeField]    
-    public bool isCutsceneAndWait = false;
     private Dictionary<string, Npc> actors;
 
     //private Npc curActor;
@@ -99,86 +96,6 @@ public class Talking : MonoBehaviour, PlayerState
         }
     }
 
-        //this is a custome action in unity that creates the
-        //talking settings for the
-    [YarnCommand("PlayAndWaitCutscene")]
-    public Coroutine PlayAndWaitCutscene(int index, bool hidden)
-    {
-        if (index >= cutscenes.Length)
-            return null;
-        if (hidden)
-        {
-            GameUI.SetActive(false);
-        }
-        isCutsceneAndWait = true;
-        player.player_animator.enabled = true;
-        return StartCoroutine(PlayCutscene(index, hidden));
-    }
-
-    //this play an animation
-    [YarnCommand("playAndWait")]
-    public Coroutine PlayAndWait(GameObject gameObject, string anim)
-    {
-        if (gameObject == null)
-            return null;
-
-        Animator actorAnimator = gameObject.GetComponent<Animator>();
-        if(actorAnimator)
-        {
-            isCutsceneAndWait = true;
-            GameUI.SetActive(false);
-            int hash = Animator.StringToHash("Base Layer." + anim);
-            return StartCoroutine(PlayAnimationAndWait(actorAnimator, hash));
-        }
-        return null;
-    }
-
-    IEnumerator PlayAnimationAndWait(Animator actorAnimator, int hash)
-    {
-        actorAnimator.Play(hash);
-        //a flag that lets us know to ignore the "default" state at the start of playing an animtion clip
-        bool hitFrameZero = true; 
-        while (isCutsceneAndWait)
-        {
-            AnimatorStateInfo stateInfo = actorAnimator.GetCurrentAnimatorStateInfo(0);
-            if (stateInfo.fullPathHash == hash || hitFrameZero)
-            {
-                //shut down this flag so we write it to false once
-                if (hitFrameZero) 
-                    hitFrameZero = false;
-                yield return null;
-            }
-            else
-            {
-                GameUI.SetActive(true);
-                isCutsceneAndWait = false;
-                player.player_animator.enabled = false;
-            }
-        }
-    }
-
-    [YarnCommand("cutscene")]
-    IEnumerator PlayCutscene(int i, bool hidden)
-    {
-        if (i >= cutscenes.Length)
-            yield break;
-        timeline.playableAsset = cutscenes[i];
-        timeline.Play();
-        while (isCutsceneAndWait)
-        {
-            if (timeline.state == PlayState.Playing)
-                yield return null;
-            else
-            {
-                if(hidden)
-                {
-                    GameUI.SetActive(true);
-                }
-                isCutsceneAndWait = false;
-            }
-        }
-    }
-
     [YarnCommand("profile")]
     public void ShowProfile(string actor, string emote)
     {
@@ -218,7 +135,7 @@ public class Talking : MonoBehaviour, PlayerState
     // Start is called before the first frame update
     public void handleInput(StateMachine player)
     {
-        if (isCutsceneAndWait)
+        if (cutsceneManager.IsPlaying())
             return;
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -229,7 +146,7 @@ public class Talking : MonoBehaviour, PlayerState
     }
     public void UpdateState(StateMachine player)
     {
-        if (isCutsceneAndWait)
+        if (cutsceneManager.IsPlaying())
             return;
 
         if (dialogueRunner.IsDialogueRunning == false)

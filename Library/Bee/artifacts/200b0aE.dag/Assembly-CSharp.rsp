@@ -402,6 +402,7 @@
 -analyzer:"Library/PackageCache/dev.yarnspinner.unity@1ebd52fe24/SourceGenerator/YarnSpinner.Unity.SourceCodeGenerator.dll"
 "Assets/ChangeSorting.cs"
 "Assets/change_side.cs"
+"Assets/CutsceneManager.cs"
 "Assets/fadeOutObjects.cs"
 "Assets/FollowPlayer.cs"
 "Assets/Quest/Quest.cs"

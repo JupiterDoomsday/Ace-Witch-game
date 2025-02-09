@@ -4202,16 +4202,13 @@ MonoBehaviour:
   lineViewer: {fileID: 1014566507}
   left: {fileID: 1895048593}
   right: {fileID: 1595157202}
+  cutsceneManager: {fileID: 1569592406}
   NPCContainer: {fileID: 54779044}
   PictureContainer: {fileID: 672782906}
   playerObject: {fileID: 1350272972}
   audioSource: {fileID: 1992624915}
   textButton: {fileID: 1365266885}
-  timeline: {fileID: 680577541}
-  cutscenes:
-  - {fileID: 11400000, guid: db49ab039c7d396408042e3c49af4652, type: 2}
   GameUI: {fileID: 35153087}
-  isCutsceneAndWait: 0
 --- !u!114 &680577538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8196,8 +8193,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1569592405}
   - component: {fileID: 1569592404}
+  - component: {fileID: 1569592406}
   m_Layer: 0
-  m_Name: TimeLine
+  m_Name: TimeLineManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8223,13 +8221,13 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 476432978}
   - key: {fileID: -4798866020011095340, guid: db49ab039c7d396408042e3c49af4652, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 841916665}
   - key: {fileID: 3911218500916079959, guid: db49ab039c7d396408042e3c49af4652, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 476432978}
   - key: {fileID: -2282814014910884892, guid: db49ab039c7d396408042e3c49af4652, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 841916662}
   - key: {fileID: 5422571424661681946, guid: db49ab039c7d396408042e3c49af4652, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1761096607}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1569592405
@@ -8247,6 +8245,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1569592406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569592403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc109b3977efca41992dcd984acb86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutscenes:
+  - {fileID: 11400000, guid: db49ab039c7d396408042e3c49af4652, type: 2}
+  director: {fileID: 1569592404}
+  GameUI: {fileID: 1014566502}
+  playerAnimator: {fileID: 7047113398565234604}
 --- !u!1 &1595157200
 GameObject:
   m_ObjectHideFlags: 0
