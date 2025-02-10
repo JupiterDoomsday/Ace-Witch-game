@@ -70,6 +70,7 @@ public class CutsceneManager : MonoBehaviour
             isPlaying = true;
             GameUI.SetActive(false);
             int hash = Animator.StringToHash("Base Layer." + anim);
+            actorAnimator.enabled = true;
             return StartCoroutine(PlayAnimationAndWait(actorAnimator, hash));
         }
         return null;

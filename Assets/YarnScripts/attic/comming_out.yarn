@@ -137,7 +137,6 @@ position: 141,140
 ---
 <<profile GameStateMachine walker lookaway>>
 Dani: I mean... people get on my nerves too. I don't think its special or anything, though.
-(Marji sprite shakes her head)
 Marji: No! I don't "like" like people!
 <<profile GameStateMachine walker default>>
 Dani: Oh.
@@ -153,9 +152,11 @@ Dani: Well, well, I guess I'm not the only one in the family.
 Marji: Are you for real!?!
 <<profile GameStateMachine walker default>>
 Dani: Yeah.
-(Marji sprite flops to her side)
+<<PlayAndWaitCutscene TimeLineManager 1 false>>
+<<clearProfile GameStateMachine 1>>
 Marji: Uuuuuugh! I was scared for NOTHING!
 Dani: Hey Marji.
+<<playAndWait TimeLineManager Marji move_face>>
 <<jump the_end>>
 ===
 
@@ -181,10 +182,12 @@ Dani: Yeah! I have an asexual pride flag in my room!
 Marji: I'm not allowed in your room...
 Dani: I mean yeah-- but
 Marji: Why didn't you tell me?!?
-(dani sprite shrugs)
 Dani: Because you never asked.
+<<PlayAndWaitCutscene TimeLineManager 1 false>>
+<<clearProfile GameStateMachine 1>>
 Marji: OH. MY. GOD.
 Dani: Oh! By the way, this doen't change anything! You're still not allowed in my room!
+<<playAndWait TimeLineManager Marji move_face>>
 Marji: Don't care! Smells like chickens!
 Dani: No it doesn't!
 Marji: Does too!

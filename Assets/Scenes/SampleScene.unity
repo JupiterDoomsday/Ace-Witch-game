@@ -8210,7 +8210,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1569592403}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: db49ab039c7d396408042e3c49af4652, type: 2}
+  m_PlayableAsset: {fileID: 0}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -8227,6 +8227,10 @@ PlayableDirector:
   - key: {fileID: -2282814014910884892, guid: db49ab039c7d396408042e3c49af4652, type: 2}
     value: {fileID: 841916662}
   - key: {fileID: 5422571424661681946, guid: db49ab039c7d396408042e3c49af4652, type: 2}
+    value: {fileID: 1761096607}
+  - key: {fileID: 209979700292615173, guid: 88c464e57229883419c5588e53915c2c, type: 2}
+    value: {fileID: 7047113398565234604}
+  - key: {fileID: 8911923849574867053, guid: 88c464e57229883419c5588e53915c2c, type: 2}
     value: {fileID: 1761096607}
   m_ExposedReferences:
     m_References: []
@@ -8259,6 +8263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutscenes:
   - {fileID: 11400000, guid: db49ab039c7d396408042e3c49af4652, type: 2}
+  - {fileID: 11400000, guid: 88c464e57229883419c5588e53915c2c, type: 2}
   director: {fileID: 1569592404}
   GameUI: {fileID: 1014566502}
   playerAnimator: {fileID: 7047113398565234604}
@@ -9055,7 +9060,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a54433aec10583846bd5492dc8177181, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.12
   m_Pitch: 1
@@ -10521,12 +10526,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Marji
       objectReference: {fileID: 0}
+    - target: {fileID: 7047113397129271276, guid: 647dbf4abcbff456597a2c0455523484,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047113397129271276, guid: 647dbf4abcbff456597a2c0455523484,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047113397129271278, guid: 647dbf4abcbff456597a2c0455523484,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047113397129271278, guid: 647dbf4abcbff456597a2c0455523484,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7047113397129271278, guid: 647dbf4abcbff456597a2c0455523484,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1649092088, guid: c377ba22b247fdf4f9f184d1fe90d356,
         type: 3}
+    - target: {fileID: 7047113397129271278, guid: 647dbf4abcbff456597a2c0455523484,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7047113397129271279, guid: 647dbf4abcbff456597a2c0455523484,
         type: 3}
       propertyPath: dir

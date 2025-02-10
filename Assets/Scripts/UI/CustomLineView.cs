@@ -306,19 +306,16 @@ namespace Yarn.Unity
                         // we have a character name text view, show the character name
                         characterNameText.text = dialogueLine.CharacterName;
                         characterNameContainer.SetActive(true);
-                        if(left.enabled || right.enabled)
-                        {
-                            //custom text to show case the text box tail on the correct side
-                            if (dialogueLine.CharacterName.ToLower() == "marji")
-                            {
-                                textBoxTail.transform.localPosition =  new Vector3(-133, -100, 0);
-                                textBoxTail.transform.localRotation = Quaternion.Euler(0, 180, 0);
-                            }
-                            else
-                            {
-                                textBoxTail.transform.localPosition = new Vector3(-343, -100, 0);
-                                textBoxTail.transform.localRotation =  Quaternion.Euler(0, 0, 0);
-                            }
+                        if(right.enabled && dialogueLine.CharacterName.ToLower() == "marji")
+                        { // set text tail to go right cause its the player character
+                            textBoxTail.transform.localPosition =  new Vector3(-133, -100, 0);
+                            textBoxTail.transform.localRotation = Quaternion.Euler(0, 180, 0);
+                            textBoxTail.SetActive(true);
+                        }
+                        else if( left.enabled && dialogueLine.CharacterName.ToLower() != "marji")
+                        { //set the text tail to sgo left cause its an NPC
+                            textBoxTail.transform.localPosition = new Vector3(-343, -100, 0);
+                            textBoxTail.transform.localRotation = Quaternion.Euler(0, 0, 0);
                             textBoxTail.SetActive(true);
                         }
                     }
