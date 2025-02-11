@@ -16,11 +16,6 @@ public class fadeOutObjects : MonoBehaviour
     private float fadeOutVal= 0f;
     private float fadeInVal = 1f;
     public bool isReverse = false;
-    // Start is called before the first frame update
-    void Start()
-    {
- 
-    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -34,9 +29,14 @@ public class fadeOutObjects : MonoBehaviour
         }
     }
 
+    /// This is a function call if we need to Fade these objects on command instead of a collision trigger
+    public void FadeOnCommand()
+    {
+        StartCoroutine(AlterAlpha(curFOA, curFIA, fadeInVal, fadeOutVal, fadeTime, isReverse));
+    }
+
     private void OnDisable()
     {
-        StopAllCoroutines();
         FadeInSwitch.SetActive(true);
     }
 
@@ -52,48 +52,41 @@ public class fadeOutObjects : MonoBehaviour
                 newFadeInAlpha = newFadeOutAlpha;
                 newFadeOutAlpha = temp;
             }
-
-            int curPropIndex = 0;
-            int propSize = fadeOutprops.Length;
-            for (int i = 0; i < fadeOut.Length; i++)
-            {
-                Tilemap curFadeOut = fadeOut[i];
-                Color tmp = curFadeOut.color;
-                tmp.a = newFadeOutAlpha;
-                curFadeOut.color = tmp;
-                if (curPropIndex < propSize)
-                {
-                    SpriteRenderer prop = fadeOutprops[curPropIndex];
-                    tmp = prop.color;
-                    tmp.a = newFadeOutAlpha;
-                    prop.color = tmp;
-                    curPropIndex++;
-                }
-            }
-
-            curPropIndex = 0;
-            propSize = fadeInprops.Length;
-            for (int i = 0; i < fadeIn.Length; i++)
-            {
-                Tilemap curFadeIn = fadeIn[i];
-                Color tmp = curFadeIn.color;
-                tmp.a = newFadeInAlpha;
-                curFadeIn.color = tmp;
-
-                if (curPropIndex < propSize)
-                {
-                    SpriteRenderer prop = fadeInprops[curPropIndex];
-                    tmp = prop.color;
-                    tmp.a = newFadeInAlpha;
-                    prop.color = tmp;
-                    curPropIndex++;
-                }
-            }
-
+            FadeIOItems(fadeOutprops, fadeOut, newFadeOutAlpha); //change fadeOut props and Tilemap
+            FadeIOItems(fadeInprops, fadeIn, newFadeInAlpha); // change fadeIn props and Tilemaps
             yield return null;
         }
         gameObject.SetActive(false);
     }
 
-
+    //helper function to fade in all of the items in a list
+    private void FadeIOItems(SpriteRenderer[] props, Tilemap[] tiles, float newAlpha)
+    {
+        int curPropIndex = 0;
+        int propSize = props.Length;
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            Tilemap curFadeOut = tiles[i];
+            Color tmp = curFadeOut.color;
+            tmp.a = newAlpha;
+            curFadeOut.color = tmp;
+            if (curPropIndex < propSize)
+            {
+                SpriteRenderer prop = props[curPropIndex];
+                tmp = prop.color;
+                tmp.a = newAlpha;
+                prop.color = tmp;
+                curPropIndex++;
+            }
+        }
+        //If there is "more" props than tilemaps go through the rest of the array to alter it
+        for(int i = curPropIndex; i < propSize; i++)
+        {
+            SpriteRenderer prop = props[curPropIndex];
+            Color tmp = prop.color;
+            tmp.a = newAlpha;
+            prop.color = tmp;
+            curPropIndex++;
+        }
+    }
 }
