@@ -47,7 +47,7 @@ public class  Player : MonoBehaviour, IDataPersistence
     private void Awake()
     {
         expressions = new Dictionary<string, Sprite>();
-        invo.AddItem(0, 1);
+       
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
     }
@@ -286,12 +286,27 @@ public class  Player : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         Debug.Log("load data");
-        this.transform.position = data.playerPosition;
-        this.dir = DIRECTION.UP;
+        //this.transform.position = data.playerPosition;
+        //this.dir = DIRECTION.UP;
+        for(int i=0; i< data.itemAmt.Length; i++)
+        {
+            int amt = data.itemAmt[i];
+            if (amt == 0)
+                continue;
+            invo.AddItem(i, amt);
+        }
     }
 
     public void SaveData(ref GameData data)
     {
         data.playerPosition = this.transform.position;
+        int i = 0;
+        foreach (ItemSlot id in invo.item_list)
+        {
+            data.invo[i] = id.item_id;
+            i++;
+            data.itemAmt[id.item_id] = id.amount;
+        }
+        //data.invo = this.invo;
     }
 }
