@@ -57,10 +57,9 @@ public class Talking : MonoBehaviour, PlayerState
                 right.enabled = false;
                 break;
             case 2:
+            default:
                 left.enabled = false;
                 right.enabled = false;
-                break;
-            default:
                 break;
         }
     }

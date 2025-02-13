@@ -1,0 +1,30 @@
+title: Opening
+position: -439,-569
+---
+Marji: Alright Marji, you got this! What could possibly go wrong
+Marji: (Everything.... everthing could go wrong...)
+<<profile GameStateMachine zhat default>> 
+Zhat: Marji! What'cha Doin'?
+Marji: Ah! Zhat! Where you listening?
+Zhat: Uh-huh!
+Marji: Did... bro hear it?
+<<profile GameStateMachine zhat happy>> 
+Zhat: Pssh! Nah! He's busy doing nerd shit!
+<<clearProfile GameStateMachine 2>>
+<<playAndWait TimeLineManager zhat head_turn>>
+Zhat: Yep! Still busy!
+<<playAndWait TimeLineManager zhat head_return>>
+Marji: ummmmm... I have to tell Danny something really reeeeally important! but I'm like-- reeeeeeally nervous tho!
+Zhat: Why don't you get a glass of water? That always helps me whenever I have butterflies in my stomach.
+Zhat: ACK! PFT! PFT! 
+Zhat: BLEEEEEEEEEEGH!
+MArji: WAS THAT A PALLET!?!
+Zhat: Sorry, had butterflies for breakfast! Can you also grab me a glass while you're down there!
+Marji: Uh, sure. Thanks Zhat... you're the best familar ever...
+<<profile GameStateMachine zhat happy>> 
+Zhat: I know! I can't help being awesome!
+<<clearProfile GameStateMachine 2>>
+Srosha: Hark! How could my companion venture out and forget me!
+Marji: Oh yeah, almost forgot my familiar! 
+Marji: Come on Srosha! Lets go!
+===

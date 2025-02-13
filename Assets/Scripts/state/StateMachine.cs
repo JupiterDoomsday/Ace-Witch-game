@@ -27,13 +27,11 @@ public class StateMachine : MonoBehaviour
 
     public void Start()
     {
-        //automataStack = new AutomataStack();
         walkingState = new Walking();
         interactState = new Interact();
         idleState = new Idle();
         sitState = new Sitting();
         curState = idleState;
-        //talkingState.player = player;
         invoUI.setInvo(player.invo);
     }
 

@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: e6c39817f790f43eb90fa9de404294e1
+guid: cbe4371de61f01442921400a6b0f1235
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 1543769295293084831
-    second: Jatt-Sheet_0
-  - first:
-      213: 819012671509505418
-    second: Jatt-Sheet_1
-  - first:
-      213: 4583084598111612062
-    second: Jatt-Sheet_2
-  - first:
-      213: 4451487763381329701
-    second: Jatt-Sheet_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -45,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -61,7 +49,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -75,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -94,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,19 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jatt-Sheet_0
+      name: zhat_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 240
-        height: 240
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f94791daef19c6510800000000000000
-      internalID: 1543769295293084831
+      spriteID: 3d759d0cd6c5471408457bbe7bf18fc8
+      internalID: 1829278557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jatt-Sheet_1
+      name: zhat_1
       rect:
         serializedVersion: 2
-        x: 240
+        x: 64
         y: 0
-        width: 240
-        height: 240
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a852ed77fa7bd5b00800000000000000
-      internalID: 819012671509505418
+      spriteID: 525cf2b0c87b7624d8f3c31e64fb1722
+      internalID: 258129522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jatt-Sheet_2
+      name: zhat_2
       rect:
         serializedVersion: 2
-        x: 480
+        x: 128
         y: 0
-        width: 240
-        height: 240
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,29 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9ca106e8236a9f30800000000000000
-      internalID: 4583084598111612062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jatt-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 0
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52f975a298cd6cd30800000000000000
-      internalID: 4451487763381329701
+      spriteID: 8a149bc706668d04ba9c5c365e99d7a0
+      internalID: 782385506
       vertices: []
       indices: 
       edges: []
@@ -223,10 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jatt-Sheet_0: 1543769295293084831
-      Jatt-Sheet_1: 819012671509505418
-      Jatt-Sheet_3: 4451487763381329701
-      Jatt-Sheet_2: 4583084598111612062
+      zhat_2: 782385506
+      zhat_1: 258129522
+      zhat_0: 1829278557
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
