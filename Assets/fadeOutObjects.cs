@@ -37,7 +37,7 @@ public class fadeOutObjects : MonoBehaviour
 
     private void OnDisable()
     {
-        /*if(isReverse)
+        if(isReverse)
         {
             FadeIOItems(fadeOutprops, fadeOut, 1f); //change fadeOut props and Tilemap
             FadeIOItems(fadeInprops, fadeIn, 0f); // change fadeIn props and Tilemaps
@@ -46,7 +46,7 @@ public class fadeOutObjects : MonoBehaviour
         {
             FadeIOItems(fadeOutprops, fadeOut, 0f); //change fadeOut props and Tilemap
             FadeIOItems(fadeInprops, fadeIn, 1f); // change fadeIn props and Tilemaps
-        }*/
+        }
         FadeInSwitch.SetActive(true);
     }
 
@@ -76,27 +76,33 @@ public class fadeOutObjects : MonoBehaviour
         int propSize = props.Length;
         for (int i = 0; i < tiles.Length; i++)
         {
-            Tilemap curFadeOut = tiles[i];
-            Color tmp = curFadeOut.color;
-            tmp.a = newAlpha;
-            curFadeOut.color = tmp;
-            if (curPropIndex < propSize)
+            if (tiles[i])
             {
-                SpriteRenderer prop = props[curPropIndex];
-                tmp = prop.color;
+                Tilemap curFadeOut = tiles[i];
+                Color tmp = curFadeOut.color;
                 tmp.a = newAlpha;
-                prop.color = tmp;
-                curPropIndex++;
+                curFadeOut.color = tmp;
+                if (curPropIndex < propSize)
+                {
+                    SpriteRenderer prop = props[curPropIndex];
+                    if (prop == null)
+                        continue;
+                    tmp = prop.color;
+                    tmp.a = newAlpha;
+                    prop.color = tmp;
+                    curPropIndex++;
+                }
             }
         }
         //If there is "more" props than tilemaps go through the rest of the array to alter it
         for(int i = curPropIndex; i < propSize; i++)
         {
-            SpriteRenderer prop = props[curPropIndex];
+            if (props[i] == null)
+                continue;
+            SpriteRenderer prop = props[i];
             Color tmp = prop.color;
             tmp.a = newAlpha;
             prop.color = tmp;
-            curPropIndex++;
         }
     }
 }
