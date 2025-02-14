@@ -37,7 +37,7 @@ public class fadeOutObjects : MonoBehaviour
 
     private void OnDisable()
     {
-        if(isReverse)
+        /*if(isReverse)
         {
             FadeIOItems(fadeOutprops, fadeOut, 1f); //change fadeOut props and Tilemap
             FadeIOItems(fadeInprops, fadeIn, 0f); // change fadeIn props and Tilemaps
@@ -46,7 +46,7 @@ public class fadeOutObjects : MonoBehaviour
         {
             FadeIOItems(fadeOutprops, fadeOut, 0f); //change fadeOut props and Tilemap
             FadeIOItems(fadeInprops, fadeIn, 1f); // change fadeIn props and Tilemaps
-        }
+        }*/
         FadeInSwitch.SetActive(true);
     }
 

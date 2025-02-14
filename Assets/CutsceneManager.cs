@@ -63,7 +63,7 @@ public class CutsceneManager : MonoBehaviour
     {
         if (gameObject == null)
             return null;
-
+        Debug.Log("Playing : " + anim);
         Animator actorAnimator = gameObject.GetComponent<Animator>();
         if (actorAnimator)
         {
@@ -96,6 +96,7 @@ public class CutsceneManager : MonoBehaviour
                 GameUI.SetActive(true);
                 isPlaying = false;
                 playerAnimator.enabled = false;
+                Debug.Log("Finsihed animation : ");
             }
         }
     }
