@@ -32,8 +32,6 @@ public class WarpZone : MonoBehaviour
         isFadingIn = false;
         fadeInHash = Animator.StringToHash("Base Layer.fade_in_faster");
         fadeOutHash = Animator.StringToHash("Base Layer.fade_out_faster");
-        Debug.Log("Fade in hash: " + fadeInHash);
-        Debug.Log("Fade Out hash: " + fadeOutHash);
     }
     // Start is called before the first frame update
 
@@ -43,6 +41,8 @@ public class WarpZone : MonoBehaviour
         {
             isPlaying = true;
             isWarping = true;
+            mach.ExitStateRightAway();
+            mach.enabled = false;
             StartCoroutine(PlayAndWait(crossFade, fadeInHash));
         }
     }
@@ -61,6 +61,11 @@ public class WarpZone : MonoBehaviour
             isFadingIn = true;
             isPlaying = true;
             StartCoroutine(PlayAndWait(crossFade, fadeOutHash));
+        }
+        if( isFadingIn)
+        {
+            mach.enabled = true;
+            isFadingIn = false;
         }
     }
 

@@ -127,6 +127,14 @@ public class StateMachine : MonoBehaviour
         return prevPlayerState;
     }
 
+    public void SetToIdle()
+    {
+        player.act = ACT.IDLE;
+        player.player_animator.enabled = false;
+        curState = idleState;
+        this.enabled = false;
+    }
+
     public void UpdateAct()
     {
         switch (player.act)
