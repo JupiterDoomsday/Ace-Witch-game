@@ -28,7 +28,7 @@ public class ChangeSorting : MonoBehaviour
             }
             else
             {
-                layerDest = "Fence";
+                layerDest = "foreground";
                 layer.sortingOrder = 1;
             }
             layer.sortingLayerID = SortingLayer.NameToID(layerDest);
