@@ -26,7 +26,8 @@ public enum DIRECTION
     UP,
     DOWN,
     LEFT,
-    RIGHT
+    RIGHT,
+    ANY
 };
 public class  Player : MonoBehaviour, IDataPersistence
 {

@@ -39,14 +39,26 @@ public class WarpZone : MonoBehaviour
     {
         if (collision.CompareTag("Player") && marji.dir == reqDir)
         {
-            isPlaying = true;
-            isWarping = true;
-            mach.ExitStateRightAway();
-            mach.enabled = false;
-            StartCoroutine(PlayAndWait(crossFade, fadeInHash));
+            WarpPlayer();
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!isPlaying && collision.CompareTag("Player") && marji.dir == reqDir)
+        {
+            WarpPlayer();
         }
     }
 
+    public void WarpPlayer()
+    {
+        Debug.Log("Main call for player");
+        isPlaying = true;
+        isWarping = true;
+        mach.ExitStateRightAway();
+        mach.enabled = false;
+        StartCoroutine(PlayAndWait(crossFade, fadeInHash));
+    }
     public void FixedUpdate()
     {
         if (isPlaying)
@@ -54,7 +66,6 @@ public class WarpZone : MonoBehaviour
         
         if (isWarping)
         {
-            Debug.Log("Playing Fade out");
             mainCamera.transform.position = CameraPosition;
             player.transform.position = SetPosition;
             isWarping = false;
