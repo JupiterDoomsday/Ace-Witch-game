@@ -26,7 +26,6 @@ public class Npc : Interactable
     public ACT act;
     public NPC_TYPE type;
     public SOCIAL_STANDING player_relationship;
-    public DIRECTION dir;
 
     public Dictionary<string,Sprite> expressions;
     public Sprite Profile;
@@ -73,7 +72,6 @@ public class Npc : Interactable
             case (DIRECTION.RIGHT):
                 this.dir = DIRECTION.LEFT;
                 break;
-
         }
     }
 
@@ -112,6 +110,8 @@ public class Npc : Interactable
             
         switch (this.dir)
         {
+            case (DIRECTION.ANY):
+                return true;
             case (DIRECTION.UP):
                 return (marji.dir == DIRECTION.DOWN);
             case (DIRECTION.DOWN):

@@ -37,10 +37,11 @@ public class Interact :  PlayerState
         
     }
 
-    public void OnExit(StateMachine player)
+    public void OnExit(StateMachine mach)
     {
         hit = new RaycastHit2D();
-        player.UpdateAct();
+        mach.player.act = ACT.IDLE;
+        mach.UpdateAct();
     }
 
     public void UpdateState(StateMachine mach)
@@ -71,16 +72,24 @@ public class Interact :  PlayerState
                         hit.collider.enabled = false;
                     break;
                 case "talkingItem":
-                Debug.Log("You Hit TALKING ITEM!");
                     TalkableItem item = hit.collider.GetComponentInParent<TalkableItem>();
+                    if (item.CorrespondingDirection(player))
+                    {
                         player.act = ACT.TALKING;
                         OnExit(mach);
                         mach.talkingState.dialogueRunner.StartDialogue(item.startNode);
-                    return;
-
+                        return;
+                    }
+                    break;
+                case "itemPuzzle":
+                    ItemReqPuzzle puzzle = hit.collider.GetComponent<ItemReqPuzzle>();
+                    if(puzzle.CorrespondingDirection(player))
+                    {
+                        puzzle.Interacting(player);
+                    }
+                    break;
             }
         }
-            player.act = ACT.IDLE;
             OnExit(mach);
     }
 }
