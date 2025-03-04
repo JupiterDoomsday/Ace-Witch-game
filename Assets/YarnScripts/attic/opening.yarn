@@ -1,10 +1,20 @@
-title: Opening
+title: openingStart
 position: -439,-569
 ---
+<<HideUI GameStateMachine>>
+<<movePlayer Marji RIGHT 4 4 >>
+<<wait .5>>
+<<movePlayer Marji LEFT 4 4 >>
+<<wait .5>>
+<<movePlayer Marji RIGHT 4 4 >>
+<<wait .5>>
+<<ShowUI GameStateMachine>>
 Marji: Alright Marji, you got this! What could possibly go wrong
 Marji: (Everything.... everthing could go wrong...)
 <<profile GameStateMachine zhat default>> 
 Zhat: Marji! What'cha Doin'?
+<<SetDirection Marji UP false>>
+<<profile GameStateMachine marji stressed>>
 Marji: Ah! Zhat! Where you listening?
 Zhat: Uh-huh!
 Marji: Did... bro hear it?
@@ -14,17 +24,35 @@ Zhat: Pssh! Nah! He's busy doing nerd shit!
 <<playAndWait TimeLineManager zhat head_turn>>
 Zhat: Yep! Still busy!
 <<playAndWait TimeLineManager zhat head_return>>
-Marji: ummmmm... I have to tell Danny something really reeeeally important! but I'm like-- reeeeeeally nervous tho!
+<<profile GameStateMachine marji stressed>>
+<<profile GameStateMachine zhat default>> 
+Marji: ummmmm... I have to tell Danny something really really important! but I'm like-- reeeeeeally nervous tho!
 Zhat: Why don't you get a glass of water? That always helps me whenever I have butterflies in my stomach.
-Zhat: ACK! PFT! PFT! 
-Zhat: BLEEEEEEEEEEGH!
+<<profile GameStateMachine zhat tired>>
+<<clearProfile GameStateMachine 1>>
+Zhat: ACK! PFT! PFT! BLEEEEEEEEEEGH!
+<<profile GameStateMachine marji mouthopen>>
 MArji: WAS THAT A PALLET!?!
-Zhat: Sorry, had butterflies for breakfast! Can you also grab me a glass while you're down there!
+<<profile GameStateMachine marji lookat>>
+Zhat: Just had them for breakfast! Can you grab me a glass while you're down there!
+<<profile GameStateMachine marji mouthopen>>
 Marji: Uh, sure. Thanks Zhat... you're the best familar ever...
 <<profile GameStateMachine zhat happy>> 
-Zhat: I know! I can't help being awesome!
+Zhat: I know! I can't help it!
 <<clearProfile GameStateMachine 2>>
+<<HideUI GameStateMachine>>
+<<movePlayer Marji DOWN 2 4 >>
+<<movePlayer Marji RIGHT 1 4 >>
+<<PlayAndWaitCutscene TimeLineManager 3 true>>
+<<wait .2>>
+<<ShowUI GameStateMachine>>
+<<SetDirection Marji LEFT false>>
 Srosha: Hark! How could my companion venture out and forget me!
-Marji: Oh yeah, almost forgot my familiar! 
-Marji: Come on Srosha! Lets go!
+<<profile GameStateMachine marji smile>>
+Marji: Oh yeeeeeah, almost forgot! Come on Srosha, Lets go!
+<<HideUI GameStateMachine>>
+<<playSoundFX GameStateMachine stairs.ogg>>
+<<playAndWait TimeLineManager CrossFade fade_in>>
+<<SetObjectPosition srosha 10 -22 0>>
+<<playAndWait TimeLineManager CrossFade fade_out>>
 ===

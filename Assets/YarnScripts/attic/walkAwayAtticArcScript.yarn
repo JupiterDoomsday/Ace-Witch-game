@@ -1,0 +1,10 @@
+title: walkAwayAttic
+position: -192,-370
+---
+<<HideUI GameStateMachine>>
+<<movePlayer Marji DOWN 2 4 >>
+<<wait .25>>
+<<ShowUI GameStateMachine>>
+<<profile GameStateMachine marji stressed>> 
+Marji: Um... no. I need some water.
+===

@@ -8,8 +8,6 @@ public class StateMachine : MonoBehaviour
 {
     static Walking walkingState;
     static Idle idleState;
-    [SerializeField]
-    private PlayableDirector timeline;
     private QuestManager m_QManager;
     public AudioSource footstepsSoundFX;
     [SerializeField] private QuestSystemUI QuestUI;
@@ -23,6 +21,7 @@ public class StateMachine : MonoBehaviour
     private PlayerState curState = null;
     private bool isCutscenePlaying = false;
     public Player player;
+    public PlayOpening cutscene;
     private ACT prevPlayerState;
 
     public void Start()
@@ -33,44 +32,18 @@ public class StateMachine : MonoBehaviour
         sitState = new Sitting();
         curState = idleState;
         invoUI.setInvo(player.invo);
+        cutscene.StartCutscene();
     }
 
     //is the bones for handeling the talking event
-    public void isTalking(Npc npc)
-    {
-        
-        PlayableAsset introCutscene = npc.GetCutscene();
-        if(introCutscene)
-        {
-            timeline.playableAsset = introCutscene;
-            isCutscenePlaying = true;
-            StartCoroutine(Cutscene(npc));
-        }
-        else
-        {
-            talkingState.dialogueRunner.StartDialogue(npc.speak());
-        }
-        
-    }
+    public void isTalking(Npc npc){ PlayYarnScript(npc.speak()); }
 
-    IEnumerator Cutscene(Npc npc)
+    public void PlayYarnScript(string yanrNode)
     {
-        timeline.Play();
-        while (isCutscenePlaying)
-        {
-            if (timeline.state == PlayState.Playing)
-            {
-                yield return null;
-            }
-            else
-            {
-                isCutscenePlaying = false;
-                talkingState.dialogueRunner.StartDialogue(npc.speak());
-                yield break;
-            }
-        }
+        player.setTalking();
+        curState = talkingState;
+        talkingState.dialogueRunner.StartDialogue(yanrNode);
     }
-
 
     public void SetInteractingObject(GameObject curObject)
     {
@@ -88,7 +61,6 @@ public class StateMachine : MonoBehaviour
         //we want to put a "hold on updating anyting if we have cutscenes;
         if (isCutscenePlaying)
             return;
-
         curState.UpdateState(this);
     }
 

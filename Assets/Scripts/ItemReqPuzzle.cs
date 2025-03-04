@@ -15,7 +15,7 @@ namespace CustomeInteractables
         internal UnityEngine.Events.UnityEvent OnPuzzleSolved;
         public ItemReqPuzzle()
         {
-            interacting = INTERACT_TYPE.ITEM;
+            interacting = INTERACT_TYPE.TOOL;
             ReqItemId = -1;
         }
 
@@ -41,7 +41,7 @@ namespace CustomeInteractables
        public  void IsSolved()
         {
            OnPuzzleSolved.Invoke();
-           //Destroy(this);
+           Destroy(this);
         }
     }
 }

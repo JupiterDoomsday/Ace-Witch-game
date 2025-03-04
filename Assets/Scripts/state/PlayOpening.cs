@@ -10,19 +10,18 @@ public class PlayOpening : MonoBehaviour, IDataPersistence
     public CutsceneManager timelineManager;
     private bool opening = true;
 
-    public void Start()
+    public void StartCutscene()
     {
         if(opening)
         {
             player.invo.AddItem(0, 1);
-            timelineManager.PlayAndWaitCutscene(2, true);
+            mach.PlayYarnScript("openingStart");
+            //timelineManager.PlayAndWaitCutscene(2, true);
         }
-    }
-    public void PlayOpeningDia()
-    {
-        player.setTalking();
-        mach.UpdateAct();
-        mach.talkingState.dialogueRunner.StartDialogue("Opening");
+        else
+        {
+            Destroy(this);
+        }
     }
     public void LoadData(GameData data)
     {
