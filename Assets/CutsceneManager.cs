@@ -11,6 +11,8 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField]
     private PlayableDirector director;
     [SerializeField]
+    private AudioSource soundFXPlayer;
+    [SerializeField]
     private GameObject GameUI;
     [SerializeField]
     private Animator playerAnimator;
@@ -100,5 +102,4 @@ public class CutsceneManager : MonoBehaviour
             }
         }
     }
-
 }
