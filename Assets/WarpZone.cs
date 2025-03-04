@@ -14,6 +14,10 @@ public class WarpZone : MonoBehaviour
     private Vector2 SetPosition;
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private AudioSource audioPlayer;
+    [SerializeField]
+    private AudioClip soundFx;
     private Player marji;
     [SerializeField]
     private Animator crossFade;
@@ -52,11 +56,12 @@ public class WarpZone : MonoBehaviour
 
     public void WarpPlayer()
     {
-        Debug.Log("Main call for player");
+        audioPlayer.clip = soundFx;
         isPlaying = true;
         isWarping = true;
         mach.ExitStateRightAway();
         mach.enabled = false;
+        audioPlayer.Play();
         StartCoroutine(PlayAndWait(crossFade, fadeInHash));
     }
     public void FixedUpdate()
@@ -101,5 +106,9 @@ public class WarpZone : MonoBehaviour
                 isPlaying = false;
             }
         }
+    }
+    public bool isRunning()
+    {
+        return isWarping || isFadingIn;
     }
 }

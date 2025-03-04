@@ -8,6 +8,8 @@ public class Save
     public int player_y;
     public int player_x;
     public List<int> playerInvo = new List<int>();
+    public int[] EventList = new int[10];
     public bool openingPlayed = false;
+
 
 }

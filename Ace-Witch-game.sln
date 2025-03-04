@@ -121,8 +121,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Burst.Editor", "Unity
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEditor.XR.LegacyInputHelpers", "UnityEditor.XR.LegacyInputHelpers.csproj", "{AE69195A-A8E8-2766-0EA7-1A69B201A771}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{97D14F57-3D3E-68EA-3576-38CD69FB3EF6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InternalAPIEditorBridge.001", "Unity.InternalAPIEditorBridge.001.csproj", "{EACC7057-5CBD-3A48-72EF-B94041966854}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Sysroot.Linux_x86_64", "Unity.Sysroot.Linux_x86_64.csproj", "{2DFCF014-4367-A85B-F424-E33E7B760642}"
@@ -441,10 +439,6 @@ Global
 		{AE69195A-A8E8-2766-0EA7-1A69B201A771}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE69195A-A8E8-2766-0EA7-1A69B201A771}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE69195A-A8E8-2766-0EA7-1A69B201A771}.Release|Any CPU.Build.0 = Release|Any CPU
-		{97D14F57-3D3E-68EA-3576-38CD69FB3EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97D14F57-3D3E-68EA-3576-38CD69FB3EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97D14F57-3D3E-68EA-3576-38CD69FB3EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97D14F57-3D3E-68EA-3576-38CD69FB3EF6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EACC7057-5CBD-3A48-72EF-B94041966854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EACC7057-5CBD-3A48-72EF-B94041966854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EACC7057-5CBD-3A48-72EF-B94041966854}.Release|Any CPU.ActiveCfg = Release|Any CPU

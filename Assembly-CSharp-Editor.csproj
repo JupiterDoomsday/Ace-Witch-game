@@ -59,10 +59,7 @@
     <Analyzer Include="C:\Users\isaai\Documents\GitHub\Ace-Witch-game\Library\PackageCache\dev.yarnspinner.unity@1ebd52fe24\SourceGenerator\YarnSpinner.Unity.SourceCodeGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\editor\CutNode.cs" />
     <Compile Include="Assets\Scripts\editor\Connection.cs" />
-    <Compile Include="Assets\Scripts\editor\ConnectionPoint.cs" />
-    <Compile Include="Assets\Scripts\editor\NodeEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
