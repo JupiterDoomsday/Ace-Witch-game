@@ -44,13 +44,39 @@ public class  Player : MonoBehaviour, IDataPersistence
     public bool isSitting = false;
     public Animator player_animator;
     public Rigidbody2D rgb2d;
+    [SerializeField]
+    private ContactFilter2D m_LayerStopsPlayer;
+    [SerializeField]
+    private ContactFilter2D m_filter;
+    private BoxCollider2D m_collider;
+    private Collider2D[] m_CollidedObjects = new Collider2D[1];
 
-    private void Awake()
+    private void Start()
     {
+        m_collider = GetComponent<BoxCollider2D>();
+        rgb2d = GetComponent<Rigidbody2D>();
         expressions = new Dictionary<string, Sprite>();
-       
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
+    }
+
+    public void CheckCollisions()
+    {
+        m_collider.OverlapCollider(m_filter, m_CollidedObjects);
+        foreach(var col in m_CollidedObjects)
+        {
+            if(col)
+                Debug.Log(col.name);
+        }
+    }
+
+    public Collider2D GetCollision()
+    {
+        return m_CollidedObjects[0];
+    }
+    public void ResetCollision()
+    {
+        m_CollidedObjects[0] = null;
     }
 
     
@@ -191,7 +217,10 @@ public class  Player : MonoBehaviour, IDataPersistence
         else
             return null;
     }
-
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
     [YarnCommand("SetPosition")]
     public void SetPosition(float x, float y)
     {
@@ -201,6 +230,7 @@ public class  Player : MonoBehaviour, IDataPersistence
     [YarnCommand("SetDirection")]
     public void SetSpriteDirection(string direction, bool isSitting)
     {
+        player_animator.enabled = false;
         if (isSitting)
         {
             SetSitting(direction);
@@ -212,7 +242,8 @@ public class  Player : MonoBehaviour, IDataPersistence
         setDirectionSprite();
     }
 
-    private IEnumerator MoveActor(string direction, int amt, float speed)
+    [YarnCommand("movePlayer")]
+    public IEnumerator MoveActor(string direction, int amt, float speed)
     {
         SetDirection(direction);
         Vector3 moveDir = new Vector3(0, 0, 0);
@@ -220,11 +251,11 @@ public class  Player : MonoBehaviour, IDataPersistence
         switch (direction)
         {
             case "UP":
-                moveDir.y = -1;
+                moveDir.y = 1;
                 player_animator.SetInteger("y", 1);
                 break;
             case "DOWN":
-                moveDir.y = 1;
+                moveDir.y = -1;
                 player_animator.SetInteger("y", -1);
                 break;
             case "LEFT":
@@ -239,17 +270,18 @@ public class  Player : MonoBehaviour, IDataPersistence
         }
         Vector3 startPos = transform.position;
         Vector3 finalPos = startPos + (moveDir * amt);
-        float inTime = speed * amt;
+        float expectedTime = (speed / 30) * amt;
         float elapsedTime = 0;
-        while (elapsedTime < inTime)
+        while (elapsedTime < expectedTime)
         {
-            transform.position = Vector3.Lerp(startPos, finalPos, elapsedTime / inTime);
-            elapsedTime += Time.fixedDeltaTime;
+            transform.position = Vector3.Lerp(startPos, finalPos, elapsedTime / expectedTime);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
         player_animator.SetInteger("y", 0);
         player_animator.SetInteger("x", 0);
         player_animator.enabled = false;
+        SetSpriteDirection(direction, false);
     }
 
     public void PlayAnimation(string aniState)

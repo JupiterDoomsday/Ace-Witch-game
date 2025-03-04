@@ -38,8 +38,6 @@ public class ChangeSorting : MonoBehaviour
                 props[i].sortingLayerID = SortingLayer.NameToID(layerDest);
             }
         }
-
-
     }
 
     void OnTriggerExit2D(Collider2D col)

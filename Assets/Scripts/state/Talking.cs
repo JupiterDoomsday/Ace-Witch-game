@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Yarn.Unity;
 using UnityEngine.UI;
+using UnityEditor;
 using state;
 using UnityEngine.Playables;
 using System;
@@ -121,6 +122,11 @@ public class Talking : MonoBehaviour, PlayerState
         target.SetNativeSize();
         target.enabled = true;
     }
+    [YarnCommand("playSoundFX")]
+    public void PlaySoundFX(string file)
+    {
+        audioSource.PlayOneShot((AudioClip)AssetDatabase.LoadAssetAtPath(("Assets/soundfx/" + file), typeof(AudioClip)));
+    }
 
     [YarnCommand("showImage")]
     public void ShowImage(bool enable, bool hideProfile)
@@ -128,6 +134,12 @@ public class Talking : MonoBehaviour, PlayerState
         if (hideProfile)
             ClearSprite(2);
         PictureContainer.SetActive(enable);
+    }
+
+    [YarnCommand("disableObject")]
+    public static void disableObject(GameObject obj, bool isActive)
+    {
+        obj.SetActive(isActive);
     }
 
 
@@ -143,6 +155,14 @@ public class Talking : MonoBehaviour, PlayerState
         }
 
     }
+    [YarnCommand("SetObjectPosition")]
+    public static void SetPosition(GameObject obj, float x, float y, float z)
+    {
+        if(obj)
+        {
+            obj.transform.position = new Vector3(x, y, z);
+        }
+    }
     public void UpdateState(StateMachine player)
     {
         if (cutsceneManager.IsPlaying())
@@ -150,6 +170,7 @@ public class Talking : MonoBehaviour, PlayerState
 
         if (dialogueRunner.IsDialogueRunning == false)
         {
+            Debug.Log("exit dialouge");
             OnExit(player);
         }
 

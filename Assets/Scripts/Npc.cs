@@ -29,14 +29,14 @@ public class Npc : Interactable
 
     public Dictionary<string,Sprite> expressions;
     public Sprite Profile;
-    private bool dirMoves = false;
+    public bool dirMoves = false;
     public int speed;
     [SerializeField]
-    private Sprite[] defaultSprites = new Sprite[1];
-    [SerializeField]
-    private PlayableAsset introCutscene;
+    private Sprite[] defaultSprites = new Sprite[4];
     public string Name;
     public string startNode;
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
     //public DialogueRunner runner;
     //private Transform transform;
     private Animator actor_animator;
@@ -51,6 +51,7 @@ public class Npc : Interactable
     private void Start()
     {
         //render.sprite = defaultSprites[0];
+        spriteRenderer = GetComponent<SpriteRenderer>();
         expressions = new Dictionary<string, Sprite>();
         for (int i = 0; i != Math.Min(_keys.Count, _values.Count); i++)
             expressions.Add(_keys[i], _values[i]);
@@ -58,71 +59,78 @@ public class Npc : Interactable
 
     public void resetNPCDir(Player marji)
     {
+        Sprite render = null;
         switch (marji.dir)
         {
             case (DIRECTION.UP):
                 this.dir = DIRECTION.DOWN;
+                render = ChangeDefaultSprite(2);
                 break;
             case (DIRECTION.DOWN):
                 this.dir = DIRECTION.UP;
+                render = ChangeDefaultSprite(0);
                 break;
             case (DIRECTION.LEFT):
                 this.dir = DIRECTION.RIGHT;
+                render = ChangeDefaultSprite(1);
                 break;
             case (DIRECTION.RIGHT):
                 this.dir = DIRECTION.LEFT;
+                render = ChangeDefaultSprite(3);
                 break;
+        }
+
+        if (render)
+        {
+            spriteRenderer.sprite = render;
         }
     }
 
     public void SetDirection(string direction)
     {
+        Sprite render = null;
         switch (direction)
         {
             case "UP":
-                dir = DIRECTION.UP;            
+                dir = DIRECTION.UP;
+                render = ChangeDefaultSprite(0);
                 break;
 
             case "LEFT":
                dir = DIRECTION.LEFT;
+                render = ChangeDefaultSprite(3);
                 break;
 
             case "RIGHT":
                 dir = DIRECTION.RIGHT;
+                render = ChangeDefaultSprite(1);
                 break;
 
             case "DOWN":
                 dir = DIRECTION.DOWN;
+                render = ChangeDefaultSprite(2);
                 break;
+        }
+
+        if (render)
+        {
+            spriteRenderer.sprite = render;
         }
     }
     public void SetNPCDirection(DIRECTION direction)
     {
         this.dir = direction;
     }
-    public bool corespondingDir(Player marji)
+
+    public override bool CorrespondingDirection(Player p)
     {
         if (dirMoves)
         {
-            resetNPCDir(marji);
+            Debug.Log("IN Dir moves");
+            resetNPCDir(p);
             return true;
         }
-            
-        switch (this.dir)
-        {
-            case (DIRECTION.ANY):
-                return true;
-            case (DIRECTION.UP):
-                return (marji.dir == DIRECTION.DOWN);
-            case (DIRECTION.DOWN):
-                return marji.dir == DIRECTION.UP;
-            case (DIRECTION.LEFT):
-                return marji.dir == DIRECTION.RIGHT;
-            case (DIRECTION.RIGHT):
-                return this.dir == DIRECTION.LEFT;
-            default:
-                return false;
-        }
+        return base.CorrespondingDirection(p);
     }
     public string speak()
     {
@@ -170,10 +178,6 @@ public class Npc : Interactable
 
         return defaultSprites[i];
     }
-    public PlayableAsset GetCutscene()
-    {
-        return introCutscene;
-    }
 
     public void PlayNPCAnimation(string anim)
     {
@@ -214,7 +218,7 @@ public class Npc : Interactable
         }
         Vector3 startPos = transform.position;
         Vector3 finalPos = startPos + (moveDir * amt);
-        float inTime = speed * amt;
+        float inTime = (speed/30) * amt;
         float elapsedTime = 0;
         while (elapsedTime < inTime)
         {

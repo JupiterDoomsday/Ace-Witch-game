@@ -8,13 +8,12 @@ public class Interact :  PlayerState
 { 
 
     private GameObject curIteractable;
-    private RaycastHit2D hit;
-    public float dist = 2f;
 
     public void handleInput(StateMachine mach)
     {
         Player player = mach.player;
-        float axisX = Input.GetAxisRaw("Horizontal");
+        player.CheckCollisions();
+        /*float axisX = Input.GetAxisRaw("Horizontal");
         switch (player.dir)
         {
             case DIRECTION.UP:
@@ -33,13 +32,13 @@ public class Interact :  PlayerState
                 hit = Physics2D.Raycast(player.transform.position, Vector2.right, dist, LayerMask.GetMask("npc", "item"));
                 Debug.DrawRay(player.transform.position, (Vector2.right * dist), Color.green);
                 break;
-        }
-        
+        }*/
+
     }
 
     public void OnExit(StateMachine mach)
     {
-        hit = new RaycastHit2D();
+        mach.player.ResetCollision();
         mach.player.act = ACT.IDLE;
         mach.UpdateAct();
     }
@@ -47,17 +46,17 @@ public class Interact :  PlayerState
     public void UpdateState(StateMachine mach)
     {
         Player player = mach.player;
-        if (hit.collider != null && hit.distance < 1f)
+        Collider2D target = mach.player.GetCollision();
+        if (target)
         {
-            switch(hit.collider.tag)
+            switch(target.tag)
             {
                 case "npc":
                     Debug.Log("You Hit NPC!");
-                    Npc actor = hit.collider.GetComponentInParent<Npc>();
-                    if (actor.corespondingDir(player))
+                    Npc actor = target.GetComponentInParent<Npc>();
+                    if (actor.CorrespondingDirection(player))
                     {
                         Debug.Log("You Hit: " + actor.Name);
-                        player.act = ACT.TALKING;
                         OnExit(mach);
                         mach.isTalking(actor);
                         return;
@@ -66,26 +65,27 @@ public class Interact :  PlayerState
 
                 case "item":
                     Debug.Log("You Hit ITEM!");
-                        PickUp pickup = hit.collider.GetComponentInParent<PickUp>();
+                        PickUp pickup = target.GetComponentInParent<PickUp>();
                         player.invo.AddItem(pickup.item, pickup.amt);
                         pickup.gameObject.SetActive(false);
-                        hit.collider.enabled = false;
                     break;
                 case "talkingItem":
-                    TalkableItem item = hit.collider.GetComponentInParent<TalkableItem>();
+                    TalkableItem item = target.GetComponentInParent<TalkableItem>();
                     if (item.CorrespondingDirection(player))
                     {
                         player.act = ACT.TALKING;
                         OnExit(mach);
-                        mach.talkingState.dialogueRunner.StartDialogue(item.startNode);
+                        mach.PlayYarnScript(item.Talk());
                         return;
                     }
                     break;
                 case "itemPuzzle":
-                    ItemReqPuzzle puzzle = hit.collider.GetComponent<ItemReqPuzzle>();
+                    ItemReqPuzzle puzzle = target.GetComponent<ItemReqPuzzle>();
                     if(puzzle.CorrespondingDirection(player))
                     {
+                        OnExit(mach);
                         puzzle.Interacting(player);
+                        return;
                     }
                     break;
             }
