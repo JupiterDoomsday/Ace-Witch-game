@@ -35,7 +35,6 @@ public class StateMachine : MonoBehaviour
         curState = idleState;
         //talkingState.player = player;
         invoUI.setInvo(player.invo);
-        cutscene.StartCutscene();
         walkingState.player = player;
     }
 

@@ -83,7 +83,7 @@ public class Walking : MonoBehaviour, PlayerState
     {
         isMoving = true;
         ogPos = player.transform.position;
-        targetPos = player.GetPosition() + moveDir;
+        targetPos = ogPos + moveDir;
         float interpolateTime = 0;
 
         while(interpolateTime < 2.0f)
