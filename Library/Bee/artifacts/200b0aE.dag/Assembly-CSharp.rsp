@@ -400,6 +400,7 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/YarnSpinner.Unity.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/YarnSpinnerTests.CommandsInAnAssemblyDefinition.ref.dll"
 -analyzer:"Library/PackageCache/dev.yarnspinner.unity@1ebd52fe24/SourceGenerator/YarnSpinner.Unity.SourceCodeGenerator.dll"
+"Assets/AutoRunEvent.cs"
 "Assets/ChangeSorting.cs"
 "Assets/change_side.cs"
 "Assets/CutsceneManager.cs"
@@ -429,11 +430,14 @@
 "Assets/Scripts/Inventory/ItemSlot.cs"
 "Assets/Scripts/Inventory/PickUp.cs"
 "Assets/Scripts/Inventory/TradeNBarter.cs"
+"Assets/Scripts/ItemReqPuzzle.cs"
 "Assets/Scripts/LevelLoader.cs"
 "Assets/Scripts/MenuTransition.cs"
 "Assets/Scripts/MeshMath.cs"
 "Assets/Scripts/Npc.cs"
 "Assets/Scripts/NPCMovement.cs"
+"Assets/Scripts/OnClickEvent.cs"
+"Assets/Scripts/OnTouchEvent.cs"
 "Assets/Scripts/Owl.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/ShopKeeper.cs"
@@ -445,6 +449,7 @@
 "Assets/Scripts/state/Menu.cs"
 "Assets/Scripts/state/Pause.cs"
 "Assets/Scripts/state/PlayerState.cs"
+"Assets/Scripts/state/PlayOpening.cs"
 "Assets/Scripts/state/Sitting.cs"
 "Assets/Scripts/state/StateMachine.cs"
 "Assets/Scripts/state/TalkableItem.cs"
@@ -456,6 +461,7 @@
 "Assets/Scripts/UI/SelectedItem.cs"
 "Assets/SitOnEvent.cs"
 "Assets/SwitchExitTransitions.cs"
+"Assets/WarpZone.cs"
 -langversion:9.0
 
 /deterministic
