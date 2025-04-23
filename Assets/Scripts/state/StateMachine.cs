@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 
 public class StateMachine : MonoBehaviour
 {
-    static Walking walkingState;
+    public Walking walkingState;
     static Idle idleState;
     [SerializeField]
     private PlayableDirector timeline;
@@ -35,6 +35,8 @@ public class StateMachine : MonoBehaviour
         curState = idleState;
         //talkingState.player = player;
         invoUI.setInvo(player.invo);
+        cutscene.StartCutscene();
+        walkingState.player = player;
     }
 
     //is the bones for handeling the talking event

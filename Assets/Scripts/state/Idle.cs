@@ -19,15 +19,15 @@ public class Idle : PlayerState
             mach.handleInputNow(); //get the latest input RIGHT AWAY;
             return;
         }
-        float axisX = Input.GetAxisRaw("Horizontal");
-        float axisY = Input.GetAxisRaw("Vertical");
-        if (axisX == -1)
+        float axisX = Input.GetAxis("Horizontal");
+        float axisY = Input.GetAxis("Vertical");
+        if (axisX < 0)
             player.dir = DIRECTION.LEFT;
-        else if (axisX == 1)
+        else if (axisX > 0)
             player.dir = DIRECTION.RIGHT;
-        else if (axisY == 1)
+        else if (axisY > 0)
             player.dir = DIRECTION.UP;
-        else if (axisY == -1)
+        else if (axisY < 0)
             player.dir = DIRECTION.DOWN;
         else
             return;

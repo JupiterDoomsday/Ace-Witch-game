@@ -2,47 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 using state;
-public class Walking : PlayerState
+public class Walking : MonoBehaviour, PlayerState 
 {
     public int playerId;
     public Player player;
-    public Vector2 moveDir;
+    public Vector3 moveDir;
+    private Vector3 targetPos, ogPos;
+    private bool isMoving = false;
     public void handleInput(StateMachine mach)
     {
-        Player player = mach.player;
+        //Player player = mach.player;
         if(player.IsSitting())
         {
             player.act = ACT.SITTING;
             OnExit(mach);
             return;
         }
-        float axisX = Input.GetAxisRaw("Horizontal");
-        float axisY = Input.GetAxisRaw("Vertical");
-        player.player_animator.SetInteger("x", (int)axisX);
-        player.player_animator.SetInteger("y", (int)axisY);
-        switch(axisX){
-            case -1:
-                player.dir = DIRECTION.LEFT;
-                return;
-                
-            case 1:
-                player.dir = DIRECTION.RIGHT;
-                return;
-        }
-        switch (axisY)
-        {
-            case -1:
-                player.dir = DIRECTION.DOWN;
-                return;
-            case 1:
-                player.dir = DIRECTION.UP;
-                return;
-            default:
-                player.act = ACT.IDLE;
-                OnExit(mach);
-                break;
-        }
 
+        if(!isMoving)
+        {
+            float axisX = Input.GetAxisRaw("Horizontal");
+            float axisY = Input.GetAxisRaw("Vertical");
+            player.player_animator.SetInteger("y", (int)axisY);
+            switch (axisX)
+            {
+                case -1:
+                    player.dir = DIRECTION.LEFT;
+                    player.player_animator.SetInteger("x", (int)axisX);
+                    player.player_animator.SetInteger("y", 0);
+                    moveDir = new Vector3(-2, 0, 0);
+                    return;
+
+                case 1:
+                    player.dir = DIRECTION.RIGHT;
+                    player.player_animator.SetInteger("x", (int)axisX);
+                    player.player_animator.SetInteger("y", 0);
+                    moveDir = new Vector3(2, 0, 0);
+                    return;
+            }
+            switch (axisY)
+            {
+                case -1:
+                    player.dir = DIRECTION.DOWN;
+                    player.player_animator.SetInteger("y", (int)axisY);
+                    player.player_animator.SetInteger("x", 0);
+                    moveDir = new Vector3(0, -2, 0);
+                    return;
+                case 1:
+                    player.dir = DIRECTION.UP;
+                    player.player_animator.SetInteger("y", (int)axisY);
+                    player.player_animator.SetInteger("x", 0);
+                    moveDir = new Vector3(0, 2, 0);
+                    return;
+            }
+            player.player_animator.SetInteger("y", 0);
+            player.player_animator.SetInteger("x", 0);
+            player.act = ACT.IDLE;
+            OnExit(mach);
+        }
     }
     public void OnExit(StateMachine mach)
     {
@@ -59,21 +76,24 @@ public class Walking : PlayerState
         Player player = mach.player;
         if (player.act != ACT.WALKING)
             return;
-        switch (player.dir)
+        player.rgb2d.velocity = moveDir * player.speed;
+    }
+
+    IEnumerator GridMovement()
+    {
+        isMoving = true;
+        ogPos = player.transform.position;
+        targetPos = player.GetPosition() + moveDir;
+        float interpolateTime = 0;
+
+        while(interpolateTime < 2.0f)
         {
-            case DIRECTION.LEFT:
-                moveDir= new Vector2(-1,0);
-                break;
-            case DIRECTION.RIGHT:
-                moveDir = new Vector2(1, 0);
-                break;
-            case DIRECTION.UP:
-                moveDir = new Vector2(0, 1);
-                break;
-            case DIRECTION.DOWN:
-                moveDir = new Vector2(0, -1);
-                break;
+            Vector3 newPos = Vector3.Lerp(ogPos, targetPos, interpolateTime / 2.0f);
+            player.rgb2d.MovePosition(newPos);
+            interpolateTime += Time.deltaTime;
+            yield return null;
         }
-        player.rgb2d.velocity= moveDir * player.speed;
+        player.rgb2d.MovePosition(targetPos);
+        isMoving = false;
     }
 }
