@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using state;
-public class Walking : PlayerState
+public class Walking : MonoBehaviour, PlayerState
 {
     public int playerId;
-    public Player player;
+    private bool inMotion = false;
     public Vector2 moveDir;
     public void handleInput(StateMachine mach)
     {
@@ -16,6 +16,10 @@ public class Walking : PlayerState
             OnExit(mach);
             return;
         }
+       /* if(inMotion)
+        {
+            return;
+        }*/
         float axisX = Input.GetAxisRaw("Horizontal");
         float axisY = Input.GetAxisRaw("Vertical");
         player.player_animator.SetInteger("x", (int)axisX);
@@ -42,7 +46,6 @@ public class Walking : PlayerState
                 OnExit(mach);
                 break;
         }
-
     }
     public void OnExit(StateMachine mach)
     {
@@ -56,6 +59,10 @@ public class Walking : PlayerState
     // Update is called once per frame
     public void UpdateState(StateMachine mach)
     {
+        /*if (inMotion)
+        {
+            return;
+        }*/
         Player player = mach.player;
         if (player.act != ACT.WALKING)
             return;
@@ -74,6 +81,26 @@ public class Walking : PlayerState
                 moveDir = new Vector2(0, -1);
                 break;
         }
+        inMotion = true;
+        StartCoroutine(GridMovement(player));
         player.rgb2d.velocity= moveDir * player.speed;
+    }
+
+
+
+    private IEnumerator GridMovement(Player p)
+    {
+        Vector3 startPos = p.transform.position;
+        Vector3 targeTPos = moveDir;
+        Vector3 finalPos = startPos + (targeTPos);
+        float inTime = (p.speed/30);
+        float elapsedTime = 0;
+        while (elapsedTime < inTime)
+        {
+            p.transform.position = Vector3.Lerp(startPos, finalPos, elapsedTime / inTime);
+            elapsedTime += Time.fixedDeltaTime;
+            yield return null;
+        }
+        inMotion = false;
     }
 }
