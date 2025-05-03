@@ -137,7 +137,7 @@ public class Talking : MonoBehaviour, PlayerState
     }
 
     [YarnCommand("disableObject")]
-    public static void disableObject(GameObject obj, bool isActive)
+    public static void DisableGameObject(GameObject obj, bool isActive)
     {
         obj.SetActive(isActive);
     }

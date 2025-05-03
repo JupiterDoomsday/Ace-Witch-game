@@ -3,7 +3,7 @@ position: -439,-569
 ---
 <<declare $interactSink = false>>
 <<playAndWait TimeLineManager CrossFade fade_in>>
-<<SetPosition Marji 39.1 -26.5>>
+<<SetPosition Marji 39 -28.5>>
 <<SetDirection Marji UP false>>
 <<SetObjectPosition MainCamera 40 -23 -1>>
 <<playAndWait TimeLineManager CrossFade fade_out>>
@@ -19,5 +19,5 @@ Marji: Oh! A chocolate sink!
 <<set $interactSink to true>>
 Marji: awww, its just rust! 
 <<SetDirection Marji DOWN false>>
-<<disableObject gate_blockade_event>>
+<<disableObject gate_blockade_event false>>
 ===

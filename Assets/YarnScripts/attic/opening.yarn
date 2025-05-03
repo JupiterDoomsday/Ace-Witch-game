@@ -53,6 +53,6 @@ Marji: Oh yeeeeeah, almost forgot! Come on Srosha, Lets go!
 <<HideUI GameStateMachine>>
 <<playSoundFX GameStateMachine stairs.ogg>>
 <<playAndWait TimeLineManager CrossFade fade_in>>
-<<SetObjectPosition srosha 10 -22 0>>
+<<SetObjectPosition srosha 11.167 -23.35 0>>
 <<playAndWait TimeLineManager CrossFade fade_out>>
 ===

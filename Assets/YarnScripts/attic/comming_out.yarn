@@ -32,7 +32,7 @@ title: hows_day_been
 position: 59,-369
 ---
 <<playAndWait TimeLineManager CrossFade fade_in>>
-<<SetPosition Marji -2.3 5>>
+<<SetPosition Marji -3 4.5>>
 <<SetDirection Marji RIGHT true>>
 <<playAndWait TimeLineManager CrossFade fade_out>>
 <<ExitState GameStateMachine sitting>>
