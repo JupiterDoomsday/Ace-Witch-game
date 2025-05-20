@@ -26,7 +26,7 @@ public class StateMachine : MonoBehaviour
 
     public void Start()
     {
-        walkingState = new Walking();
+        walkingState = GetComponent<Walking>();
         interactState = new Interact();
         idleState = new Idle();
         sitState = new Sitting();

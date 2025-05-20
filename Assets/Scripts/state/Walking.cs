@@ -5,8 +5,8 @@ using state;
 public class Walking : MonoBehaviour, PlayerState
 {
     public int playerId;
-    private bool inMotion = false;
-    public Vector2 moveDir;
+    //private bool inMotion = false;
+    private Vector2 moveDir;
     public void handleInput(StateMachine mach)
     {
         Player player = mach.player;
@@ -16,10 +16,9 @@ public class Walking : MonoBehaviour, PlayerState
             OnExit(mach);
             return;
         }
-       /* if(inMotion)
-        {
+        /*if(inMotion)
             return;
-        }*/
+        */
         float axisX = Input.GetAxisRaw("Horizontal");
         float axisY = Input.GetAxisRaw("Vertical");
         player.player_animator.SetInteger("x", (int)axisX);
@@ -50,6 +49,8 @@ public class Walking : MonoBehaviour, PlayerState
     public void OnExit(StateMachine mach)
     {
         Player p = mach.player;
+        p.player_animator.SetInteger("x", 0);
+        p.player_animator.SetInteger("y", 0);
         p.rgb2d.velocity = Vector2.zero;
         p.player_animator.enabled = false;
         p.setDirectionSprite();
@@ -59,41 +60,38 @@ public class Walking : MonoBehaviour, PlayerState
     // Update is called once per frame
     public void UpdateState(StateMachine mach)
     {
-        /*if (inMotion)
-        {
+        /* (inMotion)
             return;
-        }*/
+        */
         Player player = mach.player;
         if (player.act != ACT.WALKING)
             return;
         switch (player.dir)
         {
             case DIRECTION.LEFT:
-                moveDir= new Vector2(-1,0);
+                moveDir= new Vector2(-2,0);
                 break;
             case DIRECTION.RIGHT:
-                moveDir = new Vector2(1, 0);
+                moveDir = new Vector2(2, 0);
                 break;
             case DIRECTION.UP:
-                moveDir = new Vector2(0, 1);
+                moveDir = new Vector2(0, 2);
                 break;
             case DIRECTION.DOWN:
-                moveDir = new Vector2(0, -1);
+                moveDir = new Vector2(0, -2);
                 break;
         }
-        inMotion = true;
-        StartCoroutine(GridMovement(player));
+        //inMotion = true;
+        //StartCoroutine(GridMovement(player));
         player.rgb2d.velocity= moveDir * player.speed;
     }
-
-
 
     private IEnumerator GridMovement(Player p)
     {
         Vector3 startPos = p.transform.position;
         Vector3 targeTPos = moveDir;
         Vector3 finalPos = startPos + (targeTPos);
-        float inTime = (p.speed/30);
+        float inTime = 2f;
         float elapsedTime = 0;
         while (elapsedTime < inTime)
         {
@@ -101,6 +99,7 @@ public class Walking : MonoBehaviour, PlayerState
             elapsedTime += Time.fixedDeltaTime;
             yield return null;
         }
-        inMotion = false;
+        p.transform.position = finalPos;
+        //inMotion = false;
     }
 }
