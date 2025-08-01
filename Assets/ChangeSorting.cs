@@ -17,6 +17,10 @@ public class ChangeSorting : MonoBehaviour
         prevLayer = layer.sortingLayerName;
         len = props.Length;
         prevSprites = new int[len];
+        for (int i = 0; i < len; i++)
+        {
+            prevSprites[i] = props[i].sortingOrder;
+        }
     }
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -29,12 +33,11 @@ public class ChangeSorting : MonoBehaviour
             else
             {
                 layerDest = "foreground";
-                layer.sortingOrder = 1;
+                layer.sortingOrder += 1;
             }
             layer.sortingLayerID = SortingLayer.NameToID(layerDest);
             for (int i = 0; i < len; i++)
             {
-                prevSprites[i] = props[i].sortingOrder;
                 props[i].sortingLayerID = SortingLayer.NameToID(layerDest);
             }
         }
@@ -45,9 +48,10 @@ public class ChangeSorting : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             layer.sortingLayerID = SortingLayer.NameToID(prevLayer);
+            layer.sortingOrder -= 1;
             for (int i = 0; i < len; i++)
             {
-                props[i].sortingOrder= prevSprites[i];
+                props[i].sortingOrder = prevSprites[i];
                 props[i].sortingLayerID = SortingLayer.NameToID(prevLayer);
             }
         }

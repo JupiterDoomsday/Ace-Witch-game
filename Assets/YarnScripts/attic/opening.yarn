@@ -47,6 +47,7 @@ Zhat: I know! I can't help it!
 <<wait .2>>
 <<ShowUI GameStateMachine>>
 <<SetDirection Marji LEFT false>>
+<<profile GameStateMachine srosha angry>>
 Srosha: Hark! How could my companion venture out and forget me!
 <<profile GameStateMachine marji smile>>
 Marji: Oh yeeeeeah, almost forgot! Come on Srosha, Lets go!

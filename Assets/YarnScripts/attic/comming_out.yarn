@@ -8,7 +8,7 @@ position: -192,-370
 <<declare $birdBook = false>>
 <<if $cameOutAce is false>>
 Marji:Hey bro!
-Dani: Hey.
+Danny: Hey.
 -> I have to tell you something
     <<jump hows_day_been>> 
 -> Naw
@@ -20,36 +20,36 @@ Dani: Hey.
     <<jump quick_end>>
 <<else>>
 Marji: Sooooo! Did you find that bird?
-Dani: Not yet.
+Danny: Not yet.
 <<endif>>
 ===
 title: quick_end
 position: -551,-158
 ---
-Dani: See you later!
+Danny: See you later!
 ===
 title: hows_day_been
-position: 59,-369
+position: 59,-370
 ---
 <<playAndWait TimeLineManager CrossFade fade_in>>
 <<SetPosition Marji -3 4.5>>
 <<SetDirection Marji RIGHT true>>
 <<playAndWait TimeLineManager CrossFade fade_out>>
 <<ExitState GameStateMachine sitting>>
-Dani: yeah?
+Danny: yeah?
 Marji: Um. What'cha doin'?
-Dani: I just woke up and catching up on my reading.
+Danny: I just woke up and catching up on my reading.
 <<profile GameStateMachine marji smile>> 
 Marji: Ha! Me too! I mean-- not the book part!
-Dani: Hilarious.
+Danny: Hilarious.
 <<profile GameStateMachine walker lookaway>>
 <<playAndWait TimeLineManager walker book_down>>
-Dani: In fact, what's even more funny is you're never up this early.
+Danny: In fact, what's even more funny is you're never up this early.
 <<profile GameStateMachine marji stressed>> 
 Marji:...
-Dani:...
+Danny:...
 <<profile GameStateMachine walker default>> 
-Dani: Okay, there's either two things happening here–– One. You need help, presumably with a spell. Two. You need help, cause you messed up a spell–
+Danny: Okay, there's either two things happening here–– One. You need help, presumably with a spell. Two. You need help, cause you messed up a spell–
 -> Pft-- I wish!
     <<jump hdb_resp1>>
 -> I just want your love and support
@@ -60,7 +60,7 @@ Dani: Okay, there's either two things happening here–– One. You need help, p
 title: hdb_resp1
 position: 361,-154
 ---
-Dani: Marji, if you're going to hex someone at least wake me up so I can see the trainwreck!
+Danny: Marji, if you're going to hex someone at least wake me up so I can see the trainwreck!
 <<profile GameStateMachine marji smile>> 
 Marji: Naw, only to my enemies.
 Marji: Anyways!
@@ -70,47 +70,47 @@ Marji: Anyways!
     <<jump comming_outt>>
 ===
 title: hbd_resp2
-position: -199,-156
+position: -199,-157
 ---
 <<profile GameStateMachine marji lookat>>
-Dani: Okay, Get out!
-Dani: I'm trying to finish this book before our shift starts!
+Danny: Okay, Get out!
+Danny: I'm trying to finish this book before our shift starts!
 Marji: Wait!
-Dani: What?
+Danny: What?
 <<profile GameStateMachine marji default>>
 Marji: I mean it!
-Dani: Right, sure you do.
+Danny: Right, sure you do.
 Marji: For real! Its' super important and you can't tell anyone! So you better pinky swear! No fingers crossed!
-Dani: ...
-Dani: You didn't... summon anything ancient? Right?
+Danny: ...
+Danny: You didn't... summon anything ancient? Right?
 <<profile GameStateMachine marji smile>>
 Marji: Naw!
 <<profile GameStateMachine walker hyper>>
 <<profile GameStateMachine marji lookat>>
-Dani: Okay, Good! You know how much I love calculating the non-eclidian geometry for summoning blueprints. 
-Dani: Although, doing stellar parralax on elder stars is-
+Danny: Okay, Good! You know how much I love calculating the non-eclidian geometry for summoning blueprints. 
+Danny: Although, doing stellar parralax on elder stars is-
 Marji: AH-HEM! 
 <<profile GameStateMachine walker lookaway>>
-Dani: What? I love math!
+Danny: What? I love math!
 <<profile GameStateMachine marji irritated>>
 Marji: Bro! Let me talk!
 <<profile GameStateMachine walker default>>
-Dani: No.
+Danny: No.
 -> (throw your pillow at your brother)
     <<jump throw_pillow>>
 -> Uh- too bad!
     <<jump taunt_bro>>
 ===
 title: hbd_resp3
-position: 110,-130
+position: 108,-124
 ---
-Dani: Okay. Sure. Then what is it?
+Danny: Okay. Sure. Then what is it?
 Marji: Weeeeeeell, I'm gonna need ya to pinky swear!
-Dani: Pinky swear? What is this? Baby's first summoning contract?!?
+Danny: Pinky swear? What is this? Baby's first summoning contract?!?
 Marji: Do the damn pinky swear!
-Dani: Fine.
+Danny: Fine.
 <<showImage GameStateMachine true true>>
-Dani: I pinky swear not to tell.
+Danny: I pinky swear not to tell.
 <<showImage GameStateMachine false false>>
 Marji: Cool! Sooooooo--
 -> I'm Asexual!
@@ -121,41 +121,41 @@ Marji: Cool! Sooooooo--
 title: comming_out
 position: 421,116
 ---
-Dani: You're what?
+Danny: You're what?
 Marji: I–
 (Marji looks away distressed)
 Marji: I– uh...
-Dani: Is this a joke?
+Danny: Is this a joke?
 (Dani turns his face away)
-Dani: Heh...
-Dani: Hahahahaha
-Marji: No! You're a joke!
+Danny: Heh...
+Danny: Hahahahaha
+Marji: N-no! Y-you're a joke!
 <<jump dani_out>>
 ===
 title: comming_outt
 position: 141,140
 ---
 <<profile GameStateMachine walker lookaway>>
-Dani: I mean... people get on my nerves too. I don't think its special or anything, though.
+Danny: I mean... people get on my nerves too. I don't think its special or anything, though.
 Marji: No! I don't "like" like people!
 <<profile GameStateMachine walker default>>
-Dani: Oh.
+Danny: Oh.
 Marji: I-- uh... Don't like boys...
-Dani: Okay.
+Danny: Okay.
 Marji: AAAAND I don't like girls!
 <<profile GameStateMachine walker sus>>
-Dani: So what? Are you telling me you're Asexual?
+Danny: So what? Are you telling me you're Asexual?
 Marji: Yes!
 Marji: Wait-- huh!?!?
 <<profile GameStateMachine walker lookaway>>
-Dani: Well, well, I guess I'm not the only one in the family.
+Danny: Well, well, I guess I'm not the only one in the family.
 Marji: Are you for real!?!
 <<profile GameStateMachine walker default>>
-Dani: Yeah.
+Danny: Yeah.
 <<PlayAndWaitCutscene TimeLineManager 1 false>>
 <<clearProfile GameStateMachine 1>>
 Marji: Uuuuuugh! I was scared for NOTHING!
-Dani: Hey Marji.
+Danny: Hey Marji.
 <<playAndWait TimeLineManager Marji move_face>>
 <<jump the_end>>
 ===
@@ -165,33 +165,33 @@ position: 242,614
 ---
 Marji: What?
 <<profile GameStateMachine walker smile>>
-Dani: I'm proud of you! Thanks for sharing this with me.
+Danny: I'm proud of you! Thanks for sharing this with me.
 Marji: Yeah, yeah-- I love you too!
-Dani: You know what–– yeah, I love you too.
+Danny: You know what–– yeah, I love you too.
 <<playAndWait TimeLineManager walker book_up>>
 <<set $cameOutAce to true>>
 ===
 title: dani_out
 position: 463,336
 ---
-Dani: Woah! Hey! I wasn't laughing at you!
-Dani: I'm laughing because-
-Dani: I'm Asexual too!
+Danny: Woah! Hey! I wasn't laughing at you!
+Danny: I'm laughing because-
+Danny: I'm Asexual too!
 Marji: What.
-Dani: Yeah! I have an asexual pride flag in my room!
+Danny: Yeah! I have an asexual pride flag in my room!
 Marji: I'm not allowed in your room...
-Dani: I mean yeah-- but
+Danny: I mean yeah-- but
 Marji: Why didn't you tell me?!?
-Dani: Because you never asked.
+Danny: Because you never asked.
 <<PlayAndWaitCutscene TimeLineManager 1 false>>
 <<clearProfile GameStateMachine 1>>
 Marji: OH. MY. GOD.
-Dani: Oh! By the way, this doen't change anything! You're still not allowed in my room!
+Danny: Oh! By the way, this doen't change anything! You're still not allowed in my room!
 <<playAndWait TimeLineManager Marji move_face>>
 Marji: Don't care! Smells like chickens!
-Dani: No it doesn't!
+Danny: No it doesn't!
 Marji: Does too!
-Dani: Hey Sis?
+Danny: Hey Sis?
 <<jump the_end>>
 ===
 title: taunt_bro
@@ -201,17 +201,17 @@ Marji: I'm tellin' ya anyway!
 <<profile GameStateMachine walker grimace>> 
 Marji: Whatcha gonna do about it? walk away?!?
 <<profile GameStateMachine walker default>>
-Dani: Fine. You win this round sister. What is it?
+Danny: Fine. You win this round sister. What is it?
 -> I'm Asexual!
     <<jump comming_out>>
 -> I don't like people the way others do
     <<jump comming_outt>>
 ===
 title: throw_pillow
-position: -266,254
+position: -266,253
 ---
 <<PlayAndWaitCutscene TimeLineManager 0 true>>
-Dani: okay! okay! It was a joke...
+Danny: okay! okay! It was a joke...
 <<profile GameStateMachine marji default>> 
 Marji: Damn right it was!
 Marji: *Sigh* So, uh--
@@ -223,9 +223,9 @@ Marji: *Sigh* So, uh--
 title: Gleeb
 position: -454,50
 ---
-Dani: The Midwest Guide to indentifying Passerines
+Danny: The Midwest Guide to indentifying Passerines
 Marji: Is that a bird book or...
-Dani: Yes, I had a slice of pizza stolen yesterday and I need to know who did it...
+Danny: Yes, I had a slice of pizza stolen yesterday and I need to know who did it...
 Marji: Yeah, yeah. Cowabummer.
 <<set $birdBook to true>>
 === 
