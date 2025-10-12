@@ -53,14 +53,18 @@ public class Talking : MonoBehaviour, PlayerState
         {
             case 0:
                 left.enabled = false;
+                left.color = Color.white;
                 break;
             case 1:
                 right.enabled = false;
+                right.color = Color.white;
                 break;
             case 2:
             default:
                 left.enabled = false;
                 right.enabled = false;
+                left.color = Color.white;
+                right.color = Color.white;
                 break;
         }
     }
@@ -106,18 +110,16 @@ public class Talking : MonoBehaviour, PlayerState
             witch = actors[actor].getExpression(emote);
             target = left;
         }
+        else if(actor.Equals("marji"))
+        {
+            witch = player.getExpression(emote);
+        }
         else
         {
-            if (actor.Equals("marji"))
-            {
-                witch = player.getExpression(emote);
-            }
-            else
-                Debug.Log("ERROR actor doesn't exsist");
-        }
-
-        if (witch == null)
+            Debug.LogError("ERROR: actor doesn't exsist, cannot show profile art");
             return;
+        }
+            
         target.sprite = witch;
         target.SetNativeSize();
         target.enabled = true;
@@ -142,25 +144,26 @@ public class Talking : MonoBehaviour, PlayerState
         obj.SetActive(isActive);
     }
 
-
-    // Start is called before the first frame update
-    public void handleInput(StateMachine player)
-    {
-        if (cutsceneManager.IsPlaying())
-            return;
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            textButton.SetActive(false);
-            lineViewer.UserRequestedViewAdvancement();
-        }
-
-    }
     [YarnCommand("SetObjectPosition")]
     public static void SetPosition(GameObject obj, float x, float y, float z)
     {
         if(obj)
         {
             obj.transform.position = new Vector3(x, y, z);
+        }
+    }
+    ///-------------------------------------------------------------------------------------------------------------------------------------------
+
+    // State Interface calls
+    public void handleInput(StateMachine player)
+    {
+        if (cutsceneManager.IsPlaying())
+            return;
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            textButton.SetActive(false);
+            lineViewer.UserRequestedViewAdvancement();
         }
     }
     public void UpdateState(StateMachine player)
@@ -173,7 +176,6 @@ public class Talking : MonoBehaviour, PlayerState
             Debug.Log("exit dialouge");
             OnExit(player);
         }
-
     }
     public void OnExit(StateMachine mach)
     {
@@ -183,6 +185,4 @@ public class Talking : MonoBehaviour, PlayerState
         mach.UpdateAct();
         ExitState = ACT.IDLE;
     }
-
-
 }
