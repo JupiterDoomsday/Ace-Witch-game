@@ -17,6 +17,7 @@ MonoBehaviour:
   desc: 'Take a deep breath. There''s always a first, and tho it won''t be your last,
     think of it like  as the final weight off your chest. '
   taskDescs:
+  - Get a Drink of Water
   - Talk to your brother.
-  questId: 0
+  questId: 1
   state: 1

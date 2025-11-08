@@ -49,7 +49,10 @@ public class QuestSystemUI : MonoBehaviour
                     playerMenuState.popUp = this.popup;
                     popup.SetActive(true);
                     setCurQuest(curQuest);
-                    ActivateAllQuestTask(curQuest.GetCurTaskDesc());
+                    for(int i = 0; i<= curQuest.checkCurrentTask(); i++)
+                    {
+                        ActivateAllQuestTask(curQuest.GetTaskDesc(i),i, curQuest.checkCurrentTask());
+                    }
                     playerMenuState.isAtQuestSelected();
                     deactivateAllItems();
                 });
@@ -79,13 +82,19 @@ public class QuestSystemUI : MonoBehaviour
             btn.interactable = true;
         }
     }
-    private void ActivateAllQuestTask(string desc)
+    private void ActivateAllQuestTask(string desc, int step, int curTask)
     {
-            RectTransform taskSlotRectTransform = Instantiate(taskSlotTemplate, taskSlotContainer).GetComponent<RectTransform>();
-            taskSlotRectTransform.gameObject.SetActive(true);
-            taskSlotRectTransform.anchoredPosition = new Vector2(100, 0);
-            Transform q_img = taskSlotRectTransform.GetChild(1);
-            TextMeshProUGUI label = q_img.GetComponent<TextMeshProUGUI>();
+        RectTransform taskSlotRectTransform = Instantiate(taskSlotTemplate, taskSlotContainer).GetComponent<RectTransform>();
+        taskSlotRectTransform.gameObject.SetActive(true);
+        taskSlotRectTransform.anchoredPosition = new Vector2(100, 0);
+        Transform q_img = taskSlotRectTransform.GetChild(1);
+        TextMeshProUGUI label = q_img.GetComponent<TextMeshProUGUI>();
+        if (step != curTask)
+        {
+            label.text = "<s>" + desc + "</s>";
+        }
+
+        else
             label.text = desc;
     }
     public void DeactivateAllQuestTask()

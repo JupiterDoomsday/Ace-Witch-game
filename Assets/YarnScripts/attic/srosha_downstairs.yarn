@@ -1,6 +1,8 @@
 title: sroshaDwnStart
 position: -439,-569
 ---
+<<declare $srosha_talk = 0>>
+<<if $doorlock is true>>
 Srosha: Doth not taking the door to ye liking!
 Marji: I think its locked...
 Srosha: mmmmm, How wouldst thy solve such a conundrum?
@@ -10,4 +12,11 @@ Marji: No... Ugh! I dunno! I give up! You have a better idea?
 Srosha: Perhap one must look unto thyself, and see thine burdens from which thy carry.
 Marji: What?
 Srosha: Check your pockets.
+<<if $srosha_talk is 0>>
+<<SetTask GameStateMachine 0 1>>
+<<set $srosha_talk to 1>>
+<<endif>>
+<<else>>
+Srosha: Good luck.
+<<endif>>
 ===

@@ -19,11 +19,12 @@ public class QuestDatabase : ScriptableObject
         if (questId < Quests.Count)
             Quests[questId].SetToInactive();
     }
-    public void nextStep(int questId)
+    public void SetStep(int questId, int step)
     {
         if (questId < Quests.Count)
-            Quests[questId].moveToNextTask();
+            Quests[questId].SetTaskStep(step);
     }
+
 
     public string GetDesc(int id)
     {

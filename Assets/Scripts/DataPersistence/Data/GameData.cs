@@ -8,6 +8,7 @@ public class GameData
     public int room;
     public Vector3 playerPosition;
     public int[] quest;
+    public int[] questStep;
     public int[] invo;
     public int[] itemAmt;
     public bool[] eventList;

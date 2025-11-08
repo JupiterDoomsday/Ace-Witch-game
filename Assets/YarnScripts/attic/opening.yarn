@@ -56,4 +56,5 @@ Marji: Oh yeeeeeah, almost forgot! Come on Srosha, Lets go!
 <<playAndWait TimeLineManager CrossFade fade_in>>
 <<SetObjectPosition srosha 11.167 -23.35 0>>
 <<playAndWait TimeLineManager CrossFade fade_out>>
+<<declare $doorlock = true>>
 ===
